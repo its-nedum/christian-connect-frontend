@@ -3,9 +3,11 @@ import {Link} from 'react-router-dom'
 import Header from './header'
 import Links from './links'
 //import SearchBar from './searchBar'
+import '../../myStyles/main.css'
+
 const Navbar = () => {
     return (
-        <nav className="transparent">
+        <nav >
             <div className="nav-wrapper">
                 <div className="container">
                     <div className="row">

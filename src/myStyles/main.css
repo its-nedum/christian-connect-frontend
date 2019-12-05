@@ -1,0 +1,21 @@
+.footer-down {
+    background-color:#00b7eb !important;
+}
+
+.footer-top {
+    background-color: #FF00FF !important;
+}
+
+nav {
+    background-color: #FF00FF !important;
+}
+
+.coloredHead {
+    color: #FF00FF;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+      position: relative !important;
+    }
+  }
