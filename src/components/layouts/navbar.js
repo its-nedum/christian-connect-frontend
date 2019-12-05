@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import Header from './header'
 import Links from './links'
 //import SearchBar from './searchBar'
@@ -11,6 +12,9 @@ const Navbar = () => {
                         <div className="col s12">
                             <Header />
                         </div>
+                        <Link to="#" className="sidenav-trigger" data-target="mobile-menu">
+                        <i className="material-icons">menu</i>
+                        </Link>
                         <div className="col s12">
                             <Links />
                         </div>
