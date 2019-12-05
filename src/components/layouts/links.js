@@ -20,8 +20,8 @@ const Links = () => {
                 <li><Link to='/'>Lyrics</Link></li>
                 <li><Link to='/'>News</Link></li>
                 <li><Link to='/'>Jobs</Link></li>
-                <li><Link to='/signin'>SignIn</Link></li>
-                <li><Link to='/signup'>SignUp</Link></li>
+                <li><Link to='/'>SignIn</Link></li>
+                <li><Link to='/'>SignUp</Link></li>
             </ul>
         </div>
     )
