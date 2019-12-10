@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner2 from '../adverts/banner2'
 
-const Comments = () => {
+const NewsComment = () => {
     return (
         <div className="row">
         <div className="col s12 m8">
@@ -26,13 +26,11 @@ const Comments = () => {
             </div>
         </div>
         {/* Advert banner goes here */}
-        
         <div className="col s12 m4 ">
-                <Banner2 />
-            </div>
-        
+            <Banner2 />
+        </div>
         </div>
     )
 }
 
-export default Comments
+export default NewsComment

@@ -10,16 +10,14 @@ const Links = () => {
                 <li><Link to='/music'>Music</Link></li>
                 <li><Link to='/videos'>Video</Link></li>
                 <li><Link to='/lyrics'>Lyrics</Link></li>
-                <li><Link to='/'>News</Link></li>
-                <li><Link to='/'>Jobs</Link></li>
+                <li><Link to='/news'>News</Link></li>
             </ul>
             <ul className="sidenav" id='mobile-menu'>
                 <li><Link to='/'>Home</Link></li><div className="divider" />
                 <li><Link to='/music'>Music</Link></li>
                 <li><Link to='/videos'>Video</Link></li>
                 <li><Link to='/lyrics'>Lyrics</Link></li>
-                <li><Link to='/'>News</Link></li>
-                <li><Link to='/'>Jobs</Link></li><div className="divider" />
+                <li><Link to='/news'>News</Link></li>
                 <li><Link to='/'>SignIn</Link></li><div className="divider" />
                 <li><Link to='/'>SignUp</Link></li><div className="divider" />
             </ul>

@@ -9,6 +9,8 @@ import AllVideos from './components/videos/allVideos'
 import SingleVideoWithComments from './components/videos/singleVideoWithComments'
 import AllLyrics from './components/lyrics/allLyrics';
 import SingleLyricWithComments from './components/lyrics/singleLyricWithComments';
+import AllNews from './components/news/allNews';
+import SingleNewsWithComments from './components/news/singleNewsWithComments';
 
 class App extends Component {
   render(){
@@ -23,6 +25,8 @@ class App extends Component {
         <Route path='/videos/:videoId' component={SingleVideoWithComments} />
         <Route exact path="/lyrics" component={AllLyrics} />
         <Route path="/lyrics/:lyricsId" component={SingleLyricWithComments} />
+        <Route exact path="/news" component={AllNews} />
+        <Route path="/news/:newsId" component={SingleNewsWithComments} />
 -      </Switch>
     </div>
     </BrowserRouter>

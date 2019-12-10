@@ -1,4 +1,5 @@
 import React from 'react'
+import Banner2 from '../adverts/banner2'
 
 const VidComment = () => {
     return (
@@ -25,10 +26,8 @@ const VidComment = () => {
             </div>
         </div>
         {/* Advert banner goes here */}
-        <div className="col m2 hide-on-small-only">
-            <div className="card">
-                
-            </div>
+        <div className="col s12 m4 ">
+               <Banner2 /> 
         </div>
         </div>
     )
