@@ -1,18 +1,18 @@
 import React from 'react'
-import Footer from '../layouts/footer'
 import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
-import Recommended from './recommended'
+import Footer from '../layouts/footer'
+import VidRecommended from './vidRecommended'
 
-const AllMusic = () => {
+const AllVideos = () => {
     return (
         <div>
             <Navbar />
             <Banner />
-            <Recommended />
+            <VidRecommended />
             <Footer />
         </div>
     )
 }
 
-export default AllMusic
+export default AllVideos

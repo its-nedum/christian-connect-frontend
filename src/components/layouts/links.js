@@ -8,7 +8,7 @@ const Links = () => {
             <ul className="center hide-on-med-and-down">
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/music'>Music</Link></li>
-                <li><Link to='/'>Video</Link></li>
+                <li><Link to='/videos'>Video</Link></li>
                 <li><Link to='/'>Lyrics</Link></li>
                 <li><Link to='/'>News</Link></li>
                 <li><Link to='/'>Jobs</Link></li>

@@ -1,9 +1,8 @@
 import React from 'react'
 
-class AddComments extends React.Component {
-    render(){
+const AddVidComment = () => {
     return (
-        <div className="row">
+       <div className="row">
         <div className="col s12 m8">
         <h5 className="white-text left-align">Post a Comment</h5>
             <form className="white">
@@ -23,5 +22,5 @@ class AddComments extends React.Component {
         </div>
     )
 }
-}
-export default AddComments
+
+export default AddVidComment
