@@ -7,6 +7,8 @@ import AllMusic from './components/music/allMusic';
 import SingleSongWithComments from './components/music/singleSongWithComments';
 import AllVideos from './components/videos/allVideos'
 import SingleVideoWithComments from './components/videos/singleVideoWithComments'
+import AllLyrics from './components/lyrics/allLyrics';
+import SingleLyricWithComments from './components/lyrics/singleLyricWithComments';
 
 class App extends Component {
   render(){
@@ -19,6 +21,8 @@ class App extends Component {
         <Route path='/music/:songId' component={SingleSongWithComments} />
         <Route exact path='/videos' component={AllVideos} />
         <Route path='/videos/:videoId' component={SingleVideoWithComments} />
+        <Route exact path="/lyrics" component={AllLyrics} />
+        <Route path="/lyrics/:lyricsId" component={SingleLyricWithComments} />
 -      </Switch>
     </div>
     </BrowserRouter>

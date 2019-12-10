@@ -1,5 +1,5 @@
 import React from 'react'
-import songCover from '../../image/giphy.gif'
+//import songCover from '../../image/giphy.gif'
 
 const SingleSong = () => {
     return (
@@ -17,7 +17,7 @@ const SingleSong = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt in facilis. Accusantium quasi assumenda nostrum fugit corrupti, eius delectus vero sapiente ipsa eum blanditiis dolor! Reiciendis nulla nihil dolorum.</p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, facere veniam sit ut laborum dolorum quia delectus molestias velit nam repellendus consequatur, eius illo, corporis quis nulla excepturi repellat iure.</p>
                 <div className="card-action center">
-                   <a href="#"> Download Here: <i className="material-icons">file_download</i></a>
+                   <a href="#" rel="noopener noreferrer"> Download Here: <i className="material-icons">file_download</i></a>
                 </div>
                 </div>
                 
