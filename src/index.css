@@ -13,3 +13,21 @@ code {
     monospace;
 }
 
+form{
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form button, form h5{
+  margin: 20px 0;
+}
+
+input[type=textarea]:not(.browser-default):focus:not([readonly]),
+input[type=file]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color:  #000033;
+  box-shadow: none;
+}

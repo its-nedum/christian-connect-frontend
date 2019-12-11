@@ -11,6 +11,8 @@ import AllLyrics from './components/lyrics/allLyrics';
 import SingleLyricWithComments from './components/lyrics/singleLyricWithComments';
 import AllNews from './components/news/allNews';
 import SingleNewsWithComments from './components/news/singleNewsWithComments';
+import SignIn from './components/auths/signIn';
+import SignUp from './components/auths/signUp';
 
 class App extends Component {
   render(){
@@ -27,6 +29,8 @@ class App extends Component {
         <Route path="/lyrics/:lyricsId" component={SingleLyricWithComments} />
         <Route exact path="/news" component={AllNews} />
         <Route path="/news/:newsId" component={SingleNewsWithComments} />
+        <Route path= '/signin' component={SignIn} />
+        <Route path='/signup' component={SignUp} />
 -      </Switch>
     </div>
     </BrowserRouter>

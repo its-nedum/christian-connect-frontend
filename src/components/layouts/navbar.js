@@ -14,8 +14,8 @@ const Navbar = () => {
                         <div className="col s12">
                             <Header />
                         </div>
-                        <Link to="#" className="sidenav-trigger" data-target="mobile-menu">
-                        <i className="material-icons">menu</i>
+                        <Link to="#" className="sidenav-trigger" data-target="mobile-menu" >
+                            <i className="material-icons">menu</i>
                         </Link>
                         <div className="col s12">
                             <Links />

@@ -9,8 +9,8 @@ const Header = () => {
         <div>
             <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
             <ul className="right hide-on-small-only">
-                <li><Link to='/'>SignIn</Link></li>
-                <li><Link to='/'>SignUp</Link></li>
+                <li><Link to='/signin'>SignIn</Link></li>
+                <li><Link to='#'>SignUp</Link></li>
             </ul>
         </div>
     )

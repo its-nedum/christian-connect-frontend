@@ -23,3 +23,9 @@ nav {
 .m-top {
     margin-top: 100px;
 }
+
+.login-form {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    background-color:  #ffffff;
+}
