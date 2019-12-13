@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-// import Navbar from './components/layouts/navbar'
 import './App.css';
 import Home from './components/landing/home';
 import AllMusic from './components/music/allMusic';
@@ -13,6 +12,7 @@ import AllNews from './components/news/allNews';
 import SingleNewsWithComments from './components/news/singleNewsWithComments';
 import SignIn from './components/auths/signIn';
 import SignUp from './components/auths/signUp';
+import Welcome from './components/community/welcome';
 
 class App extends Component {
   render(){
@@ -31,6 +31,7 @@ class App extends Component {
         <Route path="/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />
         <Route path='/signup' component={SignUp} />
+        <Route path='/user' component={Welcome} />
 -      </Switch>
     </div>
     </BrowserRouter>

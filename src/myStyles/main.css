@@ -6,8 +6,12 @@
     background-color: #000033 !important;
 }
 
-nav {
+.header-nav {
     background-color: #000033 !important;
+}
+
+.link-nav {
+    background-color: transparent !important;
 }
 
 .coloredHead {
@@ -24,8 +28,24 @@ nav {
     margin-top: 100px;
 }
 
-.login-form {
+.login-div {
     margin-top: 0px;
     margin-bottom: 100px;
-    background-color:  #ffffff;
+}
+
+.loginForm {
+    border-radius: 10px;
+}
+
+.signupForm {
+    border-radius: 10px;
+}
+
+.link-font-size {
+    font-weight: bolder;
+}
+
+/* Community styles start here */
+.com-sidebar-nav {
+    display: block !important;
 }

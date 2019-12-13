@@ -1,9 +1,11 @@
 import React from 'react'
 
-const SignedOutLinks = () => {
-    return(
+const Dashboard = () => {
+    return (
         <div>
             
         </div>
     )
 }
+
+export default Dashboard
