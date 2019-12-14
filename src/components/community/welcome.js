@@ -8,7 +8,8 @@ const Welcome = () => {
     return (
         <div>
             <ComHeader />
-            <div className="c">
+            <br/>
+            <div className="">
                 <div className="row">
                     <div className="col s3">
                         <ComSidebar />

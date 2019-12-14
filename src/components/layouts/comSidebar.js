@@ -4,17 +4,18 @@ import '../../myStyles/main.css'
 
 const ComSidebar = () => {
     return (
-        <nav>
-        <div className="nav-wrapper">
-            <ul>
-                <li className="com-sidebar-nav"><Link to="#" >HOME</Link></li>
+        <div>
+            <ul id="slide-out" className="sidenav">
+                <li><Link to="#" >HOME</Link></li>
                 <li><Link to="#">HOME</Link></li>
                 <li><Link to="#">HOME</Link></li>
                 <li><Link to="#">HOME</Link></li>
                 <li><Link to="#">HOME</Link></li>
             </ul>
-        </div>
-        </nav>
+            <Link to='#' data-target="slide-out" className="sidenav-trigger show-on-large">
+                <i className="material-icons white">menu</i>
+            </Link>
+        </div> 
     )
 }
 

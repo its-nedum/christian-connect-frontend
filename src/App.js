@@ -31,7 +31,7 @@ class App extends Component {
         <Route path="/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />
         <Route path='/signup' component={SignUp} />
-        <Route path='/user' component={Welcome} />
+        <Route path='/feed' component={Welcome} />
 -      </Switch>
     </div>
     </BrowserRouter>
