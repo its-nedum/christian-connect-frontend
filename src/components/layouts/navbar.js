@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Header from './header'
 import Links from './links'
 import '../../myStyles/main.css'
 

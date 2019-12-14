@@ -14,15 +14,15 @@ const Links = () => {
                 <li><Link className="link-font-size" to='/news'>NEWS</Link></li>
             </ul>
         
-        <ul className="sidenav" id='mobile-sidenav-menu'>
+        <ul id='mobile-sidenav-menu' className="sidenav">
                 <li><Link to="#" className="sidenav-close right pink-text lighten-1">X</Link></li>
-                <li><Link to='/'>HOME</Link></li><div className="divider" />
-                <li><Link to='/music'>MUSIC</Link></li>
-                <li><Link to='/videos'>VIDEO</Link></li>
-                <li><Link to='/lyrics'>LYRICS</Link></li>
-                <li><Link to='/news'>NEWS</Link></li><div className="divider" />
-                <li><Link to='/signin'>Sign In</Link></li><div className="divider" />
-                <li><Link to='/signup'>Sign Up</Link></li><div className="divider" />
+                <li><a href='/' className="sidenav-close">HOME</a></li><div className="divider" />
+                <li><a href='/music' className="sidenav-close">MUSIC</a></li>
+                <li><a href='/videos' className="sidenav-close">VIDEO</a></li>
+                <li><a href='/lyrics' className="sidenav-close">LYRICS</a></li>
+                <li><a href='/news' className="sidenav-close">NEWS</a></li><div className="divider" />
+                <li><a href='/signin' className="sidenav-close">Sign In</a></li><div className="divider" />
+                <li><a href='/signup' className="sidenav-close">Sign Up</a></li><div className="divider" />
          </ul>
         
          </div>  

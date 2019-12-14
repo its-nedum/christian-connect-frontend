@@ -12,7 +12,7 @@ class SignIn extends Component {
                 <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
                     <ul className="right">
                         <li><Link to='/signup'>Sign Up</Link></li>
-                        <li><Link to='/'>Home</Link></li>
+                        <li><a href='/'>Home</a></li>
                     </ul>
                 </nav>
                     <div className="container login-div">
@@ -23,15 +23,15 @@ class SignIn extends Component {
                             <div className="row">
                                 <div className="input-field col s12">
                                 <input id="email" type="email" className="validate" />
-                                <label htmlfor="email">Email or Username</label>
+                                <label htmlFor="email">Email or Username</label>
                                 </div>
                                 <div className="input-field col s12">
                                 <input id="password" type="password" className="validate" />
-                                <label htmlfor="password">Password</label>
+                                <label htmlFor="password">Password</label>
                                 </div>
                             </div>
                             <div className="input-field center">
-                            <input type="button" className="btn pink lighten-1 z-depth-0" value="Login" />
+                            <a href='/feed'><input type="button" className="btn pink lighten-1 z-depth-0" value="Login" /></a>
                             </div>
                             <div className="center" style={{marginBottom:'6px'}}><Link to='#'>Forgot your log in details?</Link></div>
                             </form>

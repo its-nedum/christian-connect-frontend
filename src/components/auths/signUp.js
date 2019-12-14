@@ -12,7 +12,7 @@ class SignUp extends Component {
                 <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
                     <ul className="right">
                         <li><Link to='/signin'>Sign In</Link></li>
-                        <li><Link to='/'>Home</Link></li>
+                        <li><a href='/'>Home</a></li>
                     </ul>
             </nav>
             <div className="container">
@@ -23,19 +23,19 @@ class SignUp extends Component {
                     <div className="row">
                          <div className="input-field col s12 m6">
                             <input id="firstname" type="text" className="validate" />
-                            <label htmlfor="firstname">First Name</label>
+                            <label htmlFor="firstname">First Name</label>
                         </div>
                         <div className="input-field col s12 m6">
                             <input id="lastname" type="text" className="validate" />
-                            <label htmlfor="lastname">Last Name</label>
+                            <label htmlFor="lastname">Last Name</label>
                         </div>
                         <div className="input-field col s6">
                             <input id="email" type="email" className="validate" />
-                            <label htmlfor="email">E-mail</label>
+                            <label htmlFor="email">E-mail</label>
                         </div> 
                         <div className="input-field col s6">
                             <input id="telephone" type="text" className="validate" />
-                            <label htmlfor="telephone">Phone No.</label>
+                            <label htmlFor="telephone">Phone No.</label>
                         </div>
                         <div className="input-field col s6">
                             <select className="browser-default">
@@ -46,7 +46,7 @@ class SignUp extends Component {
                         </div>
                         <div className="input-field col s6">
                             <input id="birthdate" type="text" className="datepicker" />
-                            <label htmlfor="birthdate">Birthdate</label>
+                            <label htmlFor="birthdate">Birthdate</label>
                         </div>
                         <div className="input-field col s6">
                             <select className="browser-default">
@@ -92,15 +92,15 @@ class SignUp extends Component {
                         </div>
                         <div className="input-field col s6">
                             <textarea id="address" className="materialize-textarea"></textarea>
-                            <label htmlfor="address">Address</label>
+                            <label htmlFor="address">Address</label>
                         </div>
                         <div className="input-field col s6">
                             <input id="username" type="text" className="validate" />
-                            <label htmlfor="username">Username</label>
+                            <label htmlFor="username">Username</label>
                         </div>
                         <div className="input-field col s6">
                             <input id="password" type="password" className="validate" />
-                            <label htmlfor="password">Password</label>
+                            <label htmlFor="password">Password</label>
                         </div>
                         <div className="input-field center">
                             <input type="button" className="btn pink lighten-1 z-depth-0" value="Sign Up" />

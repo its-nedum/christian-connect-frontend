@@ -9,12 +9,13 @@ const Welcome = () => {
         <div>
             <ComHeader />
             <br/>
+            
             <div className="">
                 <div className="row">
-                    <div className="col s3">
+                    <div className="col m3">
                         <ComSidebar />
                     </div>
-                    <div className="col s8">
+                    <div className="col s12 m8">
                         <Dashboard />
                     </div>
                 </div>
