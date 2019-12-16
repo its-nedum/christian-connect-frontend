@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
-import UrThoughts from './urThoughts'
+import React from 'react'
+import {Link} from 'react-router-dom'
+import AddComment from './addComment'
+import CommentsList from './commentsList'
 
-class Dashboard extends Component {
-    
-    render(){
+const PostAndComments = () => {
     return (
         <div>
-            <UrThoughts />
             <div className="card">
                 <div className="card-content">
                     <span className="card-title">
@@ -18,16 +17,16 @@ class Dashboard extends Component {
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio impedit quidem asperiores, provident unde blanditiis, perspiciatis at dolorem! Ipsum eaque, molestias id consequatur soluta iusto beatae!
                     </div>
                     <div className="card-action">
-                        <span>Posted 4:55pm yesterday </span>
-                        <span><i className="material-icons">comment</i> 88 Comments </span>
-                        <span><i className="material-icons">thumb_up</i> 17 like </span>
+                        <span className="col s12 m4">Posted 4:55pm yesterday </span>
+                        <span className="col s6 m4"><i className="material-icons">comment</i>88 Comments </span> 
+                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 like </span>
                     </div>
-                    
                 </div>
             </div>
+            <AddComment />
+            <CommentsList />
         </div>
     )
 }
-}
 
-export default Dashboard
+export default PostAndComments

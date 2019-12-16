@@ -12,7 +12,8 @@ import AllNews from './components/news/allNews';
 import SingleNewsWithComments from './components/news/singleNewsWithComments';
 import SignIn from './components/auths/signIn';
 import SignUp from './components/auths/signUp';
-import Welcome from './components/community/welcome';
+import Welcome from './components/feed/welcome';
+import PostComments from './components/feed/postComments';
 
 class App extends Component {
   render(){
@@ -31,7 +32,8 @@ class App extends Component {
         <Route path="/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />
         <Route path='/signup' component={SignUp} />
-        <Route path='/feed' component={Welcome} />
+        <Route exact path='/feed' component={Welcome} />
+        <Route path='/feed/:postId/comments' component={PostComments} />
 -      </Switch>
     </div>
     </BrowserRouter>
