@@ -14,6 +14,8 @@ import SignIn from './components/auths/signIn';
 import SignUp from './components/auths/signUp';
 import Welcome from './components/feed/welcome';
 import PostComments from './components/feed/postComments';
+import AllJobs from './components/jobs/allJobs';
+import JobDescription from './components/jobs/jobDescription'
 
 class App extends Component {
   render(){
@@ -34,6 +36,8 @@ class App extends Component {
         <Route path='/signup' component={SignUp} />
         <Route exact path='/feed' component={Welcome} />
         <Route path='/feed/:postId/comments' component={PostComments} />
+        <Route exact path='/job-connect' component={AllJobs} />
+        <Route path='/job-connect/:jobTitle' component={JobDescription} />
 -      </Switch>
     </div>
     </BrowserRouter>

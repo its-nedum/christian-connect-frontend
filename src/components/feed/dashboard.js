@@ -21,7 +21,7 @@ class Dashboard extends Component {
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo odio suscipit esse fuga. Quam id, repellendus, provident at ad quidem porro expedita, natus aspernatur quasi ea corporis sint eaque soluta!
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio impedit quidem asperiores, provident unde blanditiis, perspiciatis at dolorem! Ipsum eaque, molestias id consequatur soluta iusto beatae!
                     </div>
-                    <div className="card-action">
+                    <div className="card-action row">
                         <span className="col s12 m4">Posted 4:55pm yesterday </span>
                         <span className="col s6 m4">
                             <i className="material-icons">comment</i>
@@ -47,7 +47,7 @@ class Dashboard extends Component {
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo odio suscipit esse fuga. Quam id, repellendus, provident at ad quidem porro expedita, natus aspernatur quasi ea corporis sint eaque soluta!
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio!
                     </div>
-                    <div className="card-action">
+                    <div className="card-action row">
                         <span className="col s12 m4">Posted 4:55pm yesterday </span>
                         <span className="col s6 m4">
                             <i className="material-icons">comment</i>
