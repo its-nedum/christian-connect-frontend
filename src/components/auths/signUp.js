@@ -91,16 +91,16 @@ class SignUp extends Component {
                             </select>
                         </div>
                         <div className="input-field col s6">
-                            <textarea id="address" className="materialize-textarea"></textarea>
-                            <label htmlFor="address">Address</label>
-                        </div>
-                        <div className="input-field col s6">
                             <input id="username" type="text" className="validate" />
                             <label htmlFor="username">Username</label>
                         </div>
                         <div className="input-field col s6">
                             <input id="password" type="password" className="validate" />
                             <label htmlFor="password">Password</label>
+                        </div>
+                        <div className="input-field col s6">
+                            <input id="passwordConfirm" type="password" className="validate" />
+                            <label htmlFor="passwordConfirm">Confirm Password</label>
                         </div>
                         <div className="input-field center">
                             <input type="button" className="btn pink lighten-1 z-depth-0" value="Sign Up" />

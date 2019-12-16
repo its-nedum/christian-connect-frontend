@@ -4,18 +4,16 @@ import '../../myStyles/main.css'
 
 const ComSidebar = () => {
     return (
-        <div>
-            <ul id="slide-out" className="sidenav">
-            <li><Link to="#" className="sidenav-close right pink-text lighten-1">X</Link></li>
-                <li><a href="/feed" className="sidenav-close">Dashboard</a></li>
-                <li><a href="#" className="sidenav-close">Connect</a></li>
-                <li><a href="#" className="sidenav-close">Job Alert</a></li>
-                <li><a href="#" className="sidenav-close">Chat Room</a></li>
-                <li><a href="#" className="sidenav-close">Events</a></li>
+        <div className="card">
+            <ul className="sidebar-ul">
+                <li><i className="material-icons">dashboard</i><a href="/feed" > Dashboard</a></li>
+                <li><i className="material-icons">supervisor_account</i><a href="#" > Connect</a></li>
+                <li><i className="material-icons">work</i><a href="#"> Job Alert</a></li>
+                <li><i className="material-icons">chat</i><a href="#"> Chat Room</a></li>
+                <li><i className="material-icons">event_note</i><a href="#"> Events</a></li>
+                <li><i className="material-icons">exit_to_app</i><a href="/signin"> Log Out</a></li>
             </ul>
-            <Link to='#' data-target="slide-out" className="sidenav-trigger show-on-large">
-                <i className="material-icons white">menu</i>
-            </Link>
+            
         </div> 
     )
 }

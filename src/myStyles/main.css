@@ -49,3 +49,18 @@
 .com-sidebar-nav {
     display: block !important;
 }
+
+/* Comunity sidebar styles */
+.sidebar-ul > li {
+    padding: 10px;
+    border-bottom: #000033 1px solid;
+}
+
+#textForm, #imageForm {
+    padding: 0px;
+    margin-top: 0px; 
+}
+
+::placeholder {
+    color: #000033
+}
