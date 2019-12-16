@@ -68,3 +68,7 @@
 ::placeholder {
     color: #000033
 }
+
+.cardActionLink {
+    text-transform: capitalize !important;   
+}
