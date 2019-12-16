@@ -4,10 +4,13 @@ import SingleVideo from './singleVideo'
 import AddVidComment from './addVidComment'
 import VidComments from './vidComments'
 import Footer from '../layouts/footer'
+import Header from '../layouts/header'
 
 const SingleVideoWithComments = () => {
     return (
+        
         <div>
+            <Header />
             <Navbar />
             <div className="container">
                 <SingleVideo />
