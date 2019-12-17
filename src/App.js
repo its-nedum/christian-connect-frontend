@@ -16,6 +16,9 @@ import Welcome from './components/feed/welcome';
 import PostComments from './components/feed/postComments';
 import AllJobs from './components/jobs/allJobs';
 import JobDescription from './components/jobs/jobDescription'
+import ChatBox from './components/chats/chatBox';
+import AllConnect from './components/connect/allConnect';
+import SingleConnect from './components/connect/singleConnect';
 
 class App extends Component {
   render(){
@@ -38,6 +41,10 @@ class App extends Component {
         <Route path='/feed/:postId/comments' component={PostComments} />
         <Route exact path='/job-connect' component={AllJobs} />
         <Route path='/job-connect/:jobTitle' component={JobDescription} />
+        <Route path='/chat-room' component={ChatBox} />
+        <Route exact path='/users' component={AllConnect} />
+        <Route path='/users/:userId' component={SingleConnect} />
+        
 -      </Switch>
     </div>
     </BrowserRouter>
