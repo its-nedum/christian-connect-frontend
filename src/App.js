@@ -20,6 +20,8 @@ import ChatBox from './components/chats/chatBox';
 import AllConnect from './components/connect/allConnect';
 import SingleConnect from './components/connect/singleConnect';
 import ProfileHolder from './components/profile/profileHolder';
+import AllEvents from './components/events/allEvents';
+
 
 class App extends Component {
   render(){
@@ -45,7 +47,8 @@ class App extends Component {
         <Route path='/chat-room' component={ChatBox} />
         <Route exact path='/users' component={AllConnect} />
         <Route exact path='/users/:userId' component={SingleConnect} />
-        <Route path='/users/:userId/settings' component={ProfileHolder} />
+        <Route path='/profile' component={ProfileHolder} />
+        <Route exact path='/events' component={AllEvents} />
 -      </Switch>
     </div>
     </BrowserRouter>

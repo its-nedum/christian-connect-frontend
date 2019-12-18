@@ -10,8 +10,8 @@ const ComSidebar = () => {
                 <li><i className="material-icons">supervisor_account</i><a href="/users" > Connect</a></li>
                 <li><i className="material-icons">chat</i><a href="/chat-room"> Chat Rooms</a></li>
                 <li><i className="material-icons">work</i><a href="/job-connect"> Job Alert</a></li>
-                <li><i className="material-icons">event_note</i><a href="#"> Events</a></li>
-                <li><i className="material-icons">settings</i><a href="/users/23/settings"> Profile</a></li>
+                <li><i className="material-icons">event_note</i><a href="/events"> Events</a></li>
+                <li><i className="material-icons">settings</i><a href="/profile"> Profile</a></li>
                 <li><i className="material-icons">exit_to_app</i><a href="/signin"> Log Out</a></li>
             </ul>
             
