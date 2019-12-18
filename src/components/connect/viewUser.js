@@ -8,7 +8,7 @@ const ViewUser = () => {
                 <div className="col s4"></div>
                 <div className="card-image col s4">
                 <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" 
-                     alt="pic" className="materialboxed responsive-img" width="650"
+                     alt="pic" className="materialboxed" width="650"
                      style={{borderRadius: '15px', marginTop: '15px'}} />
                 <h5 className="center">Chinedu Emesue</h5>
                 </div>
