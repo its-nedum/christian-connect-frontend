@@ -19,6 +19,7 @@ import JobDescription from './components/jobs/jobDescription'
 import ChatBox from './components/chats/chatBox';
 import AllConnect from './components/connect/allConnect';
 import SingleConnect from './components/connect/singleConnect';
+import ProfileHolder from './components/profile/profileHolder';
 
 class App extends Component {
   render(){
@@ -43,8 +44,8 @@ class App extends Component {
         <Route path='/job-connect/:jobTitle' component={JobDescription} />
         <Route path='/chat-room' component={ChatBox} />
         <Route exact path='/users' component={AllConnect} />
-        <Route path='/users/:userId' component={SingleConnect} />
-        
+        <Route exact path='/users/:userId' component={SingleConnect} />
+        <Route path='/users/:userId/settings' component={ProfileHolder} />
 -      </Switch>
     </div>
     </BrowserRouter>

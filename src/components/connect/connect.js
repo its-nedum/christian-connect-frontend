@@ -11,7 +11,6 @@ const Connect = () => {
                     <span className="title">Chinedu Emesue</span>
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
-                    <p>Hobbies: Football, Gaming, Movies</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
                     <Link to="/users/chinedu-emesue">View Profile</Link>
                 </li>
@@ -20,7 +19,6 @@ const Connect = () => {
                     <span className="title">Chinedu Emesue</span>
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
-                    <p>Hobbies: Football, Gaming, Movies</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
                     <Link to="/users/chinedu-emesue">View Profile</Link>
                 </li>
@@ -29,7 +27,6 @@ const Connect = () => {
                     <span className="title">Chinedu Emesue</span>
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
-                    <p>Hobbies: Football, Gaming, Movies</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
                     <Link to="/users/chinedu-emesue">View Profile</Link>
                 </li>
@@ -38,7 +35,6 @@ const Connect = () => {
                     <span className="title">Chinedu Emesue</span>
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
-                    <p>Hobbies: Football, Gaming, Movies</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
                     <Link to="/users/chinedu-emesue">View Profile</Link>
                 </li>

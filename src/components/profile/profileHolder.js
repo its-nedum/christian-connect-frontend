@@ -2,11 +2,11 @@ import React from 'react'
 import ComHeader from '../layouts/comHeader'
 import Footer from '../layouts/footer'
 import ComSidenav from '../layouts/comSidenav'
-import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
-import ViewUser from './viewUser'
+import MyProfile from './myProfile'
 
-const SingleConnect = () => {
+
+const ProfileHolder = () => {
     return (
         <div>
         <ComHeader />
@@ -17,11 +17,8 @@ const SingleConnect = () => {
                     <div className="col m2 hide-on-small-only">
                     <ComSidebar />
                     </div>
-                    <div className="col s12 m7">
-                    <ViewUser />
-                    </div>
-                    <div className="col s3 hide-on-small-only">
-                        <Banner2 />
+                    <div className="col s12 m9">
+                    <MyProfile />
                     </div>
                 </div>
             </div>
@@ -30,4 +27,4 @@ const SingleConnect = () => {
     )
 }
 
-export default SingleConnect
+export default ProfileHolder
