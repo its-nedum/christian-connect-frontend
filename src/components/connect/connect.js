@@ -12,7 +12,7 @@ const Connect = () => {
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <Link to="/users/chinedu-emesue">View Profile</Link>
+                    <a href="/users/chinedu-emesue">View Profile</a>
                 </li>
                 <li className="collection-item avatar">
                     <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
@@ -20,7 +20,7 @@ const Connect = () => {
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <Link to="/users/chinedu-emesue">View Profile</Link>
+                    <a href="/users/chinedu-emesue">View Profile</a>
                 </li>
                 <li className="collection-item avatar">
                     <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
@@ -28,7 +28,7 @@ const Connect = () => {
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <Link to="/users/chinedu-emesue">View Profile</Link>
+                    <a href="/users/chinedu-emesue">View Profile</a>
                 </li>
                 <li className="collection-item avatar">
                     <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
@@ -36,7 +36,7 @@ const Connect = () => {
                     <p>Location: Abuja</p>
                     <p>Gender: Male</p>
                     <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <Link to="/users/chinedu-emesue">View Profile</Link>
+                    <a href="/users/chinedu-emesue">View Profile</a>
                 </li>
             </ul>
         </div>
