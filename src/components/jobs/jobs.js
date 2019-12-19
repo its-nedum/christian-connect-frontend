@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+
 
 const Jobs = () => {
     return (
@@ -9,78 +9,78 @@ const Jobs = () => {
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Web Developer</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Web Developer</span></a>
                         <p>Middleware ICT Solutions</p>
                         <span>Location: Abuja</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Mathematics Teacher</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Mathematics Teacher</span></a>
                         <p>Manasseh Secondary School Karu</p>
                         <span>Location: Abuja</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Senior Engineer</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Senior Engineer</span></a>
                         <p>Tesla Inc</p>
                         <span>Location: Ibadan</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Cleaner</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Cleaner</span></a>
                         <p>God is Able Clinic Wuye</p>
                         <span>Location: Portharcourt</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Frontend Developer</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Frontend Developer</span></a>
                         <p>Middleware ICT Solutions</p>
                         <span>Location: Abuja</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
-                        <Link to='/job-connect/web-developer'><span className="card-title">Graphic Designer</span></Link>
+                        <a href='/job-connect/web-developer'><span className="card-title">Graphic Designer</span></a>
                         <p>Zeabon Concepts</p>
                         <span>Location: Lagos</span> | 
                         <span>Type: Full Time</span>
                     </div>
                     <div className="card-action">
-                        <Link to='/job-connect/web-developer'>READ MORE</Link>
+                        <a href='/job-connect/web-developer'>READ MORE</a>
                     </div>
                 </div>
             </div>

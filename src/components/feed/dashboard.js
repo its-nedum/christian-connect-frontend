@@ -26,7 +26,7 @@ class Dashboard extends Component {
                         <span className="col s6 m4">
                             <i className="material-icons">comment</i>
                              88 
-                             <Link to="feed/1/comments" className="cardActionLink pink-text"> Comments</Link>
+                             <a href="feed/1/comments" className="cardActa pink-text"> Comments</a>
                               </span>
                               
                         <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>
@@ -52,7 +52,7 @@ class Dashboard extends Component {
                         <span className="col s6 m4">
                             <i className="material-icons">comment</i>
                              88 
-                             <Link to="feed/1/comments" className="cardActionLink pink-text"> Comments</Link>
+                             <a href="feed/1/comments" className="cardActionLink pink-text"> Comments</a>
                               </span>
                               
                         <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>

@@ -4,7 +4,7 @@ const MyProfile = () => {
     return (
         <div>
             <div className="row">
-                <div className="col s7">
+                <div className="col s12 m7">
                     <div className="card">
                     <form style={{marginTop:'0px'}}>
                     <h5 className="center">Update Profile</h5>
@@ -85,7 +85,7 @@ const MyProfile = () => {
                     </form>
                     </div>
                 </div>
-                <div className="col s4">
+                <div className="col s12 m4">
                     <div className="card">
                     <form style={{marginTop:'0px'}} className="">
                     <h5 className="center">Change Password</h5>
