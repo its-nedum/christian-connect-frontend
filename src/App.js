@@ -16,12 +16,12 @@ import Welcome from './components/feed/welcome';
 import PostComments from './components/feed/postComments';
 import AllJobs from './components/jobs/allJobs';
 import JobDescription from './components/jobs/jobDescription'
-import ChatRoomHolder from './components/chats/chatRoomHolder';
+import ChatRoomHolder from './components/chatRooms/chatRoomHolder';
 import AllConnect from './components/connect/allConnect';
 import SingleConnect from './components/connect/singleConnect';
 import ProfileHolder from './components/profile/profileHolder';
 import AllEvents from './components/events/allEvents';
-import ChatHolder from './components/chats/chatHolder';
+import ChatHolder from './components/chatRooms/chatHolder';
 import MyConnectHolder from './components/connect/myConnectHolder'
 
 class App extends Component {
