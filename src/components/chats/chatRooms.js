@@ -11,7 +11,7 @@ const ChatRooms = () => {
                         <p>Region 28 Chat Room</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='#' >JOIN</Link>
+                        <Link to='/chat-room/region28' >JOIN</Link>
                     </div>
                 </div>
             </div>

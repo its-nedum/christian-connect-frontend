@@ -16,12 +16,13 @@ import Welcome from './components/feed/welcome';
 import PostComments from './components/feed/postComments';
 import AllJobs from './components/jobs/allJobs';
 import JobDescription from './components/jobs/jobDescription'
-import ChatBox from './components/chats/chatBox';
+import ChatRoomHolder from './components/chats/chatRoomHolder';
 import AllConnect from './components/connect/allConnect';
 import SingleConnect from './components/connect/singleConnect';
 import ProfileHolder from './components/profile/profileHolder';
 import AllEvents from './components/events/allEvents';
-
+import ChatHolder from './components/chats/chatHolder';
+import MyConnectHolder from './components/connect/myConnectHolder'
 
 class App extends Component {
   render(){
@@ -44,12 +45,15 @@ class App extends Component {
         <Route path='/feed/:postId/comments' component={PostComments} />
         <Route exact path='/job-connect' component={AllJobs} />
         <Route path='/job-connect/:jobTitle' component={JobDescription} />
-        <Route path='/chat-room' component={ChatBox} />
+        <Route exact path='/chat-room' component={ChatRoomHolder} />
+        <Route path='/chat-room/:chatRoomName' component={ChatHolder} />
         <Route exact path='/users' component={AllConnect} />
         <Route exact path='/users/:userId' component={SingleConnect} />
+        <Route path='/users/:userId/my-connect' component={MyConnectHolder} />
         <Route path='/profile' component={ProfileHolder} />
         <Route exact path='/events' component={AllEvents} />
--      </Switch>
+        
+    </Switch>
     </div>
     </BrowserRouter>
   );

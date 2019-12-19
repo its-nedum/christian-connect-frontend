@@ -6,7 +6,7 @@ import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import ChatRooms from './chatRooms'
 
-const ChatBox = () => {
+const ChatRoomHolder = () => {
     return (
         <div>
         <ComHeader />
@@ -30,4 +30,4 @@ const ChatBox = () => {
     )
 }
 
-export default ChatBox
+export default ChatRoomHolder

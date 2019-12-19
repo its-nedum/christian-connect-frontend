@@ -2,11 +2,11 @@ import React from 'react'
 import ComHeader from '../layouts/comHeader'
 import Footer from '../layouts/footer'
 import ComSidenav from '../layouts/comSidenav'
+import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
-import Connect from './connect'
-import MyConnects from './myConnects'
+import AllMyConnects from './allMyConnects'
 
-const AllConnect = () => {
+const MyConnectHolder = () => {
     return (
         <div>
         <ComHeader />
@@ -18,10 +18,10 @@ const AllConnect = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                      <Connect /> 
-                    </div>
-                    <div className="col s12 m3">
-                        <MyConnects />
+                    <AllMyConnects />
+                    </div> 
+                    <div className="col s3 hide-on-small-only">
+                        <Banner2 />
                     </div>
                 </div>
             </div>
@@ -30,4 +30,4 @@ const AllConnect = () => {
     )
 }
 
-export default AllConnect
+export default MyConnectHolder

@@ -6,7 +6,7 @@ const SingleEvent = () => {
             <div className="row">
                 <div className="card-image col s12 m4">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTLYJvzD8q-GcIWJ7tglVSIPnGQs5P0cESS9d5SnkuDEcNwZKqo" 
-                     alt="pic" className="responsive-img"
+                     alt="pic"
                      className="materialboxed" width="650"
                      style={{borderRadius: '5px', marginTop: '15px'}} />
                 <h5 className="center">The Great Turn Around</h5>

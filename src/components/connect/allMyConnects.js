@@ -1,11 +1,9 @@
 import React from 'react'
 import ConnectPagination from './connectPagination'
-
-
-const Connect = () => {
+const AllMyConnects = () => {
     return (
         <div>
-        <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Community Members</h5>
+        <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>My Connects (4)</h5>
             <ul className="collection">
                 <li className="collection-item avatar">
                     <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
@@ -45,4 +43,4 @@ const Connect = () => {
     )
 }
 
-export default Connect
+export default AllMyConnects
