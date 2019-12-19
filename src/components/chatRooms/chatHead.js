@@ -12,7 +12,7 @@ const ChatHead = () => {
                 <h5>Room Name</h5>
             </div>
             <div className="rightInnerContainer">
-                <a href="#"><img src={closeIcon} alt="close icon" /></a>
+                <a href="/feed"><img src={closeIcon} alt="close icon" /></a>
             </div>
         </div>
     )

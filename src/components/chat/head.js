@@ -9,10 +9,10 @@ const Head = () => {
         <div className="infoBar">
             <div className="leftInnerContainer">
                 <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-                <h5>Room Name</h5>
+                <h5>Chinedu Emesue</h5>
             </div>
             <div className="rightInnerContainer">
-                <a href="#"><img src={closeIcon} alt="close icon" /></a>
+                <a href="/feed"><img src={closeIcon} alt="close icon" /></a>
             </div>
         </div>
     )

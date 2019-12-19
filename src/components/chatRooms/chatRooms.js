@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 
 const ChatRooms = () => {
     return (
+        <div>
+        <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Chat Rooms</h5>
         <div className="row">
+
             <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
@@ -49,6 +52,7 @@ const ChatRooms = () => {
                 </div>
             </div>
                        
+        </div>
         </div>
     )
 }

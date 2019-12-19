@@ -19,6 +19,7 @@ const AllEvents = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
+                    <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Upcoming Events </h5>
                       <SingleEvent /> 
                       <SingleEvent />
                       <SingleEvent /> 
