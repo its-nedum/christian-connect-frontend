@@ -23,6 +23,7 @@ import ProfileHolder from './components/profile/profileHolder';
 import AllEvents from './components/events/allEvents';
 import ChatHolder from './components/chatRooms/chatHolder';
 import MyConnectHolder from './components/connect/myConnectHolder'
+import ChatHome from './components/chat/chatHome';
 
 class App extends Component {
   render(){
@@ -52,7 +53,7 @@ class App extends Component {
         <Route path='/users/:userId/my-connect' component={MyConnectHolder} />
         <Route path='/profile' component={ProfileHolder} />
         <Route exact path='/events' component={AllEvents} />
-        
+        <Route path='/users/:userId/chat' component={ChatHome} />
     </Switch>
     </div>
     </BrowserRouter>
