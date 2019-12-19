@@ -9,7 +9,7 @@ const ChatHead = () => {
         <div className="infoBar">
             <div className="leftInnerContainer">
                 <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-                <h3>Room Name</h3>
+                <h5>Room Name</h5>
             </div>
             <div className="rightInnerContainer">
                 <a href="#"><img src={closeIcon} alt="close icon" /></a>

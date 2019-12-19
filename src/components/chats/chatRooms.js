@@ -11,7 +11,7 @@ const ChatRooms = () => {
                         <p>Region 28 Chat Room</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='/chat-room/region28' >JOIN</Link>
+                        <a href='/chat-room/region28' >JOIN</a>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@ const ChatRooms = () => {
                         <p>Christian Connect Football Chat Room</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='#'>JOIN</Link>
+                    <a href='/chat-room/region28' >JOIN</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ const ChatRooms = () => {
                         <p>Connect with other House Fellowship</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='#'>JOIN</Link>
+                    <a href='/chat-room/region28' >JOIN</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const ChatRooms = () => {
                         <p>Connect with everybody</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='#'>JOIN</Link>
+                    <a href='/chat-room/region28' >JOIN</a>
                     </div>
                 </div>
             </div>

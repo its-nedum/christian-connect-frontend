@@ -6,7 +6,7 @@ const ChatInput = () => {
         <div>
             <form className="form">
                 <input className="input" type="text" placeholder="Type a message..." />
-                <button className="sendButton">Send</button>
+                <button className="sendButton"><i className="material-icons">send</i></button>
             </form>
         </div>
     )
