@@ -15,6 +15,6 @@ const AllLyrics = () => {
             <Footer />
         </div>
     )
-}
+} 
 
 export default AllLyrics

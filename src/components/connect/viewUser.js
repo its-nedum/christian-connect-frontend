@@ -18,7 +18,8 @@ const ViewUser = () => {
                 <div className="card-content">
                 <p className="center">
                     <Link to="#"><span style={{paddingRight:'50px'}}><i className="material-icons">group_add</i> Connect</span></Link>
-                    <a href="/users/chinedu-emesue/chat"><span><i className="material-icons">message</i> Message</span></a>
+                    <a href="/users/chinedu-emesue/chat"><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></a>
+                    <Link to="#"><span><i className="material-icons">block</i> Block</span></Link>
                 </p>
                 <p><i className="material-icons">work</i> Middleware ICT Solutions</p>
                 <p><i className="material-icons">school</i> Anambra State University</p>

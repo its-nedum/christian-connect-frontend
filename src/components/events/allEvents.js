@@ -1,34 +1,24 @@
 import React from 'react'
-import ComHeader from '../layouts/comHeader'
 import Footer from '../layouts/footer'
-import ComSidenav from '../layouts/comSidenav'
-import Banner2 from '../adverts/banner2'
-import ComSidebar from '../layouts/comSidebar'
+import Header from '../layouts/header'
+import Navbar from '../layouts/navbar'
+import Banner from '../adverts/banner'
 import SingleEvent from './singleEvent'
 import EventPagination from './eventPagination'
 
 const AllEvents = () => {
     return (
         <div>
-        <ComHeader />
-            <br/>
-            <ComSidenav />
-            <div className="">
-                <div className="row">
-                    <div className="col m2 hide-on-small-only">
-                    <ComSidebar />
-                    </div>
-                    <div className="col s12 m7">
-                    <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Upcoming Events </h5>
-                      <SingleEvent /> 
-                      <SingleEvent />
-                      <SingleEvent /> 
-                      <EventPagination /> 
-                    </div>
-                    <div className="col s3 hide-on-small-only">
-                        <Banner2 />
-                    </div>
-                </div>
+            <Header />
+            <Navbar />
+            <Banner />
+            <div className="container">
+            <h5 className="white-text left-align">Up Coming Events</h5>
+            <SingleEvent />
+            <SingleEvent />
+            <SingleEvent />
+            <SingleEvent />
+            <EventPagination />
             </div>
             <Footer />
         </div>
