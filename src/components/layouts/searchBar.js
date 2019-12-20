@@ -9,10 +9,7 @@ const SearchBar = () => {
                 <div className="col s12">
                     <form style={{marginTop:'0px'}}>
                         <div className="input-field">
-                            <input id="search" type="search" placeholder="What are you looking for?" className="white" style={{paddingLeft:'40px',borderRadius:'20px'}} />
-                            <label className="label-icon" htmlFor="search">
-                                <i className="material-icons">search</i>
-                            </label>
+                            <input id="search" type="search" placeholder="What are you looking for?" className="white" style={{paddingLeft:'10px',borderRadius:'15px'}} />
                             <i className="material-icons">close</i>
                         </div>
                     </form>
