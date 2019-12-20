@@ -4,6 +4,7 @@ import Events from './events'
 import Recent from './recent'
 import Footer from '../layouts/footer'
 import Header from '../layouts/header'
+import NewestUser from './newestUser'
 
 
 export class Home extends Component {
@@ -14,6 +15,7 @@ export class Home extends Component {
                 <Navbar />
                 <Events />
                 <Recent />
+                <NewestUser />
                 <Footer />
             </div>
         )

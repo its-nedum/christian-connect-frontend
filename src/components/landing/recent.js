@@ -5,7 +5,7 @@ import RecentDetails from './recentDetails'
 const Recent = () => {
     return (
         <div className="container">
-            <h5 className="white-text center">RECENTLY ADDED</h5>
+            <h5 className="white-text center">Recently Added</h5>
             <div className="row">
                 <RecentDetails />
                 <RecentDetails />

@@ -5,7 +5,7 @@ import '../../myStyles/main.css'
 const Events = () => {
     return (
         <div className="container m-top">
-            <h5 className="white-text center">UP COMING EVENTS</h5>
+            <h5 className="white-text center">Up Coming Events</h5>
             <div className="row">
                 <EventDetails />
                 <EventDetails />
