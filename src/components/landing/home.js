@@ -5,6 +5,7 @@ import Recent from './recent'
 import Footer from '../layouts/footer'
 import Header from '../layouts/header'
 import NewestUser from './newestUser'
+import SearchBar from '../layouts/searchBar'
 
 
 export class Home extends Component {
@@ -13,6 +14,7 @@ export class Home extends Component {
             <div>
                 <Header />
                 <Navbar />
+                <SearchBar />
                 <Events />
                 <Recent />
                 <NewestUser />

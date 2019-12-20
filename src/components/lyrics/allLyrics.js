@@ -4,12 +4,14 @@ import Banner from '../adverts/banner'
 import Footer from '../layouts/footer'
 import LyricsRecommended from './lyricsRecommended'
 import Header from '../layouts/header'
+import SearchBar from '../layouts/searchBar'
 
 const AllLyrics = () => {
     return (
         <div>
             <Header />
             <Navbar />
+            <SearchBar />
             <Banner />
             <LyricsRecommended />
             <Footer />

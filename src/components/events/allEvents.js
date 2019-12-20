@@ -5,12 +5,14 @@ import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
 import SingleEvent from './singleEvent'
 import EventPagination from './eventPagination'
+import SearchBar from '../layouts/searchBar'
 
 const AllEvents = () => {
     return (
         <div>
             <Header />
             <Navbar />
+            <SearchBar />
             <Banner />
             <div className="container">
             <h5 className="white-text left-align">Up Coming Events</h5>
