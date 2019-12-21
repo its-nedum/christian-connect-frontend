@@ -6,10 +6,10 @@ import logo from '../../image/logo-logo.png'
 
 class SignUp extends Component {
     render() {
-        return (
+        return ( 
             <div>
             <nav className="header-nav">
-                <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
+                <a href='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></a>
                     <ul className="right">
                         <li><Link to='/signin'>Sign In</Link></li>
                         <li><a href='/'>Home</a></li>
