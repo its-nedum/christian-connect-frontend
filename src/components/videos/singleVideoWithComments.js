@@ -5,6 +5,7 @@ import AddVidComment from './addVidComment'
 import VidComments from './vidComments'
 import Footer from '../layouts/footer'
 import Header from '../layouts/header'
+import SearchBar from '../search/searchBar'
 
 const SingleVideoWithComments = () => {
     return (
@@ -12,6 +13,7 @@ const SingleVideoWithComments = () => {
         <div>
             <Header />
             <Navbar />
+            <SearchBar />
             <div className="container">
                 <SingleVideo />
                 <AddVidComment />

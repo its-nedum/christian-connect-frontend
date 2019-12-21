@@ -5,7 +5,7 @@ import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
 import SingleEvent from './singleEvent'
 import EventPagination from './eventPagination'
-import SearchBar from '../layouts/searchBar'
+import SearchBar from '../search/searchBar'
 
 const AllEvents = () => {
     return (

@@ -4,7 +4,7 @@ import Banner from '../adverts/banner'
 import Footer from '../layouts/footer'
 import NewsRecommeded from './newsRecommeded'
 import Header from '../layouts/header'
-import SearchBar from '../layouts/searchBar'
+import SearchBar from '../search/searchBar'
 
 const AllNews = () => {
     return (

@@ -5,12 +5,14 @@ import Comments from './comments'
 import AddComments from './addComment'
 import Footer from '../layouts/footer'
 import Header from '../layouts/header'
+import SearchBar from '../search/searchBar'
 
 const SingleSongWithComments = () => {
     return (
         <div >
             <Header />
             <Navbar />
+            <SearchBar />
         <div className="container">
             <SingleSong />
             <AddComments />

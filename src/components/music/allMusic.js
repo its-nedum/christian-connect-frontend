@@ -4,7 +4,7 @@ import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
 import Recommended from './recommended'
 import Header from '../layouts/header'
-import SearchBar from '../layouts/searchBar'
+import SearchBar from '../search/searchBar'
 
 const AllMusic = () => {
     return (

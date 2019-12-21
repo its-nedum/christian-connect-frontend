@@ -5,12 +5,14 @@ import SingleNews from './singleNews'
 import AddNewsComment from './addNewsComment'
 import NewsComment from './newsComment'
 import Header from '../layouts/header'
+import Searchbar from '../search/searchBar'
 
 const SingleNewsWithComments = () => {
     return (
         <div>
             <Header />
             <Navbar />
+            <Searchbar />
             <div className="container">
                 <SingleNews />
                 <AddNewsComment />

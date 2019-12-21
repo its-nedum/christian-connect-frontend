@@ -3,7 +3,7 @@ import React from 'react'
 const SingleVideo = () => {
     return (
         <div className="row">
-        <div className="white-text lighten-2" style={{marginTop:'150px', paddingLeft:'10px', backgroundColor:'#000033'}}>
+        <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
             <strong><p>Download Music Video Mp4: Frank Edwards - You too bless me</p></strong>
             <p>Posted by: Admin on December 9, 2019</p>
             </div>

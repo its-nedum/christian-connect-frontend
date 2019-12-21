@@ -24,6 +24,8 @@ import AllEvents from './components/events/allEvents';
 import ChatHolder from './components/chatRooms/chatHolder';
 import MyConnectHolder from './components/connect/myConnectHolder'
 import ChatHome from './components/chat/chatHome';
+import SearchHolder from './components/search/searchHolder';
+import ResetForm from './components/passwordReset/resetForm';
 
 class App extends Component {
   render(){
@@ -54,6 +56,8 @@ class App extends Component {
         <Route path='/profile' component={ProfileHolder} />
         <Route exact path='/events' component={AllEvents} />
         <Route path='/users/:userId/chat' component={ChatHome} />
+        <Route path='/search/:searchItems' component={SearchHolder} />
+        <Route path='/password-reset' component={ResetForm} />
     </Switch>
     </div>
     </BrowserRouter>

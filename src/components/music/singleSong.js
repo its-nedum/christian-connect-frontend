@@ -4,7 +4,7 @@ import React from 'react'
 const SingleSong = () => {
     return (
         <div className="row">
-        <div className="white-text lighten-2" style={{marginTop:'150px', paddingLeft:'10px', backgroundColor:'#000033'}}>
+        <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
             <strong><p>Download Music Mp3: Mercy Chinwo - Chinedum</p></strong>
             <p>Posted by: Admin on December 9, 2019</p>
             </div>
