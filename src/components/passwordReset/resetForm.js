@@ -19,7 +19,7 @@ const ResetForm = () => {
                             <div className="col m2"></div>
                             <form className="white loginForm col s12 m8">
                             <h5 className="grey-text text-darken-3 center">Reset Password</h5>
-                            <h6>Enter your registered email address here to receive a reset link</h6>
+                            <div style={{color:'#000033'}}>Enter your registered email address here to receive a reset link</div>
                             <div className="row">
                                 <div className="input-field col s12">
                                 <input id="email" type="email" className="validate" />
