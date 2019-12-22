@@ -22,41 +22,45 @@ class SignUp extends Component {
                     <h5 className="grey-text text-darken-3 center">Join Christian Connect</h5>
                     <div className="row">
                          <div className="input-field col s6">
+                            <i className="material-icons prefix">account_circle</i>
                             <input id="firstname" type="text" className="validate" />
                             <label htmlFor="firstname">First Name</label>
                         </div>
                         <div className="input-field col s6">
+                            <i className="material-icons prefix">account_circle</i>
                             <input id="lastname" type="text" className="validate" />
                             <label htmlFor="lastname">Last Name</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
+                            <i className="material-icons prefix">email</i>
                             <input id="email" type="email" className="validate" />
                             <label htmlFor="email">E-mail</label>
                         </div> 
                         <div className="input-field col s6">
+                            <i className="material-icons prefix">phone</i>
                             <input id="telephone" type="text" className="validate" />
                             <label htmlFor="telephone">Phone No.</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
-                            <select className="browser-default">
-                                <option value="" disabled selected>Choose your gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
+                        <i className="material-icons prefix">perm_identity</i>
+                            <input id="username" type="text" className="validate" />
+                            <label htmlFor="username">Username</label>
                         </div>
                         <div className="input-field col s6">
+                        <i className="material-icons prefix">perm_contact_calendar</i>
                             <input id="birthdate" type="text" className="datepicker" />
                             <label htmlFor="birthdate">Birthdate</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
+                        <i className="material-icons prefix">location_city</i>
                             <select className="browser-default">
-                                <option value="" disabled selected>State of residence</option>
+                                <option value="" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State of residence</option>
                                 <option>Abia</option>
                                 <option>Adamawa</option>
                                 <option>Akwa Ibom</option>
@@ -97,19 +101,33 @@ class SignUp extends Component {
                             </select>
                         </div>
                         <div className="input-field col s6">
-                            <input id="username" type="text" className="validate" />
-                            <label htmlFor="username">Username</label>
+                        <i className="material-icons prefix">perm_identity</i>
+                        <select className="browser-default">
+                            <option value="" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
+                        <i className="material-icons prefix">lock</i>
                             <input id="password" type="password" className="validate" />
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="input-field col s6">
+                        <i className="material-icons prefix">lock</i>
                             <input id="passwordConfirm" type="password" className="validate" />
                             <label htmlFor="passwordConfirm">Confirm Password</label>
                         </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s12">
+                           <p> 
+                            <span>By clicking Sign Up, you agree to our <a href="legal/terms">Terms and Conditions</a>.</span>
+                           </p>
+                        </div>
+                        
                     </div>
                         <div className="input-field center">
                             <input type="button" className="btn pink lighten-1 z-depth-0" value="Sign Up" />

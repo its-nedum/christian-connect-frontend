@@ -22,10 +22,12 @@ class SignIn extends Component {
                             <h5 className="grey-text text-darken-3 center">Sign in to Christian Connect</h5>
                             <div className="row">
                                 <div className="input-field col s12">
+                                <i className="material-icons prefix">email</i>
                                 <input id="email" type="email" className="validate" />
                                 <label htmlFor="email">E-mail</label>
                                 </div>
                                 <div className="input-field col s12">
+                                <i className="material-icons prefix">lock</i>
                                 <input id="password" type="password" className="validate" />
                                 <label htmlFor="password">Password</label>
                                 </div>

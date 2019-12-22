@@ -14,10 +14,8 @@ const Footer = () => {
               <div className="col l4 offset-l2 s12">
                 <h5 className="white-text">Get In Touch</h5>
                 <ul>
-                  <li><a className="grey-text text-lighten-3" href="#!">Facebook</a></li>
-                  <li><a className="grey-text text-lighten-3" href="#!">Twitter</a></li>
-                  <li><a className="grey-text text-lighten-3" href="#!">Instagram</a></li>
                   <li><a className="grey-text text-lighten-3" href="#!">Email</a></li>
+                  <li><a className="grey-text text-lighten-3" href="#!">Telephone</a></li>
                 </ul>
               </div>
             </div>

@@ -22,6 +22,7 @@ const ResetForm = () => {
                             <div style={{color:'#000033'}}>Enter your registered email address here to receive a reset link</div>
                             <div className="row">
                                 <div className="input-field col s12">
+                                <i className="material-icons prefix">email</i>
                                 <input id="email" type="email" className="validate" />
                                 <label htmlFor="email">E-mail</label>
                                 </div>   

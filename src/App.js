@@ -26,6 +26,7 @@ import MyConnectHolder from './components/connect/myConnectHolder'
 import ChatHome from './components/chat/chatHome';
 import SearchHolder from './components/search/searchHolder';
 import ResetForm from './components/passwordReset/resetForm';
+import TermsAndConditions from './components/terms/termsAndCons';
 
 class App extends Component {
   render(){
@@ -58,6 +59,7 @@ class App extends Component {
         <Route path='/users/:userId/chat' component={ChatHome} />
         <Route path='/search/:searchItems' component={SearchHolder} />
         <Route path='/password-reset' component={ResetForm} />
+        <Route path='/legal/terms' component={TermsAndConditions} />
     </Switch>
     </div>
     </BrowserRouter>
