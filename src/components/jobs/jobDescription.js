@@ -38,8 +38,11 @@ const JobDescription = () => {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad laboriosam optio fugiat laudantium repudiandae nobis nesciunt nemo, consequuntur, dicta, aperiam ducimus eum atque odio tempore voluptas consectetur quaerat enim!</p>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, nulla autem velit iste non reprehenderit saepe possimus quae quisquam accusamus assumenda doloribus tempore ipsa dolorum? Aliquid sit totam eius nemo?</p>
                             <div className="divider" />
-                            <h6>How to apply</h6>
+                            <h6>How To Apply</h6>
                             <p>Interested and qualify candidate should forward their CV to smartkidsacademy@gmail.com</p>
+                            <div className="divider" />
+                            <h6>Application Deadline</h6>
+                            <p>December 20, 2020</p>
                           </div>
                         </div> 
                     </div>
