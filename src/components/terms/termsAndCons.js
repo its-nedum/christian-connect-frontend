@@ -19,47 +19,28 @@ const TermsAndConditions = () => {
                     <div className="col s12">
                         <div className="card" style={{marginTop:'20px'}}>
                             <div className="card-content">
-                            <span className="card-title">Terms and Conditions</span>
+                            <span className="card-title">Terms and conditions of use</span>
                             <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
+                            <b>1. Introduction</b>
                             </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
-                            <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi magni, eligendi eveniet nisi sunt harum delectus amet nulla, quas deleniti quia? Ratione eaque officia voluptate molestias! Et alias facere maxime!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus eveniet nesciunt beatae amet nemo impedit doloribus ducimus? Harum, sed voluptatum debitis laboriosam quo earum ex perspiciatis. Nihil, omnis atque?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae eius eos amet modi. Sint impedit esse animi dolorem in corporis dolore officia eligendi, ratione aut laboriosam consectetur tempore velit.
-                            </p>
+                           <p> 1.1	These terms and conditions shall govern your use of our website.</p>
+                           <p>1.2	By using our website, you accept these terms and conditions in full; accordingly, if you disagree with these terms and conditions or any part of these terms and conditions, you must not use our website.</p>
+                           <p>1.3	If you register with our website, submit any material to our website or use any of our website services, we will ask you to expressly agree to these terms and conditions.</p>
+                           <p>1.4	You must be at least 18 years of age to use our website; by using our website or agreeing to these terms and conditions, you warrant and represent to us that you are at least 18 years of age.</p>
+                            <br/>
+                            <b>2.	Credit </b>
+                            <p>2.1	This document was created using a template from SEQ Legal (https://seqlegal.com).</p>
+                            <br/>
+                            <b>3.	Copyright notice</b>
+                            <p>3.1	Copyright (c)2020 christianconnect</p>
+                            <p>3.2	Subject to the express provisions of these terms and conditions:</p>
+                                <ul>
+                                    <li>(a)	we, together with our licensors, own and control all the copyright and other intellectual property rights in our website and the material on our website; and</li>
+                                    <li>(b)	all the copyright and other intellectual property rights in our website and the material on our website are reserved.</li>
+                                </ul>
+
+
+
                             </div>
                         </div>
                     </div>
