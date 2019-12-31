@@ -4,7 +4,7 @@ const SingleLyric = () => {
     return (
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
-            <strong><p>Download Song Lyrics: Nara - Tim Godfrey Ft Travis Greene</p></strong>
+            <strong><p>Song Lyrics: Nara - Tim Godfrey Ft Travis Greene</p></strong>
             <p>Posted by: Admin on December 9, 2019</p>
             </div>
             
@@ -42,9 +42,7 @@ const SingleLyric = () => {
                         What shall I render to Jehovah?<br/>
                         For he has done… <br/>
                         </pre>
-                <div className="card-action center">
-                   <a href="#" rel="noopener noreferrer"> Download Here: <i className="material-icons">file_download</i></a>
-                </div>
+                
                 </div>
                 
             </div>
