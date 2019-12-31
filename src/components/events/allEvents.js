@@ -19,7 +19,6 @@ const AllEvents = () => {
             <SingleEvent />
             <SingleEvent />
             <SingleEvent />
-            <SingleEvent />
             <EventPagination />
             </div>
             <Footer />

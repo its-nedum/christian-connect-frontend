@@ -9,7 +9,6 @@ const LyricsRecommended = () => {
         <LyricsSummary />
         <LyricsSummary />
         <LyricsSummary />
-        <LyricsSummary />
         <LyricsPagination />
         </div>
     )

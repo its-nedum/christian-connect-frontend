@@ -9,8 +9,6 @@ const Recommended = () => {
             <RecommededSummary />
             <RecommededSummary />
             <RecommededSummary />
-            <RecommededSummary />
-            <RecommededSummary />
             <Pagination />
         </div>
     )
