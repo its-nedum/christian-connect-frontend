@@ -5,7 +5,7 @@ import NewsPagination from './newsPagination'
 const NewsSummary = () => {
     return (
         <div>
-            <div className="col s9">
+            <div className="col s12">
                 <div className="row">
                     <div className="col s6">
                         <NavLink to='news/67'>
