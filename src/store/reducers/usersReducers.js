@@ -1,10 +1,11 @@
 const initState = {
-
+    notification: null
 }
 
 const usersReducer = (state = initState, action) => {
     switch (action.type){
         case 'ACCOUNT_CREATED':
+            console.log('User created successfully')
             return {
                 ...state,
                 notification: 'Account created successfully'

@@ -1,4 +1,6 @@
-const axios = require('axios')
+import axios from 'axios'
+import {saveToken} from '../../helpers/utility'
+import {history} from '../../App'
 
 export const createUser = (user) => {
     return (dispatch) => {
@@ -9,13 +11,20 @@ export const createUser = (user) => {
                 'Content-Type': 'application/json',
             },
             data: JSON.stringify(user)
-          }).then( (res) => { 
-              res.json() 
-              console.log(res.json())
-            }).then( () => {
+          }).then( (response) => {
+              let { token } = response.data
+                saveToken(token)
                 dispatch({type: 'ACCOUNT_CREATED', user})
+                history.push('/feed')
+                window.location.reload()
             }).catch( (err) => {
                 dispatch({ type: 'ACCOUNT_CREATE_ERROR', err })
             })
+    }
+}
+
+export const loginUser = (credentials) => {
+    return (dispatch) => {
+        
     }
 }

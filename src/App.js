@@ -28,6 +28,9 @@ import SearchHolder from './components/search/searchHolder';
 import ResetForm from './components/passwordReset/resetForm';
 import TermsAndConditions from './components/terms/termsAndCons';
 
+import {createBrowserHistory} from 'history'
+export const history = createBrowserHistory()
+
 class App extends Component {
   render(){
   return (

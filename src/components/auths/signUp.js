@@ -36,7 +36,9 @@ class SignUp extends Component {
         usernameError: false,
         shortFirstName: false,
         shortLastName: false,
-        shortPassword: false
+        shortPassword: false,
+
+        btnValue: 'Sign Up'
     }
 
     handleChange = (e) => {
@@ -135,13 +137,13 @@ class SignUp extends Component {
             gender,
             password
             }
-
+        this.setState({btnValue: 'Please wait...'})
         this.props.createUser(user)
         
     }
     
     render() {
-        
+        const { notification } = this.props
         return ( 
             <div>
             <nav className="header-nav">
@@ -282,9 +284,11 @@ class SignUp extends Component {
                         
                     </div>
                         <div className="input-field center">
-                            <input type="button" className="btn pink lighten-1 z-depth-0" onClick={this.handleSubmit} value="Sign Up" />
+                            <input type="button" className="btn pink lighten-1 z-depth-0" onClick={this.handleSubmit} value={this.state.btnValue} />
                             </div>
-                    
+                    <div className="red-text center">
+                        { notification ? <p>{ notification }</p> : null}
+                    </div>
                     </form>
                     <div className="col m2"></div>
                 </div>
