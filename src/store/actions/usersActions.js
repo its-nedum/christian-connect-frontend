@@ -6,7 +6,7 @@ export const createUser = (user) => {
     return (dispatch) => {
         axios({
             method: 'post',
-            url: 'http://localhost:4242/api/v1/signup',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -25,6 +25,21 @@ export const createUser = (user) => {
 
 export const loginUser = (credentials) => {
     return (dispatch) => {
-        
+        axios({
+            method: 'post',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/signin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(credentials)
+        }).then( (response) => {
+            let { token } = response.data
+            saveToken(token)
+            dispatch({type: 'LOGIN_SUCCESS', credentials})
+            history.push('/feed')
+            window.location.reload()
+        }).catch( (err) => {
+            dispatch({type: 'LOGIN_ERROR', credentials})
+        })
     }
 }

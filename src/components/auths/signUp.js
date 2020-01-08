@@ -164,14 +164,14 @@ class SignUp extends Component {
                             <i className="material-icons prefix">account_circle</i>
                             <input id="firstname" type="text" onChange={this.handleChange} className="validate" />
                             <label htmlFor="firstname">First Name</label>
-                            <p>{this.state.requiredFirstnameField ? <span style={{color:'red'}}>*Firstname is required</span> : null}</p>
+                            <div>{this.state.requiredFirstnameField ? <span style={{color:'red'}}>*Firstname is required</span> : null}</div>
                             
                         </div>
                         <div className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
                             <input id="lastname" type="text" onChange={this.handleChange} className="validate" />
                             <label htmlFor="lastname">Last Name</label>
-                            <p>{this.state.requiredLastnameField ? <span style={{color:'red'}}>*Lastname is required</span> : null}</p>
+                            <div>{this.state.requiredLastnameField ? <span style={{color:'red'}}>*Lastname is required</span> : null}</div>
                             
                         </div>
                     </div>
@@ -180,14 +180,14 @@ class SignUp extends Component {
                             <i className="material-icons prefix">email</i>
                             <input id="email" type="email" onChange={this.handleChange} className="validate" />
                             <label htmlFor="email">E-mail</label>
-                            <p>{this.state.requiredEmail ? <span style={{color:'red'}}>*Email is required</span> : null}</p>
-                            <p>{this.state.emailError ? <span style={{color:'red'}}>*Enter a valid email</span> : null}</p>
+                            <div>{this.state.requiredEmail ? <span style={{color:'red'}}>*Email is required</span> : null}</div>
+                            <div>{this.state.emailError ? <span style={{color:'red'}}>*Enter a valid email</span> : null}</div>
                         </div> 
                         <div className="input-field col s6">
                             <i className="material-icons prefix">phone</i>
                             <input id="telephone" type="text" onChange={this.handleChange} className="validate" />
                             <label htmlFor="telephone">Phone No.</label>
-                            <p>{this.state.requiredTelephone ? <span style={{color:'red'}}>*Phone number is required</span> : null}</p>
+                            <div>{this.state.requiredTelephone ? <span style={{color:'red'}}>*Phone number is required</span> : null}</div>
                         </div>
                     </div>
                     <div className="row">
@@ -195,13 +195,13 @@ class SignUp extends Component {
                         <i className="material-icons prefix">perm_identity</i>
                             <input id="username" type="text" onChange={this.handleChange} className="validate" />
                             <label htmlFor="username">Username</label>
-                            <p>{this.state.requiredUsername ? <span style={{color:'red'}}>*Username is required</span> : null}</p>
+                            <div>{this.state.requiredUsername ? <span style={{color:'red'}}>*Username is required</span> : null}</div>
                         </div>
                         <div className="input-field col s6">
                         <i className="material-icons prefix">perm_contact_calendar</i>
                             <input id="birthdate" type="date" onChange={this.handleChange} className="validate" />
                             <label htmlFor="birthdate">Birthdate</label>
-                            <p>{this.state.requiredBirthdate ? <span style={{color:'red'}}>*Birthdate is required</span> : null}</p>
+                            <div>{this.state.requiredBirthdate ? <span style={{color:'red'}}>*Birthdate is required</span> : null}</div>
                         </div>
                     </div>
                     <div className="row">
@@ -247,7 +247,7 @@ class SignUp extends Component {
                                 <option>Zamfara</option>
                                 <option>Federal Capital Territory</option>
                             </select>
-                            <p>{this.state.requiredState ? <span style={{color:'red'}}>*State is required</span> : null}</p>
+                            <div>{this.state.requiredState ? <span style={{color:'red'}}>*State is required</span> : null}</div>
                         </div>
                         <div className="input-field col s6">
                         <i className="material-icons prefix">perm_identity</i>
@@ -256,7 +256,7 @@ class SignUp extends Component {
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
-                        <p>{this.state.requiredGender ? <span style={{color:'red'}}>*Gender is required</span> : null}</p>
+                        <div>{this.state.requiredGender ? <span style={{color:'red'}}>*Gender is required</span> : null}</div>
                         </div>
                     </div>
                     <div className="row">
@@ -264,15 +264,15 @@ class SignUp extends Component {
                         <i className="material-icons prefix">lock</i>
                             <input id="password" type="password" onChange={this.handleChange} className="validate" />
                             <label htmlFor="password">Password</label>
-                            <p>{this.state.requiredPassword ? <span style={{color:'red'}}>*Password is required</span> : null}</p>
-                            <p>{this.state.passwordMismatch ? <span style={{color:'red'}}>*Password mismatch</span> : null}</p>    
+                            <div>{this.state.requiredPassword ? <span style={{color:'red'}}>*Password is required</span> : null}</div>
+                            <div>{this.state.passwordMismatch ? <span style={{color:'red'}}>*Password mismatch</span> : null}</div>    
                         </div>
                         <div className="input-field col s6">
                         <i className="material-icons prefix">lock</i>
                             <input id="passwordConfirm" type="password" onChange={this.handleChange} className="validate" />
                             <label htmlFor="passwordConfirm">Confirm Password</label>
-                            <p>{this.state.requiredPasswordConfirm ? <span style={{color:'red'}}>*Confirm password is required</span> : null}</p>
-                            <p>{this.state.passwordMismatch ? <span style={{color:'red'}}>*Password mismatch</span> : null}</p> 
+                            <div>{this.state.requiredPasswordConfirm ? <span style={{color:'red'}}>*Confirm password is required</span> : null}</div>
+                            <div>{this.state.passwordMismatch ? <span style={{color:'red'}}>*Password mismatch</span> : null}</div> 
                         </div>
                     </div>
                     <div className="row">
