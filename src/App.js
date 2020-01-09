@@ -39,11 +39,11 @@ class App extends Component {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/music' component={AllMusic} />
-        <Route path='/music/:songId' component={SingleSongWithComments} />
+        <Route path='/category/music/:songId' component={SingleSongWithComments} />
         <Route exact path='/videos' component={AllVideos} />
-        <Route path='/videos/:videoId' component={SingleVideoWithComments} />
+        <Route path='/category/videos/:videoId' component={SingleVideoWithComments} />
         <Route exact path="/lyrics" component={AllLyrics} />
-        <Route path="/lyrics/:lyricsId" component={SingleLyricWithComments} />
+        <Route path="/category/lyrics/:lyricsId" component={SingleLyricWithComments} />
         <Route exact path="/news" component={AllNews} />
         <Route path="/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />

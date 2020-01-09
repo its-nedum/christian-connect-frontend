@@ -1,14 +1,14 @@
 import React from 'react'
-import RecommededSummary from './recommededSummary'
+import RecommededSummary from './recommededSummary' 
 import Pagination from './pagination'
 
-const Recommended = () => {
+const Recommended = (props) => {
+    let {music, isLoaded} = props
+    //console.log(music)
     return (
         <div className="container">
         <h5 className="white-text left-align">Recommended</h5>
-            <RecommededSummary />
-            <RecommededSummary />
-            <RecommededSummary />
+            <RecommededSummary music={music} isLoaded={isLoaded}/>
             <Pagination />
         </div>
     )

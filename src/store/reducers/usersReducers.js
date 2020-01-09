@@ -13,7 +13,7 @@ const usersReducer = (state = initState, action) => {
         case 'ACCOUNT_CREATE_ERROR':
             return {
                 ...state,
-                notification: 'An Error occured, please try again later'
+                notification: 'Something went wrong, please try again later'
             }
         case 'LOGIN_SUCCESS':
             return {
@@ -23,7 +23,7 @@ const usersReducer = (state = initState, action) => {
         case 'LOGIN_ERROR':
             return {
                 ...state,
-                notification: 'An Error occured, please try again later'
+                notification: 'Wrong email or password, please try again'
             }
 
         default: 
