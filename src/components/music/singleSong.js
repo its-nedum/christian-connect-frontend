@@ -4,7 +4,10 @@ import moment from 'moment'
 
 const SingleSong = (props) => {
     let {music} = props;
-    console.log(music)
+    let dbUrl = music.musicUrl;
+    let replaced = dbUrl.replace('//','/');
+    let splitted = replaced.split('/')
+    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${music.musicTitle}/${splitted[5]}/${splitted[6]}`
     return (
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
@@ -19,7 +22,7 @@ const SingleSong = (props) => {
                 <div className="card-content">
                     <p>{music.musicAbout}</p>
                 <div className="card-action center">
-                   <a href={music.musicUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a>
+                   <a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a>
                 </div>
                 </div>
                 

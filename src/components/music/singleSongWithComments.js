@@ -7,6 +7,7 @@ import Footer from '../layouts/footer'
 import Header from '../layouts/header'
 import SearchBar from '../search/searchBar'
 import axios from 'axios'
+import {HashLoader} from 'react-spinners'
 class SingleSongWithComments extends React.Component {
     state = {
         music: [],
@@ -38,9 +39,21 @@ class SingleSongWithComments extends React.Component {
             <Navbar />
             <SearchBar />
         <div className="container">
+            {this.state.isLoaded ?
+            <div>
             <SingleSong music={this.state.music}/>
             <AddComments />
             <Comments />
+            </div>
+            :
+            <div className="sweet-loading">
+                <HashLoader
+                sizeUnit={"px"}
+                size={200}
+                color={"#fff"}
+                />
+            </div>
+            }
         </div>
         <Footer />
         </div>

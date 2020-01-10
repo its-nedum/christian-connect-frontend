@@ -38,14 +38,14 @@ class App extends Component {
     <div className="App">
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/music' component={AllMusic} />
+        <Route exact path='/category/music' component={AllMusic} />
         <Route path='/category/music/:songId' component={SingleSongWithComments} />
-        <Route exact path='/videos' component={AllVideos} />
+        <Route exact path='/category/videos' component={AllVideos} />
         <Route path='/category/videos/:videoId' component={SingleVideoWithComments} />
-        <Route exact path="/lyrics" component={AllLyrics} />
+        <Route exact path="/category/lyrics" component={AllLyrics} />
         <Route path="/category/lyrics/:lyricsId" component={SingleLyricWithComments} />
-        <Route exact path="/news" component={AllNews} />
-        <Route path="/news/:newsId" component={SingleNewsWithComments} />
+        <Route exact path="/category/news" component={AllNews} />
+        <Route path="/category/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />
         <Route path='/signup' component={SignUp} />
         <Route exact path='/feed' component={Welcome} />
@@ -58,7 +58,7 @@ class App extends Component {
         <Route exact path='/users/:userId' component={SingleConnect} />
         <Route path='/users/:userId/my-connect' component={MyConnectHolder} />
         <Route path='/profile' component={ProfileHolder} />
-        <Route exact path='/events' component={AllEvents} />
+        <Route exact path='/category/events' component={AllEvents} />
         <Route path='/users/:userId/chat' component={ChatHome} />
         <Route path='/search/:searchItems' component={SearchHolder} />
         <Route path='/password-reset' component={ResetForm} />

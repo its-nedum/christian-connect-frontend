@@ -5,7 +5,7 @@ import {HashLoader} from 'react-spinners'
 
 const RecommededSummary = (props) => {
     let {music, isLoaded} = props;
-    console.log(music)
+    
     return (
         <div>
             <div className="row">
@@ -33,7 +33,7 @@ const RecommededSummary = (props) => {
                         <HashLoader
                         sizeUnit={"px"}
                         size={200}
-                        color={"#003333"}
+                        color={"#fff"}
                         />
                  </div>
             }
