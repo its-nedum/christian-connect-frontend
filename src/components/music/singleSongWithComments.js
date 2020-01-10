@@ -22,7 +22,7 @@ class SingleSongWithComments extends React.Component {
                 'Content-Type': 'application/json'
             }
         }).then( (response) => {
-            let {data} = response.data
+            let {data} = response.data;
             this.setState({
                 music: data,
                 isLoaded: true
@@ -32,7 +32,7 @@ class SingleSongWithComments extends React.Component {
         })
     }
     render() {
-        
+     
     return (
         <div >
             <Header />
@@ -42,8 +42,8 @@ class SingleSongWithComments extends React.Component {
             {this.state.isLoaded ?
             <div>
             <SingleSong music={this.state.music}/>
-            <AddComments />
-            <Comments />
+            <AddComments musicId={this.props.match.params.songId}/>
+            <Comments comments={this.state.music.comments}/>
             </div>
             :
             <div className="sweet-loading">

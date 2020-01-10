@@ -12,7 +12,7 @@ const SingleSong = (props) => {
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
             <strong><p>Download Music Mp3: {music.musicTitle}</p></strong>
-            <p>Posted by: {music.uploadedBy} on {moment(music.created_at).calendar()}</p>
+            <p>Posted by: {music.uploadedBy} on {moment(music.created_at).format('MMMM Do YYYY, h:mm:ss a')}</p>
             </div>
             
             <div className="center" >
