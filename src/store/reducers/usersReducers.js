@@ -5,10 +5,9 @@ const initState = {
 const usersReducer = (state = initState, action) => {
     switch (action.type){
         case 'ACCOUNT_CREATED':
-            // console.log('User created successfully')
             return {
                 ...state,
-                notification: 'Account created successfully'
+                notification: action.message
             }
         case 'ACCOUNT_CREATE_ERROR':
             return {
@@ -18,12 +17,12 @@ const usersReducer = (state = initState, action) => {
         case 'LOGIN_SUCCESS':
             return {
                 ...state,
-                notification: 'Login was successful'
+                notification: action.message
             }
         case 'LOGIN_ERROR':
             return {
                 ...state,
-                notification: 'Wrong email or password, please try again'
+                notification: 'Wrong email or password'
             }
 
         default: 

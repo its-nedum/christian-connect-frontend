@@ -22,7 +22,7 @@ const musicReducer = (state = initState, action) => {
         case 'MUSIC_COMMENT_ERROR':
             return {
                 ...state,
-                notification: 'Something went wrong, please try again later'
+               notification: 'Something went wrong, please try again later'
             }
 
         default: 

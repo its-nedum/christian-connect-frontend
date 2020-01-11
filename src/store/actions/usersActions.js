@@ -12,11 +12,13 @@ export const createUser = (user) => {
             },
             data: JSON.stringify(user)
           }).then( (response) => {
-              let { token } = response.data
+              let { token, message } = response.data
+                dispatch({type: 'ACCOUNT_CREATED', message})
+            if(message === 'Account created successfully'){
                 saveToken(token)
-                dispatch({type: 'ACCOUNT_CREATED', user})
                 history.push('/feed')
                 window.location.reload()
+              }
             }).catch( (err) => {
                 dispatch({ type: 'ACCOUNT_CREATE_ERROR', err })
             })
@@ -33,11 +35,14 @@ export const loginUser = (credentials) => {
             },
             data: JSON.stringify(credentials)
         }).then( (response) => {
-            let { token } = response.data
+            let { token, message } = response.data
+            
+            dispatch({type: 'LOGIN_SUCCESS', message})
+            if(message === 'Login was successful'){
             saveToken(token)
-            dispatch({type: 'LOGIN_SUCCESS', credentials})
             history.push('/feed')
             window.location.reload()
+            }
         }).catch( (err) => {
             dispatch({type: 'LOGIN_ERROR', credentials})
         })

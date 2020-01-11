@@ -70,22 +70,22 @@ class SignIn extends Component {
                                 <i className="material-icons prefix">email</i>
                                 <input id="email" type="email" className="validate" onChange={this.handleChange}/>
                                 <label htmlFor="email">E-mail</label>
-                                <div>{this.state.requiredEmail ? <span style={{color:'red'}}>*Email is required</span> : null}</div>
-                                <div>{this.state.emailError ? <span style={{color:'red'}}>*Enter a valid email</span> : null}</div>
+                                {this.state.requiredEmail ? <span style={{color:'red'}}>*Email is required</span> : null}
+                                {this.state.emailError ? <span style={{color:'red'}}>*Enter a valid email</span> : null}
                                 </div>
                                 <div className="input-field col s12">
                                 <i className="material-icons prefix">lock</i>
                                 <input id="password" type="password" className="validate" onChange={this.handleChange}/>
                                 <label htmlFor="password">Password</label>
-                                <div>{this.state.requiredPassword ? <span style={{color:'red'}}>*Password is required</span> : null}</div>
+                                {this.state.requiredPassword ? <span style={{color:'red'}}>*Password is required</span> : null}
                                 </div>
                             </div>
                             <div className="input-field center">
                             <input type="button" className="btn pink lighten-1 z-depth-0" onClick={this.handleSubmit} value={this.state.btnValue} />
                             </div>
-                            <div className="red-text center">
-                                { notification ? <p>{ notification }</p> : null}
-                            </div>
+                            
+                                { notification ? <p className="red-text center">{ notification }</p> : null}
+                            
                             <div className="center" style={{marginBottom:'6px'}}><a href='/password-reset'>Forgot your log in details?</a></div>
                             </form>
                             <div className="col m2"></div>
