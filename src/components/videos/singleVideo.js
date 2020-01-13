@@ -1,22 +1,28 @@
 import React from 'react'
+import moment from 'moment'
 
-const SingleVideo = () => {
+const SingleVideo = (props) => {
+    console.log(props)
+    let {video} = props;
+    let dbUrl = video.videoUrl;
+    let replaced = dbUrl.replace('//','/');
+    let splitted = replaced.split('/')
+    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${video.videoTitle}/${splitted[5]}/${splitted[6]}`
     return (
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
-            <strong><p>Download Music Video Mp4: Frank Edwards - You too bless me</p></strong>
-            <p>Posted by: Admin on December 9, 2019</p>
+            <strong><p>Download Music Video Mp4: {video.videoTitle}</p></strong>
+            <p>Posted by: {video.uploadedBy} on {moment(video.created_at).format('MMMM Do YYYY, h:mm:ss a')}</p>
             </div>
             
             <div className="center" >
-            <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575031708/d0o9cplf41drf7ofp8up.webp' alt="cover" className="responsive-img" style={{width:'400px',height:'300px'}}/>
+            <img src={video.videoUrl} alt="video cover" className="responsive-img" style={{width:'400px',height:'300px'}}/>
             </div>
             <div className="card z-depth-0 ">
                 <div className="card-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt in facilis. Accusantium quasi assumenda nostrum fugit corrupti, eius delectus vero sapiente ipsa eum blanditiis dolor! Reiciendis nulla nihil dolorum.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, facere veniam sit ut laborum dolorum quia delectus molestias velit nam repellendus consequatur, eius illo, corporis quis nulla excepturi repellat iure.</p>
+                    <p>{video.videoAbout}</p>
                 <div className="card-action center">
-                   <a href="#"> Download Here: <i className="material-icons">file_download</i></a>
+                   <a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a>
                 </div>
                 </div>
                 

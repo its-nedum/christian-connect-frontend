@@ -5,7 +5,7 @@ import '../../myStyles/main.css'
 import logo from '../../image/logo-logo.png'
 import {connect} from 'react-redux'
 import {createUser} from '../../store/actions/usersActions'
-import validator from 'validator'
+//import validator from 'validator'
 
 class SignUp extends Component {
     state = {

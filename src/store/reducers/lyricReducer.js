@@ -2,14 +2,14 @@ const initState = {
     notification: null
 }
 
-const musicReducer = (state = initState, action) => {
+const lyricReducer = (state = initState, action) => {
     switch (action.type){
-        case 'MUSIC_COMMENT_SUCCESS':
+        case 'LYRIC_COMMENT_SUCCESS':
             return {
                 ...state,
                 notification: 'Comment added successfully'
             }
-        case 'MUSIC_COMMENT_ERROR':
+        case 'LYRIC_COMMENT_ERROR':
             return {
                 ...state,
                notification: 'Something went wrong, please try again later'
@@ -20,4 +20,4 @@ const musicReducer = (state = initState, action) => {
     }
 }
 
-export default musicReducer
+export default lyricReducer
