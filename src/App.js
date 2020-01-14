@@ -58,7 +58,7 @@ class App extends Component {
         <Route exact path='/users/:userId' component={SingleConnect} />
         <Route path='/users/:userId/my-connect' component={MyConnectHolder} />
         <Route path='/profile' component={ProfileHolder} />
-        <Route exact path='/category/event' component={AllEvents} />
+        <Route exact path='/category/events' component={AllEvents} />
         <Route path='/users/:userId/chat' component={ChatHome} />
         <Route path='/search/:searchItems' component={SearchHolder} />
         <Route path='/password-reset' component={ResetForm} />

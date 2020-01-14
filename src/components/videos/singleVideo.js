@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 
 const SingleVideo = (props) => {
-    console.log(props)
+    //console.log(props)
     let {video} = props;
     let dbUrl = video.videoUrl;
     let replaced = dbUrl.replace('//','/');

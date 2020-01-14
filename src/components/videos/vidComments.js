@@ -10,7 +10,7 @@ const VidComment = (props) => {
              <h5 className="white-text left-align">Comments</h5>
              {comments && comments.map( (comment) => {
                  return (
-                    <div className="card z-depth-0">
+                    <div className="card z-depth-0" key={comment.id}>
                         <div className="card-content">
                             <p>{comment.comment_by} :</p>
                             <p>{comment.comment}</p>

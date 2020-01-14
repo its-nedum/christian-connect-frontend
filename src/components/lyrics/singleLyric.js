@@ -27,33 +27,3 @@ const SingleLyric = (props) => {
 
 export default SingleLyric
 
-{/* [Verse]<br/>
-He's done so much for me<br/>
-I can not tell it all<br/>
-Narakele Mo<br/>
-If I Had ten thousand tongues<br/>
-It won't still be enough<br/>
-Narakele Mo<br/>
-Chukwu na gwom o ria le<br/>
-When You heal You heal completely<br/>
-Nara elele mo<br/>
-Chukwu mara obim o<br/>
-Isi ikendu le<br/>
-Nara ekele mo<br/>
-[Pre-Chorus]<br />
-What shall I render to Jehovah?<br/>
-For he has done so very much for me<br/>
-What shall I render to Jehovah?<br/>
-For he has done so very much for me<br/>
-[Chorus] <br/>
-Naranara e, Narakele<br/>
-Narakele Mo<br/>
-Nara nara e, Narakele<br/>
-Narakele Mo<br/>
-Nara nara e, Narakele<br/>
-Narakele Mo<br/>
-[Pre-Chorus]<br />
-What shall I render to Jehovah?<br/>
-For he has done so very much for me<br/>
-What shall I render to Jehovah?<br/>
-For he has done… <br/> */}
