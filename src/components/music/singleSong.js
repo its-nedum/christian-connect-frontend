@@ -7,7 +7,7 @@ const SingleSong = (props) => {
     let dbUrl = music.musicUrl;
     let replaced = dbUrl.replace('//','/');
     let splitted = replaced.split('/')
-    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${music.musicTitle}/${splitted[5]}/${splitted[6]}`
+    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${music.musicTitle}/${splitted[5]}/${splitted[6]}/${splitted[7]}/${splitted[8]}`
     return (
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>

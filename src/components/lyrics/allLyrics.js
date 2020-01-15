@@ -16,8 +16,8 @@ class AllLyrics extends React.Component {
     async componentDidMount(){
         await axios({
             method: 'get',
-            // url: 'https://christian-connect-api.herokuapp.com/api/v1/category/lyric',
-            url: 'http://localhost:4242/api/v1/category/lyric',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/lyric',
+            //url: 'http://localhost:4242/api/v1/category/lyric',
             headers: {
                 'Content-Type': 'application/json'
             },

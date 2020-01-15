@@ -16,8 +16,8 @@ class AllVideos extends React.Component {
     async componentDidMount(){
         await axios({
             method: 'get',
-            // url: 'https://christian-connect-api.herokuapp.com/api/v1/category/video',
-            url: 'http://localhost:4242/api/v1/category/video',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/video',
+            //url: 'http://localhost:4242/api/v1/category/video',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -32,6 +32,7 @@ class AllVideos extends React.Component {
         })
     }
     render(){
+        
     return (
         <div>
             <Header />

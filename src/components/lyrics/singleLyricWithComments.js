@@ -18,7 +18,7 @@ class SingleLyricWithComments extends React.Component {
     async componentDidMount() {
         await axios({
             method: 'get',
-            url: `http://localhost:4242/api/v1/category/lyric/${this.props.match.params.lyricsId}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/category/lyric/${this.props.match.params.lyricsId}`,
             headers: {
                 'Content-Type': 'application/json'
             }

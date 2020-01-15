@@ -13,8 +13,8 @@ class Recent extends React.Component{
     async componentDidMount(){
         await axios({
             method: 'get',
-            // url: 'https://christian-connect-api.herokuapp.com/api/v1/admin-extra',
-            url: 'http://localhost:4242/api/v1/admin-extra',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/admin-extra',
+            //url: 'http://localhost:4242/api/v1/admin-extra',
             headers: {
                 'Content-Type': 'application/json'
             },

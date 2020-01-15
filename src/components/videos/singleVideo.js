@@ -2,12 +2,13 @@ import React from 'react'
 import moment from 'moment'
 
 const SingleVideo = (props) => {
-    //console.log(props)
+    
     let {video} = props;
     let dbUrl = video.videoUrl;
     let replaced = dbUrl.replace('//','/');
     let splitted = replaced.split('/')
-    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${video.videoTitle}/${splitted[5]}/${splitted[6]}`
+    let downloadUrl = `${splitted[0]}//${splitted[1]}/${splitted[2]}/${splitted[3]}/${splitted[4]}/fl_attachment:${video.videoTitle}/${splitted[5]}/${splitted[6]}/${splitted[7]}/${splitted[8]}`
+    
     return (
         <div className="row">
         <div className="white-text lighten-2" style={{marginTop:'0px', paddingLeft:'10px', borderRadius:'10px', backgroundColor:'#000033'}}>
@@ -16,7 +17,7 @@ const SingleVideo = (props) => {
             </div>
             
             <div className="center" >
-            <img src={video.videoUrl} alt="video cover" className="responsive-img" style={{width:'400px',height:'300px'}}/>
+            <img src={video.imageUrl} alt="video cover" className="responsive-img" style={{width:'400px',height:'300px'}}/>
             </div>
             <div className="card z-depth-0 ">
                 <div className="card-content">

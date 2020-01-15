@@ -18,7 +18,7 @@ class SingleVideoWithComments extends React.Component {
     async componentDidMount() {
         await axios({
             method: 'get',
-            url: `http://localhost:4242/api/v1/category/video/${this.props.match.params.videoId}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/category/video/${this.props.match.params.videoId}`,
             headers: {
                 'Content-Type': 'application/json'
             }
