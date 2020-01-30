@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const EventDetails = (props) => {
     let {events} = props
@@ -7,6 +8,7 @@ const EventDetails = (props) => {
         <div>
         {events && events.map((event) => {
             return(
+                <Link to="/category/events">
                 <div className="col s12 m6 l3" key={event.id}>
                     <div className="card z-depth-0">
                         <div className="card-image">
@@ -17,6 +19,7 @@ const EventDetails = (props) => {
                         </div>
                     </div>
                 </div>
+                </Link>
             )
         })}
         </div>

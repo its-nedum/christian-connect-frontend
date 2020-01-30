@@ -17,13 +17,19 @@ const SingleVideo = (props) => {
             </div>
             
             <div className="center" >
-            <img src={video.imageUrl} alt="video cover" className="responsive-img" style={{width:'400px',height:'300px'}}/>
+                    <video controls>
+                        <source src={downloadUrl} type="video/mp3"></source>
+                        <source src={downloadUrl} type="video/mp4"></source>
+                        Your browser is not supported.
+                    </video>
+            {/* <img src={video.imageUrl} alt="video cover" className="responsive-img" style={{width:'400px',height:'300px'}}/> */}
             </div>
             <div className="card z-depth-0 ">
                 <div className="card-content">
                     <p>{video.videoAbout}</p>
                 <div className="card-action center">
-                   <a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a>
+                    
+                   <p><a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a></p>
                 </div>
                 </div>
                 

@@ -14,10 +14,10 @@ export const createComment = (newComment) => {
             },
             data: { comment: comment }
         }).then( (response) => {
-            dispatch({type:'VIDEO_COMMENT_SUCCESS', comment})
+            dispatch({type:'LYRIC_COMMENT_SUCCESS', comment})
             window.location.reload()
         }).catch( (err) => {
-            dispatch({type:'VIDEO_COMMENT_ERROR', comment})
+            dispatch({type:'LYRIC_COMMENT_ERROR', comment})
         })
     }
 }

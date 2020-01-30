@@ -22,7 +22,12 @@ const SingleSong = (props) => {
                 <div className="card-content">
                     <p>{music.musicAbout}</p>
                 <div className="card-action center">
-                   <a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a>
+                    <audio controls>
+                        <source src={downloadUrl} type="audio/mp3"></source>
+                        <source src={downloadUrl} type="audio/mp4"></source>
+                        Your browser is not supported.
+                    </audio>
+                   <p><a href={downloadUrl} rel="noopener noreferrer" download> Download Here: <i className="material-icons">file_download</i></a></p>
                 </div>
                 </div>
                 
