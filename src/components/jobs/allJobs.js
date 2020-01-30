@@ -5,8 +5,35 @@ import ComSidenav from '../layouts/comSidenav'
 import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import Jobs from './jobs'
+import axios from 'axios'
 
-const AllJobs = () => {
+
+class AllJobs extends React.Component {
+    state = {
+        job: [],
+        isLoaded: false
+    }
+
+    async componentDidMount(){
+        await axios({
+            method: 'get',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/job',
+            //url: 'http://localhost:4242/api/v1/category/job',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then((response) => {
+            let { data } = response.data
+            this.setState({
+                job: data,
+                isLoaded: true
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+    render(){
+        
     return (
         <div>
         <ComHeader />
@@ -18,7 +45,7 @@ const AllJobs = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                      <Jobs />  
+                      <Jobs jobs={this.state.job} isLoaded={this.state.isLoaded}/>  
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
@@ -28,6 +55,6 @@ const AllJobs = () => {
             <Footer />
         </div>
     )
+    }
 }
-
 export default AllJobs

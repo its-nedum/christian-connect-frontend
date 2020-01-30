@@ -51,7 +51,7 @@ class App extends Component {
         <Route exact path='/feed' component={Welcome} />
         <Route path='/feed/:postId/comments' component={PostComments} />
         <Route exact path='/job-connect' component={AllJobs} />
-        <Route path='/job-connect/:jobTitle' component={JobDescription} />
+        <Route path='/job-connect/:jobId/:jobTitle' component={JobDescription} />
         <Route exact path='/chat-room' component={ChatRoomHolder} />
         <Route path='/chat-room/:chatRoomName' component={ChatHolder} />
         <Route exact path='/users' component={AllConnect} />
