@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import {setAuthToken} from '../../helpers/utility'
 
 export const createComment = (newComment) => {
     let {comment, musicId} = newComment
@@ -7,10 +7,11 @@ export const createComment = (newComment) => {
     return (dispatch) => {
         axios({
             method: 'post',
-             url: `https://christian-connect-api.herokuapp.com/api/v1/category/music/${musicId}/comment`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/category/music/${musicId}/comment`,
             //url: `http://localhost:4242/api/v1/category/music/${musicId}/comment`,
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': setAuthToken()
             },
             data: { comment: comment }
         }).then( (response) => {

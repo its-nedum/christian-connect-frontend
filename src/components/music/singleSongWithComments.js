@@ -18,6 +18,7 @@ class SingleSongWithComments extends React.Component {
         await axios({
             method: 'get',
             url: `https://christian-connect-api.herokuapp.com/api/v1/category/music/${this.props.match.params.songId}`,
+            //url: `http://localhost:4242/api/v1/category/music/${this.props.match.params.songId}`,
             headers: {
                 'Content-Type': 'application/json'
             }
