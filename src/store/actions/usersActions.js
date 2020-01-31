@@ -12,7 +12,8 @@ export const createUser = (user) => {
             },
             data: JSON.stringify(user)
           }).then( (response) => {
-              let { token, message } = response.data
+              let { message } = response.data
+              let { token } = response.data.data
                 dispatch({type: 'ACCOUNT_CREATED', message})
             if(message === 'Account created successfully'){
                 saveToken(token)
@@ -35,7 +36,8 @@ export const loginUser = (credentials) => {
             },
             data: JSON.stringify(credentials)
         }).then( (response) => {
-            let { token, message } = response.data
+            let { message } = response.data
+            let { token } = response.data.data
             
             dispatch({type: 'LOGIN_SUCCESS', message})
             if(message === 'Login was successful'){
