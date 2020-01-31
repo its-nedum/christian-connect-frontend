@@ -11,7 +11,7 @@ export const setAuthToken = () => {
 }
 
 export const isLoggedIn = () => {
-    if(getToken() === null){
+    if(getToken() === null || getToken() === undefined){
         return false
     }else{
         return true
