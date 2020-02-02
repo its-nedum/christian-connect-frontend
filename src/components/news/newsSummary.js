@@ -1,84 +1,34 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+
 import NewsPagination from './newsPagination'
 
-const NewsSummary = () => {
+const NewsSummary = ({news}) => {
+    console.log(news)
     return (
         <div>
             <div className="col s12">
                 <div className="row">
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
+                    {news && news.map((article) => {
+                        return(
+                            <div className="col s6" key={article.title}>
+                                <div className="card">
+                                    <div className="card-title">{article.title}</div>
+                                    {/* <div className="card-image">
+                                        <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
+                                    </div> */}
+                                    <div className="card-content">
+                                        <p>{article.description}</p>
+                                    </div>
+                                    <div className="card-action">
+                                    <a href={article.url}>Read more</a>
+                                    </div>
+                                </div>
+                                
                             </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
-                            </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
-                            </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
-                            </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
-                            </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
-                    <div className="col s6">
-                        <NavLink to='news/67'>
-                        <div className="card">
-                            <div className="card-image">
-                                <img src='https://res.cloudinary.com/its-nedum/image/upload/v1575989378/connect_fbzwrp.jpg' alt="news" className="responsive-img"/>
-                            </div>
-                             <div className="card-content">
-                                <p>News Headline Goes Here</p>
-                             </div>
-                        </div>
-                        </NavLink>
-                    </div>
+                        )
+                    })}
+                    
+                    
                 </div>
                 <NewsPagination />
             </div>
