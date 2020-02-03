@@ -5,7 +5,7 @@ import moment from 'moment'
 
 const LyricsSummary = (props) => {
     let {lyric, isLoaded} = props
-    console.log(lyric)
+    
     return (
         <div className="row">
             {isLoaded ?

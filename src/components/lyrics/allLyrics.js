@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
 import Footer from '../layouts/footer'
@@ -7,31 +7,30 @@ import Header from '../layouts/header'
 import SearchBar from '../search/searchBar'
 import axios from 'axios'
 
-class AllLyrics extends React.Component {
-    state = {
-        lyric: [],
-        isLoaded: false
-    }
+const AllLyrics = () => {
+    
+    const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(10); 
 
-    async componentDidMount(){
-        await axios({
-            method: 'get',
-            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/lyric',
-            //url: 'http://localhost:4242/api/v1/category/lyric',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then( (response) => {
-            let {data} = response.data
-            this.setState({
-                lyric: data,
-                isLoaded: true
-            })
-        }).catch( (err) => {
-            console.log(err)
-        })
-    }
-    render(){
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+              const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/category/lyric');
+              setPosts(res.data.data);
+              setLoading(true)
+          }
+
+          fetchPosts();
+      }, []);
+      
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
         
     return (
         <div>
@@ -39,10 +38,16 @@ class AllLyrics extends React.Component {
             <Navbar />
             <SearchBar />
             <Banner />
-            <LyricsRecommended lyric={this.state.lyric} isLoaded={this.state.isLoaded} />
+            <LyricsRecommended 
+                lyric={currentPosts} 
+                isLoaded={loading} 
+                postsPerPage={postsPerPage} 
+                totalPosts={posts.length}
+                paginate={paginate}
+                 />
             <Footer />
         </div>
     )
 } 
-}
+
 export default AllLyrics

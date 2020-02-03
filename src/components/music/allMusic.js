@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Footer from '../layouts/footer'
 import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
@@ -7,42 +7,47 @@ import Header from '../layouts/header'
 import SearchBar from '../search/searchBar'
 import axios from 'axios'
 
-class AllMusic extends React.Component {
-    state = {
-        music: [],
-        isLoaded: false
-    }
+const AllMusic = () => {
+    
+      const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(10); 
 
-    async componentDidMount(){
-        await axios({
-            method: 'get',
-            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/music',
-            //url: 'http://localhost:4242/api/v1/category/music',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then( (response) => {
-            let {data} = response.data
-            this.setState({
-                music: data,
-                isLoaded: true
-            })
-        }).catch( (err) => {
-            console.log(err)
-        })
-    }
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+              const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/category/music');
+              setPosts(res.data.data);
+              setLoading(true)
+          }
 
-    render (){
+          fetchPosts();
+      }, []);
+      
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
     return (
         <div>
             <Header />
             <Navbar />
             <SearchBar />
             <Banner />
-            <Recommended music={this.state.music} isLoaded={this.state.isLoaded}/>
+            <Recommended 
+                music={currentPosts} 
+                isLoaded={loading} 
+                postsPerPage={postsPerPage} 
+                totalPosts={posts.length}
+                paginate={paginate}
+                />
             <Footer />
         </div>
     )
 }
-}
+
 export default AllMusic

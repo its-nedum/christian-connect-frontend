@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Footer from '../layouts/footer'
 import Header from '../layouts/header'
 import Navbar from '../layouts/navbar'
@@ -9,31 +9,29 @@ import SearchBar from '../search/searchBar'
 import axios from 'axios'
 import {HashLoader} from 'react-spinners'
 
-class AllEvents extends React.Component {
-    state = {
-        event: [],
-        isLoaded: false
-    }
+const AllEvents = () => {
+    const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(6); 
 
-    async componentDidMount(){
-        await axios({
-            method: 'get',
-            url: 'https://christian-connect-api.herokuapp.com/api/v1/category/event',
-            //url: 'http://localhost:4242/api/v1/category/event',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then( (response) => {
-            let {data} = response.data
-            this.setState({
-                event: data,
-                isLoaded: true
-            })
-        }).catch( (err) => {
-            console.log(err)
-        })
-    }
-    render(){
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+              const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/category/event');
+              setPosts(res.data.data);
+              setLoading(true)
+          }
+
+          fetchPosts();
+      }, []);
+      
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
         
     return (
         <div>
@@ -43,10 +41,16 @@ class AllEvents extends React.Component {
             <Banner />
             <div className="container">
             <h5 className="white-text left-align">Up Coming / On Going Events</h5>
-            {this.state.isLoaded ? 
+            {loading ? 
             <div>
-            <SingleEvent events={this.state.event}/>
-            <EventPagination />
+            <SingleEvent 
+                events={currentPosts} 
+                />
+            <EventPagination 
+                postsPerPage={postsPerPage} 
+                totalPosts={posts.length}
+                paginate={paginate}
+                />
             </div>
             :
             <div className="sweet-loading">
@@ -62,5 +66,5 @@ class AllEvents extends React.Component {
         </div>
     )
 }
-}
+
 export default AllEvents
