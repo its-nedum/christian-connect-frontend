@@ -9,7 +9,6 @@ import SingleVideoWithComments from './components/videos/singleVideoWithComments
 import AllLyrics from './components/lyrics/allLyrics';
 import SingleLyricWithComments from './components/lyrics/singleLyricWithComments';
 import AllNews from './components/news/allNews';
-import SingleNewsWithComments from './components/news/singleNewsWithComments';
 import SignIn from './components/auths/signIn';
 import SignUp from './components/auths/signUp';
 import Welcome from './components/feed/welcome';
@@ -45,7 +44,6 @@ class App extends Component {
         <Route exact path="/category/lyrics" component={AllLyrics} />
         <Route path="/category/lyric/:lyricsId" component={SingleLyricWithComments} />
         <Route exact path="/category/news" component={AllNews} />
-        <Route path="/category/news/:newsId" component={SingleNewsWithComments} />
         <Route path= '/signin' component={SignIn} />
         <Route path='/signup' component={SignUp} />
         <Route exact path='/feed' component={Welcome} />

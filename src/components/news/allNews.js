@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../layouts/navbar'
 import Banner from '../adverts/banner'
 import Footer from '../layouts/footer'
@@ -6,40 +6,47 @@ import NewsRecommeded from './newsRecommeded'
 import Header from '../layouts/header'
 import SearchBar from '../search/searchBar'
 import axios from 'axios'
+import {newsKey} from '../../helpers/utility'
 
-class AllNews extends React.Component {
-    state = {
-        news: [],
-        isLoaded: false
-    }
+const AllNews = () => {
 
-    async componentDidMount(){
-        await axios({
-            method: 'get',
-            url: `https://newsapi.org/v2/top-headlines?country=ng&apiKey=ae9dfb783fa9425996a8900b6d676428`,
-        }).then( (response) => {
-            let {articles} = response.data
-            this.setState({
-                news: articles,
-                isLoaded: true
-            })
-        }).catch( (err) => {
-            console.log(err)
-        })
-    }
+      const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(5); 
 
-    render(){
-        //console.log(this.state.news)
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+              const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=ng&apiKey=${newsKey()}`);
+              setPosts(res.data.articles);
+              setLoading(true)
+          }
+
+          fetchPosts();
+      }, []);
+      
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
     return (
         <div>
             <Header />
             <Navbar />
             <SearchBar />
             <Banner />
-            <NewsRecommeded news={this.state.news} isLoaded={this.state.isLoaded}/>
+            <NewsRecommeded 
+                news={currentPosts} 
+                isLoaded={loading} 
+                postsPerPage={postsPerPage} 
+                totalPosts={posts.length}
+                paginate={paginate}/>
             <Footer />
         </div>
     )
 }
-}
+
 export default AllNews
