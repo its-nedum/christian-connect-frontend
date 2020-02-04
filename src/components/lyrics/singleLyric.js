@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import './lyric.css'
 
 const SingleLyric = (props) => {
     let { lyric } = props
@@ -13,7 +14,7 @@ const SingleLyric = (props) => {
             
             <div className="card z-depth-0 ">
                 <div className="card-content">
-                    <p>
+                    <p className="lyric-content">
                         {lyric.lyric}
                     
                     </p>
