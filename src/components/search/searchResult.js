@@ -1,54 +1,36 @@
 import React from 'react'
 import SearchPagination from './searchPagination'
+import moment from 'moment'
+import {NavLink} from 'react-router-dom'
 
-const SearchResult = () => {
+const SearchResult = (props) => { 
+    let {result, postsPerPage, totalPosts, paginate} = props
+    
     return (
         <div>
             <div className="container">
-            <h5 className="white-text left-align">Search Result(s)</h5>
+            
             <div className="row">
-                <div className="col s12 m6">
-                    <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">Frank Edwards - Mma Mma</span>
-                            <p>Category: Music</p>
-                            <p>Uploaded: August 17, 2020</p>
-                            <p><a href="/music/17">Download</a></p>
+                {result && result.map((item) => { 
+                    return(
+                        <div className="col s12 m6" key={item.id}>
+                            <div className="card">
+                                <div className="card-content">
+                                    <NavLink to={`/category/music/${item.id}`} >
+                                    <span className="card-title">{item.music_title}</span>
+                                    </NavLink>
+                                    <p>Category: {item.category}</p>
+                                    <p>Uploaded: {moment(item.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                                    
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="col s12 m6">
-                    <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">Frank Edwards - Mma Mma</span>
-                            <p>Category: Video</p>
-                            <p>Uploaded: August 17, 2020</p>
-                            <p><a href="/videos/17">Download</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col s12 m6">
-                    <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">Frank Edwards - Mma Mma</span>
-                            <p>Category: Lyrics</p>
-                            <p>Uploaded: August 17, 2020</p>
-                            <p><a href="/lyrics/17">Download</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col s12 m6">
-                    <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">Frank Edwards release new album</span>
-                            <p>Category: News</p>
-                            <p>Uploaded: August 17, 2020</p>
-                            <p><a href="/news/17">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
+                    )
+                })}
+                
+                
             </div>
-            <SearchPagination />
+            <SearchPagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate}/>
             </div>
         </div>
     )
