@@ -2,14 +2,14 @@ const initState = {
     notification: null
 }
 
-const searchReducer = (state = initState, action) => {
+const postsReducer = (state = initState, action) => {
     switch (action.type){
-        case 'SEARCH_SUCCESS':
+        case 'POST_SUCCESS':
             return {
                 ...state,
-                notification: 'Search was successfully'
+                notification: 'Post created successfully'
             }
-        case 'SEARCH_ERROR':
+        case 'POST_ERROR':
             return {
                 ...state,
                notification: 'Something went wrong, please try again later'
@@ -20,4 +20,4 @@ const searchReducer = (state = initState, action) => {
     }
 }
 
-export default searchReducer
+export default postsReducer

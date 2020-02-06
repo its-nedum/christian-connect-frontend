@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import '../../myStyles/main.css'
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
+import { connect } from 'react-redux'
+import { createPost } from '../../store/actions/postsActions'
 
  class UrThoughts extends Component {
     state = {
         formStatus: false,
-        swapValue: 'Add Image'
+        swapValue: 'Add Image',
+        post: null,
+        image: null
     }
 
     swapForm = (e) => {
@@ -21,7 +27,44 @@ import '../../myStyles/main.css'
             this.setState({formStatus: false, swapValue: 'Add Image'})
         }
     }
+
+    handleFile = (e) => {
+        this.setState({
+            image: e.target.files[0]
+        })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handlePostWithoutImage = (e) => {
+        e.preventDefault();
+        let { post } = this.state;
+        console.log(post)
+        let newPost = new FormData();
+        newPost.append('post', post)
+        //this.props.createPost(newPost)
+
+    }
+
+    handlePostWithImage = (e) => {
+        e.preventDefault();
+        let { post, image } = this.state;
+        let posts = {post, image}
+        console.log(posts)
+        let newPost = new FormData();
+        newPost.append('post', post)
+        newPost.append('image', image)
+        //this.props.createPost(newPost)
+
+    }
+
     render() {
+        const { notification } = this.props
+        if(!isLoggedIn()) return <Redirect to='/signin' />
         return (
             <div>
             <div className="card">
@@ -33,28 +76,36 @@ import '../../myStyles/main.css'
 
                     <form id="textForm">
                     <div className="input-field">
-                        <input type="text" placeholder="What's on your mind?" />
+                        <input type="text" id="post" onChange={this.handleChange} placeholder="What's on your mind?" />
                     </div>
                     <div className="input-field">
-                        <input type="button" className="btn pink lighten-1 z-depth-0" value="Share" />
+                        <input type="button" onClick={this.handlePostWithoutImage} className="btn pink lighten-1 z-depth-0" value="Share" />
+                    </div>
+                    <div className="red-text center">
+                        {notification ? <span>{notification}</span> : null}
                     </div>
                     </form>
 
                     <form className="hide" id="imageForm">
                     <div className="input-field">
-                        <input type="text" placeholder="What's on your mind?"/>
+                        <input type="text" id="post" onChange={this.handleChange} placeholder="What's on your mind?"/>
                     </div>
-                    <div className="file-field input-field col s12">
+                    <div className="file-field input-field">
                         <div className="btn-small">
                             <span>Image</span>
-                            <input type="file" name="image" />
+                            <input type="file" name="image" onChange={this.handleFile}/>
                         </div>
                         <div className="file-path-wrapper">
                             <input className="file-path validate" type="text"/>
                         </div>
+                        
                     </div>
+                    
                     <div className="input-field">
-                        <input type="button" className="btn pink lighten-1 z-depth-0" value="Share" />
+                        <input type="button" onClick={this.handlePostWithImage} className="btn pink lighten-1 z-depth-0" value="Share" />
+                    </div>
+                    <div className="red-text center">
+                        {notification ? <span>{notification}</span> : null}
                     </div>
                     </form>
 
@@ -65,4 +116,16 @@ import '../../myStyles/main.css'
     }
 }
 
-export default UrThoughts
+const mapStateToProps = (state) => {
+    return {
+        notification: state.posts.notification,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createPost: (post) => dispatch(createPost(post))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UrThoughts)

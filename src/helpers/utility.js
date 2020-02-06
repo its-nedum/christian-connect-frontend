@@ -1,3 +1,5 @@
+import jwt_decode from 'jwt-decode'
+
 export const saveToken = (token) => {
     localStorage.setItem('christianconnectauthtoken', token)
 }
@@ -13,9 +15,18 @@ export const setAuthToken = () => {
 export const isLoggedIn = () => {
     if(getToken() === null || getToken() === undefined){
         return false
-    }else{
-        return true
     }
+
+    try{
+        let { exp } = jwt_decode(getToken())
+        if( exp < Math.ceil(new Date().getTime() / 1000)){
+        return false
+        }
+    }catch(e){
+        return false
+    }
+
+        return true
 }
 
 export const logout = () => {
