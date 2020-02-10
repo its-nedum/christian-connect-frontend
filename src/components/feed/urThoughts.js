@@ -7,10 +7,12 @@ import { createPost } from '../../store/actions/postsActions'
 
  class UrThoughts extends Component {
     state = {
+        post: null,
+        image: null,
         formStatus: false,
         swapValue: 'Add Image',
-        post: null,
-        image: null
+        postError: false,
+        imagePostError: false
     }
 
     swapForm = (e) => {
@@ -40,26 +42,59 @@ import { createPost } from '../../store/actions/postsActions'
         })
     }
 
+    handlePostWithoutImageError = () => {
+        let { post } = this.state;
+        if(!post || post === null){
+            this.setState({
+                postError: 'Post is required'
+            })
+            return false
+        }else{
+            this.setState({
+                postError: false
+            })
+            return true
+        }
+    }
+
     handlePostWithoutImage = (e) => {
         e.preventDefault();
+      if(this.handlePostWithoutImageError()){
         let { post } = this.state;
-        console.log(post)
         let newPost = new FormData();
         newPost.append('post', post)
-        //this.props.createPost(newPost)
+        this.props.createPost(newPost)
+      }else{
+        console.log('Bro. pls check the error message')
+      }
+    }
 
+    handlePostWithImageError = () => {
+        let { post, image } = this.state;
+        if(!post || post === null || !image || image === null){
+            this.setState({
+                imagePostError: 'All fields are required'
+            })
+            return false
+        }else{
+            this.setState({
+                imagePostError: false
+            })
+            return true
+        }
     }
 
     handlePostWithImage = (e) => {
         e.preventDefault();
+        if(this.handlePostWithImageError()){
         let { post, image } = this.state;
-        let posts = {post, image}
-        console.log(posts)
         let newPost = new FormData();
         newPost.append('post', post)
         newPost.append('image', image)
-        //this.props.createPost(newPost)
-
+        this.props.createPost(newPost)
+        }else{
+            console.log('Bro. pls check the error message')
+        }
     }
 
     render() {
@@ -82,6 +117,7 @@ import { createPost } from '../../store/actions/postsActions'
                         <input type="button" onClick={this.handlePostWithoutImage} className="btn pink lighten-1 z-depth-0" value="Share" />
                     </div>
                     <div className="red-text center">
+                    {this.state.postError ? <span className="red-text">*Post is required</span> : null}
                         {notification ? <span>{notification}</span> : null}
                     </div>
                     </form>
@@ -105,6 +141,7 @@ import { createPost } from '../../store/actions/postsActions'
                         <input type="button" onClick={this.handlePostWithImage} className="btn pink lighten-1 z-depth-0" value="Share" />
                     </div>
                     <div className="red-text center">
+                    {this.state.imagePostError ? <span className="red-text">*All fields are required</span> : null}
                         {notification ? <span>{notification}</span> : null}
                     </div>
                     </form>

@@ -10,7 +10,7 @@ const RecentDetails = (props) => {
             <div className="col s12 m6">
                 <div className="card z-depth-0">
                     <div className="card-content">
-                        <NavLink to={`/category/lyric/${music.id}`}>{music.music_title}</NavLink>
+                        <NavLink to={`/category/music/${music.id}`}>{music.music_title}</NavLink>
                         <p>Category: Music</p>
                         <p>Added: {moment(music.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
                     </div>
