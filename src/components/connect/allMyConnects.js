@@ -1,5 +1,6 @@
 import React from 'react'
 import ConnectPagination from './connectPagination'
+
 const AllMyConnects = () => {
     return (
         <div>

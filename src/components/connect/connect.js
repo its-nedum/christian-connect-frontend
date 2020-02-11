@@ -1,46 +1,38 @@
 import React from 'react'
 import ConnectPagination from './connectPagination'
+import {HashLoader} from 'react-spinners'
 
 
-const Connect = () => {
+const Connect = ({users, postsPerPage, totalPosts, paginate, loading}) => {
+
     return (
         <div>
         <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Community Members</h5>
+        {loading ?  
             <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
+                {users && users.map((user) => {
+                    return(
+                        <li className="collection-item avatar" key={user.id}>
+                            {user.avatar ? <img src={user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                            <span className="title">{user.firstname} {user.lastname}</span>
+                            <p>Location: {user.state}</p>
+                            <p>Gender: {user.gender}</p>
+                            {user.about_me ? <p>About Me: {user.about_me}</p> : null}
+                            <a href={`/users/${user.username}`}>View Profile</a>
+                        </li>
+                    )
+                })} 
             </ul>
-            <ConnectPagination />
+        : 
+        <div className="sweet-loading">
+            <HashLoader
+            sizeUnit={"px"}
+            size={200}
+            color={"#fff"}
+            />
+        </div>
+        }
+           <ConnectPagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate}/>
         </div>
     )
 }

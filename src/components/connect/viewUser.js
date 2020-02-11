@@ -1,16 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import moment from 'moment'
 
-const ViewUser = () => {
+const ViewUser = ({user}) => {
+    
     return (
         <div className="card">
             <div className="row">
                 <div className="col s4"></div>
                 <div className="card-image col s4">
-                <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" 
-                     alt="pic" className="materialboxed" width="650"
-                     style={{borderRadius: '15px', marginTop: '15px'}} />
-                <h5 className="center">Chinedu Emesue</h5>
+                {user.avatar ? <img src={user.avatar} alt="pic" className="materialboxed" width="650" style={{borderRadius: '15px', marginTop: '15px'}} /> 
+                     : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" 
+                    alt="pic" className="materialboxed" width="650"
+                     style={{borderRadius: '15px', marginTop: '15px'}} />}
+                <h5 className="center">{user.firstname} {user.lastname}</h5>
                 </div>
                 <div className="col s4"></div>
             </div>
@@ -21,13 +24,13 @@ const ViewUser = () => {
                     <a href="/users/chinedu-emesue/chat"><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></a>
                     <Link to="#"><span><i className="material-icons">block</i> Block</span></Link>
                 </p>
-                <p><i className="material-icons">work</i> Middleware ICT Solutions</p>
-                <p><i className="material-icons">school</i> Anambra State University</p>
-                <p><i className="material-icons">location_city</i> Abuja</p>
-                <p><i className="material-icons">home</i> Mararaba</p>
-                <p><i className="material-icons">favorite</i> Single</p>
-                <p><i className="material-icons">account_circle</i> I am easy going and loves to watch movies when I'm bored</p>
-                <p><i className="material-icons">access_time</i> Joined January 2020</p>
+                {user.work ? <p><i className="material-icons">work</i> {user.work}</p> : null}
+                {user.school ? <p><i className="material-icons">school</i> {user.school}</p> : null}
+                {user.state ? <p><i className="material-icons">location_city</i> {user.state}</p> : null}
+                {user.city ? <p><i className="material-icons">home</i> {user.city}</p> : null}
+                {user.relationship_status ? <p><i className="material-icons">favorite</i> {user.relationship_status}</p> : null}
+                {user.about_me ? <p><i className="material-icons">account_circle</i>{user.about_me}</p> : null}
+                <p><i className="material-icons">access_time</i> Joined {moment(user.createdAt).format('MMMM YYYY')}</p>
                 </div>
             </div>
         </div>

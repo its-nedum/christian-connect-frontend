@@ -5,8 +5,34 @@ import ComSidenav from '../layouts/comSidenav'
 import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import ViewUser from './viewUser'
+import axios from 'axios'
+import {HashLoader} from 'react-spinners'
+class SingleConnect extends React.Component {
+    state = {
+        user: [],
+        isLoaded: false
+    }
 
-const SingleConnect = () => {
+    async componentDidMount(){
+        await axios({
+            method: 'get',
+            url: `https://christian-connect-api.herokuapp.com/api/v1/users/${this.props.match.params.userId}`,
+            //url: `http://localhost:4242/api/v1/users/${this.props.match.params.userId}`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then((response) => {
+            let { data } = response.data
+            this.setState({
+                user: data,
+                isLoaded: true
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+    render(){
+        
     return (
         <div>
         <ComHeader />
@@ -18,7 +44,17 @@ const SingleConnect = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                    <ViewUser />
+                    {this.state.isLoaded ? 
+                        <ViewUser user={this.state.user}/>        
+                    :
+                    <div className="sweet-loading">
+                        <HashLoader
+                        sizeUnit={"px"}
+                        size={200}
+                        color={"#fff"}
+                        />
+                    </div>
+                    }
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
@@ -28,6 +64,7 @@ const SingleConnect = () => {
             <Footer />
         </div>
     )
+}
 }
 
 export default SingleConnect

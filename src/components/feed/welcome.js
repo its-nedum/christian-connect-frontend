@@ -1,14 +1,40 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ComHeader from '../layouts/comHeader'
 import Footer from '../layouts/footer'
 import ComSidenav from '../layouts/comSidenav'
 import Dashboard from './dashboard'
 import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
-import {isLoggedIn} from '../../helpers/utility'
+import {isLoggedIn, setAuthToken} from '../../helpers/utility'
 import {Redirect} from 'react-router-dom'
+import axios from 'axios'
 
 const Welcome = () => {
+    const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(6); 
+
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+            //   const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/feed');
+            const res = await axios.get('http://localhost:4242/api/v1/posts', { headers:{ 'Authorization': setAuthToken()} });
+              setPosts(res.data.data);
+              setLoading(true)
+              //console.log(res)
+          }
+
+          fetchPosts();
+      }, []);
+
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
     if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
         <div>
