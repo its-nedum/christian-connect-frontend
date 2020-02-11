@@ -10,7 +10,8 @@ import {HashLoader} from 'react-spinners'
 class SingleConnect extends React.Component {
     state = {
         user: [],
-        isLoaded: false
+        isLoaded: false,
+        notFound: null
     }
 
     async componentDidMount(){
@@ -29,6 +30,9 @@ class SingleConnect extends React.Component {
             })
         }).catch((err) => {
             console.log(err)
+            this.setState({
+                notFound: 'The link you followed may be broken, or the page may have been removed.'
+            })
         })
     }
     render(){
@@ -55,6 +59,10 @@ class SingleConnect extends React.Component {
                         />
                     </div>
                     }
+                    {this.state.notFound ? 
+                    <div className="red-text center">
+                    <p>{this.state.notFound}</p>
+                    </div> : null}
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
