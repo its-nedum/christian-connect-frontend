@@ -26,6 +26,7 @@ import ChatHome from './components/chat/chatHome';
 import SearchHolder from './components/search/searchHolder';
 import ResetForm from './components/passwordReset/resetForm';
 import TermsAndConditions from './components/terms/termsAndCons';
+import ConnectRequest from './components/connect/connectRequest'
 
 import {createBrowserHistory} from 'history'
 export const history = createBrowserHistory()
@@ -61,6 +62,7 @@ class App extends Component {
         <Route path='/search/:searchItems' component={SearchHolder} />
         <Route path='/password-reset' component={ResetForm} />
         <Route path='/legal/terms' component={TermsAndConditions} />
+        <Route path='/connect-request' component={ConnectRequest} />
     </Switch>
     </div>
     </BrowserRouter>

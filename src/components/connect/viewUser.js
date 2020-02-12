@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
 
-const ViewUser = ({user}) => {
+const ViewUser = ({user, sendFriendRequest}) => {
     
     return (
         <div className="card">
@@ -20,7 +20,7 @@ const ViewUser = ({user}) => {
             <div className="row">
                 <div className="card-content">
                 <p className="center">
-                    <Link to="#"><span style={{paddingRight:'50px'}}><i className="material-icons">group_add</i> Connect</span></Link>
+                    <Link to="#" onClick={() => sendFriendRequest(user.id)}><span style={{paddingRight:'50px'}}><i className="material-icons">group_add</i> Connect</span></Link>
                     <a href={`/users/${user.username}/chat`}><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></a>
                     <Link to="#"><span><i className="material-icons">block</i> Block</span></Link>
                 </p>

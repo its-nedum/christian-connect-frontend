@@ -7,6 +7,7 @@ import ComSidebar from '../layouts/comSidebar'
 import ViewUser from './viewUser'
 import axios from 'axios'
 import {HashLoader} from 'react-spinners'
+import {setAuthToken} from '../../helpers/utility'
 class SingleConnect extends React.Component {
     state = {
         user: [],
@@ -35,8 +36,24 @@ class SingleConnect extends React.Component {
             })
         })
     }
+    
+    
+    sendFriendRequest = async (requesteeId) => {
+        axios({
+            method: 'post',
+            url: `http://localhost:4242/api/v1/sendfriendrequest/${requesteeId}`,
+            headers: {
+                'Authorization': setAuthToken()
+            }
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
     render(){
-        
+          
     return (
         <div>
         <ComHeader />
@@ -49,7 +66,7 @@ class SingleConnect extends React.Component {
                     </div>
                     <div className="col s12 m7">
                     {this.state.isLoaded ? 
-                        <ViewUser user={this.state.user}/>        
+                        <ViewUser user={this.state.user} sendFriendRequest={this.sendFriendRequest}/>        
                     :
                     <div className="sweet-loading">
                         <HashLoader
