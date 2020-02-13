@@ -41,7 +41,8 @@ class SingleConnect extends React.Component {
     sendFriendRequest = async (requesteeId) => {
         axios({
             method: 'post',
-            url: `http://localhost:4242/api/v1/sendfriendrequest/${requesteeId}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/sendfriendrequest/${requesteeId}`,
+            //url: `http://localhost:4242/api/v1/sendfriendrequest/${requesteeId}`,
             headers: {
                 'Authorization': setAuthToken()
             }
