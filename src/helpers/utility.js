@@ -43,3 +43,8 @@ const refreshCurrentPage = () => {
 export const newsKey = () => {
     return `ae9dfb783fa9425996a8900b6d676428`
 }
+
+export const getUsername = () => {
+    let {username} = jwt_decode(getToken())
+    return username
+}

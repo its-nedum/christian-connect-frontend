@@ -1,6 +1,6 @@
 import React from 'react'
 import ConnectPagination from './connectPagination'
-import {HashLoader} from 'react-spinners'
+import {ClipLoader} from 'react-spinners'
 
 
 const Connect = ({users, postsPerPage, totalPosts, paginate, loading}) => {
@@ -25,9 +25,9 @@ const Connect = ({users, postsPerPage, totalPosts, paginate, loading}) => {
             </ul>
         : 
         <div className="sweet-loading">
-            <HashLoader
+            <ClipLoader
             sizeUnit={"px"}
-            size={200}
+            size={100}
             color={"#fff"}
             />
         </div>

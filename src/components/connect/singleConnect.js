@@ -6,7 +6,7 @@ import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import ViewUser from './viewUser'
 import axios from 'axios'
-import {HashLoader} from 'react-spinners'
+import {ClipLoader} from 'react-spinners'
 import {setAuthToken} from '../../helpers/utility'
 class SingleConnect extends React.Component {
     state = {
@@ -70,9 +70,9 @@ class SingleConnect extends React.Component {
                         <ViewUser user={this.state.user} sendFriendRequest={this.sendFriendRequest}/>        
                     :
                     <div className="sweet-loading">
-                        <HashLoader
+                        <ClipLoader
                         sizeUnit={"px"}
-                        size={200}
+                        size={100}
                         color={"#fff"}
                         />
                     </div>

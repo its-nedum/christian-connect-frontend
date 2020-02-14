@@ -1,45 +1,73 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ConnectPagination from './connectPagination'
+import {setAuthToken} from '../../helpers/utility' 
+import axios from 'axios'
+import {ClipLoader} from 'react-spinners'
 
+ 
 const AllMyConnects = () => {
+    const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [postsPerPage] = useState(10);
+      
+
+      useEffect(( ) => {
+          const fetchPosts = async () => {
+            const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/allMyConnect', { headers:{ 'Authorization': setAuthToken()} });
+            //const res = await axios.get('http://localhost:4242/api/v1/allMyConnect', { headers:{ 'Authorization': setAuthToken()} });
+              setPosts(res.data.data);
+              setLoading(true)
+          }
+
+          fetchPosts();
+      }, []);
+
+      //Get current posts
+      const indexOfLastPost = currentPage * postsPerPage;
+      const indexOfFirstPost = indexOfLastPost - postsPerPage;
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+      
+      
+
+      //Change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+
     return (
         <div>
-        <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>My Connects (4)</h5>
+        <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>My Connects ({posts.length})</h5>
             <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <p>About Me: I am easy going and loves to watch movies when I'm bored</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
+            {loading ? 
+                <div>
+                    {currentPosts.length === 0 ? <li className="collection-item">You don't have a connect yet</li> :
+                        currentPosts && currentPosts.map((user) => {
+                            return(
+                                <li className="collection-item avatar" key={user.id}>
+                                {user.avatar ? <img src={user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                                    <span className="title">{user.firstname} {user.lastname}</span>
+                                    <p>Location: {user.state}</p>
+                                    <p>Gender: {user.gender}</p>
+                                    {user.about_me ? <p>About Me: {user.about_me} </p> : null}
+                                    <a href={`/users/${user.username}`}>View Profile</a>
+                                </li>
+                            )
+                        })}
+                        <li className="collection-item">
+                            <ConnectPagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
+                        </li>
+                </div>
+                :
+                <div className="sweet-loading">
+                    <ClipLoader
+                    sizeUnit={"px"}
+                    size={50}
+                    color={"#fff"}
+                    />
+                </div>
+                }
             </ul>
-            <ConnectPagination />
+            
         </div>
     )
 }
