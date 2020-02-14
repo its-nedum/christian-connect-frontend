@@ -3,67 +3,68 @@ import {Link} from 'react-router-dom'
 import UrThoughts from './urThoughts'
 import '../../myStyles/main.css'
 import FeedPagination from './feedPagination'
+import {ClipLoader} from 'react-spinners'
+import moment from 'moment'
 
 
-class Dashboard extends Component {
+const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
     
-    render(){
+    
     return (
         <div>
             <UrThoughts />
-            <div className="card">
-                <div className="card-content">
-                    <span className="card-title">
-                        <div className="btn btn-floating pink lighten-1">CE</div>
-                        <span> Chinedu Emesue</span>
-                    </span>
-                    <div>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo odio suscipit esse fuga. Quam id, repellendus, provident at ad quidem porro expedita, natus aspernatur quasi ea corporis sint eaque soluta!
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio impedit quidem asperiores, provident unde blanditiis, perspiciatis at dolorem! Ipsum eaque, molestias id consequatur soluta iusto beatae!
-                    </div>
-                    <div className="card-action row">
-                        <span className="col s12 m4">Posted 4:55pm yesterday </span>
-                        <span className="col s6 m4">
-                            <i className="material-icons">comment</i>
-                             88 
-                             <a href="feed/1/comments" className="cardActa pink-text"> Comments</a>
-                              </span>
-                              
-                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>
-                    </div>
-                </div>
+            
+            {loading ? 
+            <div> 
+                {posts.length === 0 ? <p>No post found</p> : 
+                    posts && posts.map((post) => {
+                        return(
+                            <div className="card" key={post.id}>
+                                <div className="card-content">
+                                    <span className="card-title">
+                                        <div className="btn btn-floating pink lighten-1">CC</div>
+                                        <span> Christian Connect</span>
+                                    </span>
+                                    {post.image_url ? 
+                                    <div className="card-image">
+                                        <img src={post.image_url} style={{width:'300px', height:'200px'}} alt="feed-pic" className="responsive-img"/>
+                                    </div>
+                                        : null}
+                                    <div>
+                                        {post.post}
+                                    </div>
+                                    <div className="card-action row">
+                                        <span className="col s12 m4">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                                        <span className="col s6 m4">
+                                            <i className="material-icons">comment</i>
+                                            88 
+                                            <a href="feed/1/comments" className="cardActionLink pink-text"> Comments</a>
+                                            </span>
+                                            
+                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                
+                }
             </div>
-            {/* This card below handles feeds with image */}
-            <div className="card">
-                <div className="card-content">
-                    <span className="card-title">
-                        <div className="btn btn-floating pink lighten-1">ZB</div>
-                        <span> Zee Baba</span>
-                    </span>
-                    <div className="card-image">
-                        <img src="https://res.cloudinary.com/its-nedum/image/upload/v1574430886/lofkg0pzowvvaljislf4.gif" style={{width:'300px', height:'200px'}} alt="feed-pic" className="responsive-img"/>
-                    </div>
-                    <div>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo odio suscipit esse fuga. Quam id, repellendus, provident at ad quidem porro expedita, natus aspernatur quasi ea corporis sint eaque soluta!
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio!
-                    </div>
-                    <div className="card-action row">
-                        <span className="col s12 m4">Posted 4:55pm yesterday </span>
-                        <span className="col s6 m4">
-                            <i className="material-icons">comment</i>
-                             88 
-                             <a href="feed/1/comments" className="cardActionLink pink-text"> Comments</a>
-                              </span>
-                              
-                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>
-                    </div>
-                </div>
+            
+            :
+            <div className="sweet-loading">
+                <ClipLoader
+                sizeUnit={"px"}
+                size={50}
+                color={"#fff"}
+                />
             </div>
+            }
 
-            <FeedPagination />
+            <FeedPagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate}/>
         </div>
     )
 }
-}
+
 
 export default Dashboard

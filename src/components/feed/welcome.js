@@ -13,15 +13,15 @@ const Welcome = () => {
     const [posts, setPosts] = useState([]);
       const [loading, setLoading] = useState(false);
       const [currentPage, setCurrentPage] = useState(1);
-      const [postsPerPage] = useState(6); 
+      const [postsPerPage] = useState(5); 
 
       useEffect(( ) => {
           const fetchPosts = async () => {
-            //   const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/feed');
-            const res = await axios.get('http://localhost:4242/api/v1/posts', { headers:{ 'Authorization': setAuthToken()} });
+              const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
+            //const res = await axios.get('http://localhost:4242/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
               setPosts(res.data.data);
               setLoading(true)
-              //console.log(res)
+            //   console.log(res)
           }
 
           fetchPosts();
@@ -47,7 +47,7 @@ const Welcome = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                        <Dashboard />
+                        <Dashboard posts={currentPosts}  postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} loading={loading}/>
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
