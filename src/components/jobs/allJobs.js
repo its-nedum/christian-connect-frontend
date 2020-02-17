@@ -6,7 +6,8 @@ import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import Jobs from './jobs'
 import axios from 'axios'
-
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
 
 class AllJobs extends React.Component {
     state = {
@@ -33,7 +34,7 @@ class AllJobs extends React.Component {
         })
     }
     render(){
-        
+        if(!isLoggedIn()) return <Redirect to='/signin' /> 
     return (
         <div>
         <ComHeader />

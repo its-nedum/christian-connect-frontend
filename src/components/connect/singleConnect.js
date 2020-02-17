@@ -7,7 +7,8 @@ import ComSidebar from '../layouts/comSidebar'
 import ViewUser from './viewUser'
 import axios from 'axios'
 import {ClipLoader} from 'react-spinners'
-import {setAuthToken} from '../../helpers/utility'
+import {setAuthToken, isLoggedIn} from '../../helpers/utility'
+import {Redirect} from 'react-router-dom'
 class SingleConnect extends React.Component {
     state = {
         user: [],
@@ -54,7 +55,7 @@ class SingleConnect extends React.Component {
     }
 
     render(){
-          
+        if(!isLoggedIn()) return <Redirect to='/signin' />   
     return (
         <div>
         <ComHeader />

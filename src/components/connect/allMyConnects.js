@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import ConnectPagination from './connectPagination'
-import {setAuthToken} from '../../helpers/utility' 
+import {setAuthToken, isLoggedIn} from '../../helpers/utility' 
 import axios from 'axios'
 import {ClipLoader} from 'react-spinners'
+import {Redirect} from 'react-router-dom'
 
  
 const AllMyConnects = () => {
@@ -33,6 +34,7 @@ const AllMyConnects = () => {
       //Change page
       const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+      if(!isLoggedIn()) return <Redirect to='/signin' />
 
     return (
         <div>

@@ -17,11 +17,11 @@ const Welcome = () => {
 
       useEffect(( ) => {
           const fetchPosts = async () => {
-              const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
-            //const res = await axios.get('http://localhost:4242/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
+              //const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
+            const res = await axios.get('http://localhost:4242/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
               setPosts(res.data.data);
               setLoading(true)
-            //   console.log(res)
+            console.log(res)
           }
 
           fetchPosts();

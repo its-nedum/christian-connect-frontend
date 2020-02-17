@@ -11,7 +11,7 @@ const ComSidenav = () => {
                 <li><a href="/feed" className="sidenav-close">Dashboard</a></li>
                 <li><a href="/users" className="sidenav-close">Connect</a></li>
                 <li><a href="/connect-request" className="sidenav-close">Connect Request</a></li>
-                <li><a href="/chat-room" className="sidenav-close">Chat Rooms</a></li>
+                <li><a href="#" className="sidenav-close">Chat Rooms</a></li>
                 <li><a href="/job-connect" className="sidenav-close">Job Alert</a></li>
                 <li><a href="/profile" className="sidenav-close">Profile</a></li>
                 <li><Link to="#" onClick={() => logout()} className="sidenav-close">Log Out</Link></li>

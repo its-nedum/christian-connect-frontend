@@ -6,10 +6,12 @@ import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import RequestSent from './requestSent'
 import RequestReceived from './requestReceived'
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
 
 
 const connectRequest = () => {
-          
+    if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
         <div>
         <ComHeader />

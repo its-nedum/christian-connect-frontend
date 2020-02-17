@@ -4,7 +4,9 @@ import Footer from '../layouts/footer'
 import ComSidenav from '../layouts/comSidenav'
 import ComSidebar from '../layouts/comSidebar'
 import axios from 'axios'
-import {HashLoader} from 'react-spinners'
+import {ClipLoader} from 'react-spinners'
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
 
 class JobDescription extends React.Component {
     state = {
@@ -32,6 +34,8 @@ class JobDescription extends React.Component {
     }
     render(){
          let { job } = this.state
+
+         if(!isLoggedIn()) return <Redirect to='/signin' />
         
     return (
         <div>
@@ -70,7 +74,7 @@ class JobDescription extends React.Component {
                           </div>
                           :
                             <div className="sweet-loading">
-                                <HashLoader
+                                <ClipLoader
                                 sizeUnit={"px"}
                                 size={200}
                                 color={"#fff"}

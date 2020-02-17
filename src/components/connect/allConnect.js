@@ -5,8 +5,9 @@ import ComSidenav from '../layouts/comSidenav'
 import ComSidebar from '../layouts/comSidebar'
 import Connect from './connect'
 import MyConnects from './myConnects'
-import {setAuthToken} from '../../helpers/utility'
+import {setAuthToken, isLoggedIn} from '../../helpers/utility'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 const AllConnect = () => {
     const [posts, setPosts] = useState([]);
@@ -34,6 +35,7 @@ const AllConnect = () => {
       //Change page
       const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+      if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
         <div>
         <ComHeader />

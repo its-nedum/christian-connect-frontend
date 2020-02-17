@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashLoader} from 'react-spinners'
+import {ClipLoader} from 'react-spinners'
 
 
 const Jobs = ({jobs, isLoaded}) => {
@@ -14,7 +14,7 @@ const Jobs = ({jobs, isLoaded}) => {
                     <div className="col s12 m6" key={job.id}>
                         <div className="card">
                             <div className="card-content">
-                                <a href='/job-connect/web-developer'><span className="card-title">{job.position}</span></a>
+                                <a href={`/job-connect/${job.id}/${job.position}`}><span className="card-title">{job.position}</span></a>
                                 <p>{job.company}</p>
                                 <p>Location: {job.location}</p>
                                 <p>Type: {job.job_type}</p>
@@ -30,7 +30,7 @@ const Jobs = ({jobs, isLoaded}) => {
             </div>
         :
             <div className="sweet-loading">
-                <HashLoader
+                <ClipLoader
                 sizeUnit={"px"}
                 size={200}
                 color={"#fff"}

@@ -20,6 +20,7 @@ export const isLoggedIn = () => {
     try{
         let { exp } = jwt_decode(getToken())
         if( exp < Math.ceil(new Date().getTime() / 1000)){
+        localStorage.removeItem('christianconnectauthtoken')
         return false
         }
     }catch(e){

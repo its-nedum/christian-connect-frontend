@@ -5,8 +5,12 @@ import ComSidenav from '../layouts/comSidenav'
 import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import PostAndComments from './postAndComments'
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
 
 const PostComments = () => {
+
+    if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
         <div>
             <ComHeader />

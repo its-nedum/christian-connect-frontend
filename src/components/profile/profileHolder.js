@@ -4,9 +4,14 @@ import Footer from '../layouts/footer'
 import ComSidenav from '../layouts/comSidenav'
 import ComSidebar from '../layouts/comSidebar'
 import MyProfile from './myProfile'
+import {Redirect} from 'react-router-dom'
+import {isLoggedIn} from '../../helpers/utility'
 
-
+ 
 const ProfileHolder = () => {
+      
+        if(!isLoggedIn()) return <Redirect to='/signin' />
+        
     return (
         <div>
         <ComHeader />
@@ -18,7 +23,11 @@ const ProfileHolder = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m9">
-                    <MyProfile />
+                    <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>My Profile Information</h5>
+                    
+                        <MyProfile />
+                    
+                        
                     </div>
                 </div>
             </div>

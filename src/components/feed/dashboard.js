@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import UrThoughts from './urThoughts'
 import '../../myStyles/main.css'
@@ -23,7 +23,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
                                 <div className="card-content">
                                     <span className="card-title">
                                         <div className="btn btn-floating pink lighten-1">CC</div>
-                                        <span> Christian Connect</span>
+                                        <span> {post.firstname} {post.lastname}</span>
                                     </span>
                                     {post.image_url ? 
                                     <div className="card-image">
