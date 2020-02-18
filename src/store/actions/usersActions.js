@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {saveToken} from '../../helpers/utility'
+import {saveToken, setAuthToken} from '../../helpers/utility'
 import {history} from '../../App'
 
 export const createUser = (user) => {
@@ -47,6 +47,52 @@ export const loginUser = (credentials) => {
             }
         }).catch( (err) => {
             dispatch({type: 'LOGIN_ERROR', credentials})
+        })
+    }
+}
+
+
+export const updatePassword = (password) => {
+    
+    return (dispatch) => {
+        axios({
+            method: 'patch',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/change-password',
+            //url: 'http://localhost:4242/api/v1/change-password',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': setAuthToken()
+            },
+            data: JSON.stringify(password)
+        }).then( (response) => {
+            let { message } = response.data
+            dispatch({type: 'PASSWORD_CHANGE_SUCCESS', message})
+            
+        }).catch( (err) => {
+            console.log(err)
+            dispatch({type: 'PASSWORD_CHANGE_ERROR', password})
+        })
+    }
+}
+
+export const updateProfile = (profileInfo) => {
+    
+    return (dispatch) => {
+        axios({
+            method: 'patch',
+            url: 'https://christian-connect-api.herokuapp.com/api/v1/update-profile',
+            //url: 'http://localhost:4242/api/v1/update-profile',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': setAuthToken()
+            },
+            data: JSON.stringify(profileInfo)
+        }).then( (response) => {
+            let { message } = response.data
+            dispatch({type: 'PROFILE_UPDATE_SUCCESS', message})
+            window.location.reload()
+        }).catch( (err) => {
+            dispatch({type: 'PROFILE_UPDATE_ERROR', profileInfo})
         })
     }
 }

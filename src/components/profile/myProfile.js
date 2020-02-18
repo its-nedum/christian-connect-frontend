@@ -1,7 +1,9 @@
-import React, {useState, useEffect}  from 'react'
+import React from 'react'
 import {ClipLoader} from 'react-spinners'
 import axios from 'axios'
 import {setAuthToken} from '../../helpers/utility'
+import {updatePassword, updateProfile} from '../../store/actions/usersActions'
+import {connect} from 'react-redux'
  
 class MyProfile extends React.Component {
     
@@ -25,6 +27,7 @@ class MyProfile extends React.Component {
         newPassword1: null,
         newPassword2: null,
         passwordError: null,
+        profileError: null,
         loading: false
     }
 
@@ -79,10 +82,13 @@ class MyProfile extends React.Component {
             this.setState({passwordError: null})
         }
 
-        const formData = new FormData()
-        formData.append('current_password',)
-        formData.append('new_password',)
-        formData.append('confirm_password',)
+        const newPassword = {
+            current_password: oldPassword,
+            new_password: newPassword1,
+            confirm_password: newPassword2
+        }
+        
+        this.props.updatePassword(newPassword)
         
     }
 
@@ -94,10 +100,36 @@ class MyProfile extends React.Component {
 
     handleProfileSubmit = (e) => {
         e.preventDefault()
+        let {firstname, lastname, email, username, telephone, state, gender, birthdate, country,
+                city, relationship_status, work, school, about_me} = this.state;
+
+        if(!firstname || !lastname || !email || !username || !telephone || !gender || !state || !birthdate){
+            return this.setState({profileError: '*Some required fields are empty'})
+        }else{
+            this.setState({profileError: null})
+        }
+
+        let newProfile = {
+            firstname,
+            lastname,
+            telephone,
+            state,
+            gender,
+            birthdate,
+            country,
+            city,
+            relationship_status,
+            work,
+            school,
+            about_me
+        }
+
+        this.props.updateProfile(newProfile)
+
     }
 
     render(){
-
+        const { notification, profile_notification } = this.props
     return (
         <div>
         {this.state.loading ? 
@@ -152,7 +184,7 @@ class MyProfile extends React.Component {
                             <div className="input-field col s6">
                             <i className="material-icons prefix">location_city</i>
                                 <input type="text" id="city" value={this.state.city} onChange={this.handleProfileChange}/>
-                                <label htmlFor="city">City</label>
+                                {this.state.city ? null : <label htmlFor="city">City</label> }
                             </div>
                         </div>
                         <div className="row">
@@ -164,17 +196,17 @@ class MyProfile extends React.Component {
                             {this.state.relationship_status ? 
                             <div className="input-field col s6">
                                 <i className="material-icons prefix">favorite</i>
-                                <input type="text" id="relationship" value={this.state.relationship_status} onChange={this.handleProfileChange}/>
+                                <input type="text" id="relationship_status" value={this.state.relationship_status} onChange={this.handleProfileChange}/>
                             </div>
                             :
                             <div className="input-field col s6">
                             <i className="material-icons prefix">favorite</i>
-                                <select id="relationship" className="browser-default" onChange={this.handleProfileChange}>
+                                <select id="relationship_status" className="browser-default" onChange={this.handleProfileChange}>
                                     <option value="" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relationship Status</option>
                                     <option value="Single">Single</option>
                                     <option value="Married">Married</option>
-                                    <option value="inRelationship">In a Relationship</option>
-                                    <option value="notSay">Prefer not to say</option>
+                                    <option value="In a Relationship">In a Relationship</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
                                 </select>
                             </div>
                             }
@@ -183,23 +215,27 @@ class MyProfile extends React.Component {
                             <div className="input-field col s6">
                             <i className="material-icons prefix">work</i>
                                 <input type="text" id="work" value={this.state.work} onChange={this.handleProfileChange}/>
-                                <label htmlFor="work">Work</label>
+                                {this.state.work ? null : <label htmlFor="work">Work</label>}
                             </div>
                             <div className="input-field col s6">
                             <i className="material-icons prefix">school</i>
                                 <input type="text" id="school" value={this.state.school} onChange={this.handleProfileChange}/>
-                                <label htmlFor="school">School (Grad. School)</label>
+                                {this.state.school ? null : <label htmlFor="school">School (Grad. School)</label>}
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
                             <i className="material-icons prefix">account_circle</i>
-                                <label htmlFor="about">About Me</label>
-                                <textarea id="about" className="materialize-textarea" value={this.state.about_me} onChange={this.handleProfileChange}></textarea>
+                                {this.state.about_me ? null : <label htmlFor="about">About Me</label>}
+                                <textarea id="about_me" className="materialize-textarea" value={this.state.about_me} onChange={this.handleProfileChange}></textarea>
                             </div>
                         </div>
                         <div className="input-field center">
                             <input type="button" className="btn pink lighten-1 z-depth-0" value="Send" onClick={this.handleProfileSubmit}/>
+                        </div>
+                        <div className="red-text center">
+                        {profile_notification ? <p>{profile_notification}</p> : null}
+                        { this.state.profileError ? <p>{this.state.profileError}</p> : null}
                         </div>
                     </form>
                     </div>
@@ -231,6 +267,7 @@ class MyProfile extends React.Component {
                             <input type="button" className="btn pink lighten-1 z-depth-0" value="Send" onClick={this.handlePasswordSubmit}/>
                         </div>
                         <div className="red-text center">
+                        {notification ? <p>{notification}</p> : null}
                         { this.state.passwordError ? <p>{this.state.passwordError}</p> : null}
                         </div>
                     </form>
@@ -251,4 +288,18 @@ class MyProfile extends React.Component {
     )
 }
 }
-export default MyProfile
+
+const mapStateToProps = (state) => {
+    return {
+        notification: state.users.notification,
+        profile_notification: state.users.profile_notification
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updatePassword: (password) => dispatch(updatePassword(password)),
+        updateProfile: (profile) => dispatch(updateProfile(profile))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MyProfile)
