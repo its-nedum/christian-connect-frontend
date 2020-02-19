@@ -96,3 +96,26 @@ export const updateProfile = (profileInfo) => {
         })
     }
 }
+
+
+export const postComment = (newComment) => {
+    console.log(newComment)
+    return (dispatch) => {
+        axios({
+            method: 'post',
+            //url: 'https://christian-connect-api.herokuapp.com/api/v1/addcommenttopost',
+            url: 'http://localhost:4242/api/v1/addcommenttopost',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': setAuthToken()
+            },
+            data: JSON.stringify(newComment)
+        }).then( (response) => {
+            let { message } = response.data
+            dispatch({type: 'POST_COMMENT_SUCCESS', message})
+            window.location.reload()
+        }).catch( (err) => {
+            dispatch({type: 'POST_COMMENT_ERROR', newComment})
+        })
+    }
+}

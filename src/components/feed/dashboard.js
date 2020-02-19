@@ -38,7 +38,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
                                         <span className="col s6 m4">
                                             <i className="material-icons">comment</i>
                                             88 
-                                            <a href="feed/1/comments" className="cardActionLink pink-text"> Comments</a>
+                                            <a href={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</a>
                                             </span>
                                             
                                         <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>

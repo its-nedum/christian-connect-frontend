@@ -1,29 +1,53 @@
 import React from 'react'
 import AddComment from './addComment'
 import CommentsList from './commentsList'
+import {ClipLoader} from 'react-spinners'
+import moment from 'moment'
 
-const PostAndComments = () => {
+const PostAndComments = ({post, isLoaded, notFound}) => {
+
     return (
         <div>
+            {isLoaded ? 
+            <div>
             <div className="card">
                 <div className="card-content">
                     <span className="card-title">
-                        <div className="btn btn-floating pink lighten-1">CE</div>
-                        <span> Chinedu Emesue</span>
+                        <div className="btn btn-floating pink lighten-1">CC</div>
+                        <span> {post.user.firstname} {post.user.lastname}</span>
                     </span>
+                    {post.image_url ? 
+                        <div className="card-image">
+                            <img src={post.image_url} style={{width:'300px', height:'200px'}} alt="feed-pic" className="responsive-img"/>
+                        </div>
+                            : null}
                     <div>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo odio suscipit esse fuga. Quam id, repellendus, provident at ad quidem porro expedita, natus aspernatur quasi ea corporis sint eaque soluta!
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ipsa suscipit nostrum distinctio impedit quidem asperiores, provident unde blanditiis, perspiciatis at dolorem! Ipsum eaque, molestias id consequatur soluta iusto beatae!
+                        {post.post}
                     </div>
                     <div className="card-action">
-                        <span className="col s12 m4">Posted 4:55pm yesterday </span>
+                        <span className="col s12 m4">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                         <span className="col s6 m4"><i className="material-icons">comment</i> 88 Comments </span> 
                         <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 like </span>
                     </div>
                 </div>
             </div>
-            <AddComment />
-            <CommentsList />
+            <AddComment post_id={post.id}/>
+            <CommentsList post_id={post.id}/>
+            </div>
+            :
+            <div className="sweet-loading">
+                <ClipLoader
+                sizeUnit={"px"}
+                size={50}
+                color={"#fff"}
+                />
+            </div>
+            }
+            {notFound ? 
+            <div className="red-text center">
+            <p>{notFound}</p>
+            </div> : null}
+            
         </div>
     )
 }

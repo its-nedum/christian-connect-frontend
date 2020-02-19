@@ -7,10 +7,40 @@ import ComSidebar from '../layouts/comSidebar'
 import PostAndComments from './postAndComments'
 import {Redirect} from 'react-router-dom'
 import {isLoggedIn} from '../../helpers/utility'
+import axios from 'axios'
 
-const PostComments = () => {
+class PostComments extends React.Component {
+    state = {
+        post: [],
+        isLoaded: false,
+        notFound: null
+    }
 
+    async componentDidMount(){
+        await axios({
+            method: 'get',
+            url: `http://localhost:4242/api/v1/viewsinglepost/${this.props.match.params.postId}`,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            let {data} = response.data;
+            this.setState({
+                post: data,
+                isLoaded: true
+            })
+        }).catch( (err) => {
+            console.log(err)
+            this.setState({
+                notFound: 'The link you followed may be broken, or the page may have been removed.'
+            })
+        })
+    }
+
+    render(){
+        
     if(!isLoggedIn()) return <Redirect to='/signin' />
+
     return (
         <div>
             <ComHeader />
@@ -22,7 +52,7 @@ const PostComments = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                        <PostAndComments />
+                        <PostAndComments post={this.state.post} isLoaded={this.state.isLoaded} notFound={this.state.notFound}/>
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
@@ -33,5 +63,5 @@ const PostComments = () => {
         </div>
     )
 }
-
+}
 export default PostComments

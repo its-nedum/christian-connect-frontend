@@ -45,6 +45,16 @@ const usersReducer = (state = initState, action) => {
                 ...state,
                 notification: 'Something went wrong, please try again later'
             }
+        case 'POST_COMMENT_SUCCESS':
+            return {
+                ...state,
+                profile_notification: action.message
+            }
+        case 'POST_COMMENT_ERROR':
+            return {
+                ...state,
+                notification: 'Something went wrong, please try again later'
+            }
         default: 
             return state
     }
