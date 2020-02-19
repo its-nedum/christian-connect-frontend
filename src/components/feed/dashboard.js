@@ -23,7 +23,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
                                 <div className="card-content">
                                     <span className="card-title">
                                         <div className="btn btn-floating pink lighten-1">CC</div>
-                                        <span> {post.firstname} {post.lastname}</span>
+                                        <span> {post.user.firstname} {post.user.lastname}</span>
                                     </span>
                                     {post.image_url ? 
                                     <div className="card-image">

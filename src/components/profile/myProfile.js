@@ -33,7 +33,7 @@ class MyProfile extends React.Component {
 
     async componentDidMount(){
         try{
-            const res = await axios.get('http://localhost:4242/api/v1/user-details', { headers:{ 'Authorization': setAuthToken()} });
+            const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/user-details', { headers:{ 'Authorization': setAuthToken()} });
             const posts = res.data.data;
 
             this.setState({

@@ -67,6 +67,7 @@ class SingleConnect extends React.Component {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
+                    <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Community Member</h5>
                     {this.state.isLoaded ? 
                         <ViewUser user={this.state.user} sendFriendRequest={this.sendFriendRequest}/>        
                     :
