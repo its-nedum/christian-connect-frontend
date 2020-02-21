@@ -23,9 +23,9 @@ const PostAndComments = ({post, isLoaded, notFound}) => {
                             : null}
                     <div>
                         {post.post}
-                    </div>
+                    </div> 
                     <div className="card-action">
-                        <span className="col s12 m4">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                        <span className="col s12 m4">{moment(post.createdAt).format('MMM Do YYYY, h:mm:ss a')}</span>
                         <span className="col s6 m4"><i className="material-icons">comment</i> 88 Comments </span> 
                         <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 like </span>
                     </div>

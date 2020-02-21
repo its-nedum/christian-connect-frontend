@@ -15,7 +15,7 @@ class PostComments extends React.Component {
         isLoaded: false,
         notFound: null
     }
-
+ 
     async componentDidMount(){
         await axios({
             method: 'get',

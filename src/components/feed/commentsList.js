@@ -40,7 +40,7 @@ const CommentsList = ({post_id}) => {
                 <div className="card z-depth-0">
                     <div className="card-content">
                         <p>{comment.comment}</p>
-                        <p> Posted by: Regina on {moment(comment.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        <p> {/*Posted by: Regina on*/} {moment(comment.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
                     </div>
                 </div>
             )
