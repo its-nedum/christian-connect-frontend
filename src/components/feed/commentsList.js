@@ -17,7 +17,7 @@ const CommentsList = ({post_id}) => {
             const res = await axios.get(`http://localhost:4242/api/v1/getcomments/${post_id}`);
               setPosts(res.data.data);
               setLoading(true)
-              //console.log(res)
+              console.log(res)
           }
 
           fetchPosts();
@@ -39,8 +39,8 @@ const CommentsList = ({post_id}) => {
             return(
                 <div className="card z-depth-0">
                     <div className="card-content">
-                        <p>{comment.comment}</p>
-                        <p> {/*Posted by: Regina on*/} {moment(comment.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        <p>{comment.user.firstname} {comment.user.lastname} : {comment.comment}</p>
+                        <p>{moment(comment.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
                     </div>
                 </div>
             )

@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import '../../myStyles/main.css'
 
 
-
 const Navbar = () => {
     return (
         <div>
