@@ -15,11 +15,12 @@ class PostComments extends React.Component {
         isLoaded: false,
         notFound: null
     }
- 
+  
     async componentDidMount(){
         await axios({
             method: 'get',
-            url: `http://localhost:4242/api/v1/viewsinglepost/${this.props.match.params.postId}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/viewsinglepost/${this.props.match.params.postId}`,
+            //url: `http://localhost:4242/api/v1/viewsinglepost/${this.props.match.params.postId}`,
             headers: {
                 'Content-Type': 'application/json'
             }
