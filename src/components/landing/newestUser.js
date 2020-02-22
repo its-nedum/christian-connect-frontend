@@ -1,55 +1,54 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {HashLoader} from 'react-spinners'
 
 const NewestUser = () => {
+
+      const [posts, setPosts] = useState([]);
+      const [loading, setLoading] = useState(false);
+
+      useEffect(() => {
+          const fetchPosts = async () => {
+            //const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/getnewestmember');
+            const res = await axios.get('http://localhost:4242/api/v1/getnewestmember');
+              setPosts(res.data.data);
+              setLoading(true)
+              console.log(res)
+          }
+
+          fetchPosts();
+      }, []);
+
     return (
         <div className="container">
         <h5 className="white-text center">Meet Our Newest Members</h5>
+        {loading ? 
            <div className="row">
-                <div className="col s12 m3">
-                <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                </ul>
-                </div> 
-                <div className="col s12 m3">
-                <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                </ul>
-                </div>
-                <div className="col s12 m3">
-                <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                </ul>
-                </div>
-                <div className="col s12 m3">
-                <ul className="collection">
-                <li className="collection-item avatar">
-                    <img src="https://res.cloudinary.com/its-nedum/image/upload/v1576591640/IMG_20190704_091221_8_rrx5cv.jpg" alt="pic" className="circle responsive-img" />
-                    <span className="title">Chinedu Emesue</span>
-                    <p>Location: Abuja</p>
-                    <p>Gender: Male</p>
-                    <a href="/users/chinedu-emesue">View Profile</a>
-                </li>
-                </ul>
-                </div>  
+               {posts.length == 0 ? <p>No user found</p> :
+                posts && posts.map((user) => {
+                    return(
+                        <div className="col s12 m3" key={user.id}>
+                            <ul className="collection">
+                            <li className="collection-item avatar">
+                            {user.avatar ? <img src={user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                                <span className="title">{user.firstname} {user.lastname}</span>
+                                <p>Location: {user.state}</p>
+                                <p>Gender: {user.gender}</p>
+                            </li>
+                            </ul>
+                        </div> 
+                    )
+                })
+               } 
             </div> 
+            :
+            <div className="sweet-loading">
+                <HashLoader
+                sizeUnit={"px"}
+                size={100}
+                color={"#fff"}
+                />
+            </div>
+            }
         </div>
     )
 }
