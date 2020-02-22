@@ -7,8 +7,6 @@ import SearchBar from './searchBar'
 import axios from 'axios'
 import {HashLoader} from 'react-spinners'
 
-//url: `https://christian-connect-api.herokuapp.com/api/v1/search/${props.match.params.searchItems}`,
-//url: `http://localhost:4242/api/v1/search/${props.match.params.searchItems}`, 
 
 const SearchHolder = (props) => {
     const [posts, setPosts] = useState([]);
@@ -19,8 +17,10 @@ const SearchHolder = (props) => {
       useEffect(() => {
           const fetchPosts = async () => {
               const res = await axios.get(`https://christian-connect-api.herokuapp.com/api/v1/search/${props.match.params.searchItems}`);
+              //const res = await axios.get(`http://localhost:4242/api/v1/search/${props.match.params.searchItems}`);
               setPosts(res.data.data);
               setLoading(true)
+              //console.log(res)
           }
 
           fetchPosts();
@@ -43,12 +43,14 @@ const SearchHolder = (props) => {
             <h5 className="white-text left-align">Search Result(s)</h5>
             </div>
             {loading ?
+                //posts.length == 0 ? <p>Not Found</p> :
                 <SearchResult 
                 result={currentPosts}
                 postsPerPage={postsPerPage} 
                 totalPosts={posts.length}
                 paginate={paginate}
                 />
+            
                 :
                 <div className="sweet-loading">
                     <HashLoader

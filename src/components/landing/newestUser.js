@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {HashLoader} from 'react-spinners'
+import axios from 'axios'
 
 const NewestUser = () => {
 
@@ -8,11 +9,11 @@ const NewestUser = () => {
 
       useEffect(() => {
           const fetchPosts = async () => {
-            //const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/getnewestmember');
-            const res = await axios.get('http://localhost:4242/api/v1/getnewestmember');
+            const res = await axios.get('https://christian-connect-api.herokuapp.com/api/v1/getnewestmember');
+            //const res = await axios.get('http://localhost:4242/api/v1/getnewestmember');
               setPosts(res.data.data);
               setLoading(true)
-              console.log(res)
+              
           }
 
           fetchPosts();
@@ -23,7 +24,7 @@ const NewestUser = () => {
         <h5 className="white-text center">Meet Our Newest Members</h5>
         {loading ? 
            <div className="row">
-               {posts.length == 0 ? <p>No user found</p> :
+               {posts.length === 0 ? <p>No user found</p> :
                 posts && posts.map((user) => {
                     return(
                         <div className="col s12 m3" key={user.id}>

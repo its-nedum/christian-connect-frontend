@@ -41,7 +41,7 @@ class Recent extends React.Component{
                 <div className="sweet-loading">
                     <HashLoader
                     sizeUnit={"px"}
-                    size={200}
+                    size={100}
                     color={"#fff"}
                     />
                 </div>

@@ -13,7 +13,9 @@ const PostAndComments = ({post, isLoaded, notFound}) => {
             <div className="card">
                 <div className="card-content">
                     <span className="card-title">
-                        <div className="btn btn-floating pink lighten-1">CC</div>
+                        <div className="btn btn-floating">
+                        {post.user.avatar ? <img src={post.user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                        </div>
                         <span> {post.user.firstname} {post.user.lastname}</span>
                     </span>
                     {post.image_url ? 
