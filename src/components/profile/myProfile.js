@@ -2,7 +2,7 @@ import React from 'react'
 import {ClipLoader} from 'react-spinners'
 import axios from 'axios'
 import {setAuthToken} from '../../helpers/utility'
-import {updatePassword, updateProfile} from '../../store/actions/usersActions'
+import {updatePassword, updateProfile, updatePicture} from '../../store/actions/usersActions'
 import {connect} from 'react-redux'
  
 class MyProfile extends React.Component {
@@ -28,7 +28,9 @@ class MyProfile extends React.Component {
         newPassword2: null,
         passwordError: null,
         profileError: null,
-        loading: false
+        loading: false,
+        image: null,
+        imageError: null
     }
 
     async componentDidMount(){
@@ -128,8 +130,30 @@ class MyProfile extends React.Component {
 
     }
 
+    handleProfilePicture = (e) => {
+        this.setState({
+            image: e.target.files[0]
+        })
+    }
+
+    handleProfilePictureSubmit = (e) => {
+        e.preventDefault();
+        let { image } = this.state
+        if(!image){
+            return this.setState({
+                imageError: '*An image file is required'
+            })
+        }else{
+            this.setState({ imageError: null})
+            let picture = new FormData();
+            picture.append('avatar', image)
+            this.props.updatePicture(picture)
+            //console.log(image)
+        }
+    }
+
     render(){
-        const { notification, profile_notification } = this.props
+        const { notification, profile_notification, profile_picture_notification } = this.props
     return (
         <div>
         {this.state.loading ? 
@@ -240,6 +264,7 @@ class MyProfile extends React.Component {
                     </form>
                     </div>
                 </div>
+                {/* Password change */}
                 <div className="col s12 m4">
                     <div className="card">
                     <form style={{marginTop:'0px'}} className="" onSubmit={this.handlePasswordSubmit}>
@@ -273,6 +298,39 @@ class MyProfile extends React.Component {
                     </form>
                     </div>
                 </div>
+
+                {/* Profile picture form */}
+                <div className="col s12 m4">
+                    <div className="card">
+                            <form style={{marginTop:'0px'}}>
+                            <h5 className="center">Profile Picture</h5>
+                            <ul className="collection">
+                            <li className="collection-item avatar">
+                            {this.state.avatar ? <img src={this.state.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                            
+                                <div className="file-field input-field">
+                                    <div className="btn-small">
+                                        <span>Image</span>
+                                        <input type="file" name="image" onChange={this.handleProfilePicture}/>
+                                    </div>
+                                    <div className="file-path-wrapper">
+                                        <input className="file-path validate" type="text"/>
+                                    </div>
+                                </div>
+
+                                </li>
+                            </ul>
+                                
+                                <div className="input-field center">
+                                    <input type="button" onClick={this.handleProfilePictureSubmit} className="btn pink lighten-1 z-depth-0" value="Send" />
+                                </div>
+                                <div className="red-text center">
+                                {profile_picture_notification ? <p>{profile_picture_notification}</p> : null}
+                                { this.state.imageError ? <p>{this.state.imageError}</p> : null}
+                                </div>
+                            </form>
+                    </div>
+                </div>
                 
             </div>
             : 
@@ -292,14 +350,16 @@ class MyProfile extends React.Component {
 const mapStateToProps = (state) => {
     return {
         notification: state.users.notification,
-        profile_notification: state.users.profile_notification
+        profile_notification: state.users.profile_notification,
+        profile_picture_notification: state.users.profile_picture_notification
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         updatePassword: (password) => dispatch(updatePassword(password)),
-        updateProfile: (profile) => dispatch(updateProfile(profile))
+        updateProfile: (profile) => dispatch(updateProfile(profile)),
+        updatePicture: (picture) => dispatch(updatePicture(picture))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MyProfile)

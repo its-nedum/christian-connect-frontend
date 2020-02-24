@@ -4,19 +4,20 @@ import {Link} from 'react-router-dom'
 import '../../myStyles/main.css'
 
 
-const Navbar = () => {
+
+class Navbar extends React.Component {
+    
+    render(){
     return (
         <div>
         <nav className="link-nav">
             <div className="nav-wrapper">
                 <div className="container">
                     <div className="row">
-                        <Link to="#" className="sidenav-trigger" data-target="mobile-sidenav-menu" >
+                        <Link to="#" className="sidenav-trigger" data-target="slide-out" >
                             <i className="material-icons">menu</i>
                         </Link>
-                        {/* <div className="col s12">
-                            <Links />
-                        </div> */}
+                        
                         <ul className="center hide-on-med-and-down">
                             <li><Link className="link-font-size" to='/'>HOME</Link></li>
                             <li><Link className="link-font-size" to='/category/music'>MUSIC</Link></li>
@@ -30,7 +31,7 @@ const Navbar = () => {
             </div>
         </nav>
 
-        <ul id='mobile-sidenav-menu' className="sidenav">
+        <ul id='slide-out' className="sidenav">
                 <li><Link to="#" className="sidenav-close right pink-text lighten-1">X</Link></li>
                 <li><a href='/' className="sidenav-close">HOME</a></li><div className="divider" />
                 <li><a href='/category/music' className="sidenav-close">MUSIC</a></li>
@@ -45,5 +46,5 @@ const Navbar = () => {
         </div>
     )
 }
-
+}
 export default Navbar
