@@ -34,6 +34,22 @@ const Welcome = () => {
       //Change page
       const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+      //Like a post
+      const likeThisPost = (postId) => {
+          console.log(postId)
+          axios({
+              method: 'post',
+              url: `http://localhost:4242/api/v1/like/${postId}`,
+              headers: {
+                'Authorization': setAuthToken()
+            }
+          }).then((response) => {
+            window.location.reload()
+          }).catch((error) => {
+              console.log(error)
+          })
+      }
+
     if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
         <div>
@@ -46,7 +62,7 @@ const Welcome = () => {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                        <Dashboard posts={currentPosts}  postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} loading={loading}/>
+                        <Dashboard posts={currentPosts}  postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} likeThisPost={likeThisPost} loading={loading}/>
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />

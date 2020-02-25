@@ -7,7 +7,7 @@ import {ClipLoader} from 'react-spinners'
 import moment from 'moment'
 
 
-const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
+const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loading}) => {
     
     
     return (
@@ -43,7 +43,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, loading}) => {
                                             <a href={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</a>
                                             </span>
                                             
-                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" className="cardActionLink pink-text">Like </Link></span>
+                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>
                                     </div>
                                 </div>
                             </div>
