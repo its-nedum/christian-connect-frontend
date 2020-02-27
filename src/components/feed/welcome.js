@@ -14,6 +14,7 @@ const Welcome = () => {
       const [loading, setLoading] = useState(false);
       const [currentPage, setCurrentPage] = useState(1);
       const [postsPerPage] = useState(5); 
+      const [likes, setLikes] = useState([])
 
       useEffect(( ) => {
           const fetchPosts = async () => {
@@ -44,8 +45,11 @@ const Welcome = () => {
                 'Authorization': setAuthToken()
             }
           }).then((response) => {
-            window.location.reload()
+            // window.location.reload()
+            console.log(response)
+            setLikes(response.data.data)
           }).catch((error) => {
+              alert('Network error, pls try again shortly..')
               console.log(error)
           })
       }
