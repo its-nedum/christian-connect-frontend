@@ -14,7 +14,6 @@ const Welcome = () => {
       const [loading, setLoading] = useState(false);
       const [currentPage, setCurrentPage] = useState(1);
       const [postsPerPage] = useState(5); 
-      const [likes, setLikes] = useState([])
 
       useEffect(( ) => {
           const fetchPosts = async () => {
@@ -22,6 +21,7 @@ const Welcome = () => {
             //const res = await axios.get('http://localhost:4242/api/v1/feed', { headers:{ 'Authorization': setAuthToken()} });
               setPosts(res.data.data);
               setLoading(true)
+              
           }
 
           fetchPosts();
@@ -37,7 +37,7 @@ const Welcome = () => {
 
       //Like a post
       const likeThisPost = (postId) => {
-          console.log(postId)
+          
           axios({
               method: 'post',
               url: `https://christian-connect-api.herokuapp.com/api/v1/like/${postId}`,
@@ -46,11 +46,9 @@ const Welcome = () => {
                 'Authorization': setAuthToken()
             }
           }).then((response) => {
-            // window.location.reload()
-            console.log(response)
-            setLikes(response.data.data)
+            window.location.reload()
           }).catch((error) => {
-              alert('Network error, pls try again shortly..')
+              alert('Network error, try again shortly..')
               console.log(error)
           })
       }

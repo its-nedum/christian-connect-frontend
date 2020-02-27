@@ -9,7 +9,6 @@ import moment from 'moment'
 
 const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loading}) => {
     
-    
     return (
         <div>
             <UrThoughts />
@@ -17,9 +16,9 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loa
             {loading ? 
             <div> 
                 {posts.length === 0 ? <p>No post found</p> : 
-                    posts && posts.map((post) => {
+                    posts && posts.map((post) => { 
                         return(
-                            <div className="card" key={post.id}>
+                            <div className="card" key={post.id}> 
                                 <div className="card-content">
                                     <span className="card-title">
                                         <div className="btn btn-floating ">
@@ -43,7 +42,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loa
                                             <a href={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</a>
                                             </span>
                                             
-                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>
+                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> {post.likes[0] ? post.likes[0].like.length : 0 } <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>
                                     </div>
                                 </div>
                             </div>
