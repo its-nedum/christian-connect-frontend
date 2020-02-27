@@ -40,7 +40,8 @@ const Welcome = () => {
           console.log(postId)
           axios({
               method: 'post',
-              url: `http://localhost:4242/api/v1/like/${postId}`,
+              url: `https://christian-connect-api.herokuapp.com/api/v1/like/${postId}`,
+            //   url: `http://localhost:4242/api/v1/like/${postId}`,
               headers: {
                 'Authorization': setAuthToken()
             }
