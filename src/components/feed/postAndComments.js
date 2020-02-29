@@ -14,27 +14,27 @@ const PostAndComments = ({post, isLoaded, notFound}) => {
                 <div className="card-content">
                     <span className="card-title">
                         <div className="btn btn-floating">
-                        {post.user.avatar ? <img src={post.user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
+                        {post.post.user.avatar ? <img src={post.post.user.avatar} alt="pic" className="circle responsive-img" /> : <img src="https://res.cloudinary.com/its-nedum/image/upload/v1581427860/Christian%20Connect/profilepics/user_vcs7aw.png" alt="pic" className="circle responsive-img" />}
                         </div>
-                        <span> {post.user.firstname} {post.user.lastname}</span>
+                        <span> {post.post.user.firstname} {post.post.user.lastname}</span>
                     </span>
-                    {post.image_url ? 
+                    {post.post.image_url ? 
                         <div className="card-image">
-                            <img src={post.image_url} style={{width:'300px', height:'200px'}} alt="feed-pic" className="responsive-img"/>
+                            <img src={post.post.image_url} style={{width:'300px', height:'200px'}} alt="feed-pic" className="responsive-img"/>
                         </div>
                             : null}
                     <div>
-                        {post.post}
+                        {post.post.post}
                     </div> 
                     <div className="card-action">
-                        <span className="col s12 m4">{moment(post.createdAt).format('MMM Do YYYY, h:mm:ss a')}</span>
-                        <span className="col s6 m4"><i className="material-icons">comment</i> 88 Comments </span> 
-                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> 17 like </span>
+                        <span className="col s12 m4">{moment(post.post.createdAt).format('MMM Do YYYY, h:mm:ss a')}</span>
+                        <span className="col s6 m4"><i className="material-icons pink-text">comment</i> {post.numberOfComments} Comments</span> 
+                        <span className="col s6 m4"><i className="material-icons pink-text">thumb_up</i> {post.post.likes[0] ? post.post.likes[0].like.length : 0 } Like</span>
                     </div>
                 </div>
             </div>
-            <AddComment post_id={post.id}/>
-            <CommentsList post_id={post.id}/>
+            <AddComment post_id={post.post.id}/>
+            <CommentsList post_id={post.post.id}/>
             </div>
             :
             <div className="sweet-loading">

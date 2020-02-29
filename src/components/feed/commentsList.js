@@ -6,7 +6,7 @@ import moment from 'moment'
 const CommentsList = ({post_id}) => {
 
     const [posts, setPosts] = useState([]);
-      const [loading, setLoading] = useState(false);
+      //const [loading, setLoading] = useState(false);
       const [currentPage, setCurrentPage] = useState(1);
       const [postsPerPage] = useState(10); 
 
@@ -15,7 +15,7 @@ const CommentsList = ({post_id}) => {
             const res = await axios.get(`https://christian-connect-api.herokuapp.com/api/v1/getcomments/${post_id}`);
             //const res = await axios.get(`http://localhost:4242/api/v1/getcomments/${post_id}`);
               setPosts(res.data.data);
-              setLoading(true)
+              //setLoading(true)
             
           }
 

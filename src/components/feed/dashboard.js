@@ -37,12 +37,12 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loa
                                     <div className="card-action row">
                                         <span className="col s12 m4">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                                         <span className="col s6 m4">
-                                            <i className="material-icons">comment</i>
+                                            <i className="material-icons pink-text">comment</i>
                                             88 
                                             <a href={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</a>
                                             </span>
                                             
-                                        <span className="col s6 m4"><i className="material-icons">thumb_up</i> {post.likes[0] ? post.likes[0].like.length : 0 } <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>
+                                        <span className="col s6 m4"><i className="material-icons pink-text">thumb_up</i> {post.likes[0] ? post.likes[0].like.length : 0 } <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>
                                     </div>
                                 </div>
                             </div>
