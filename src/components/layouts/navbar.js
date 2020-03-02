@@ -7,14 +7,33 @@ import '../../myStyles/main.css'
 
 class Navbar extends React.Component {
     
+   loadSlider = () =>
+   {
+       let slide = document.querySelector("#slide-out");
+       slide.setAttribute("style","transform: translateX(-0%)");
+       let overlay = document.querySelector(".overlay-content");
+       overlay.style.display="block";
+   }
+
+   closeMe = () =>
+   {
+    let slide = document.querySelector("#slide-out");
+    slide.setAttribute("style","transform: translateX(-105%)");
+    let overlay = document.querySelector(".overlay-content");
+    overlay.style.display="none";
+   }
+
     render(){
     return (
         <div>
+
+   <div className="overlay-content" onClick={this.closeMe}></div>
+
         <nav className="link-nav">
             <div className="nav-wrapper">
                 <div className="container">
                     <div className="row">
-                        <Link to="#" className="sidenav-trigger" data-target="slide-out" >
+                        <Link to="#" onClick={this.loadSlider} >
                             <i className="material-icons">menu</i>
                         </Link>
                         
@@ -32,7 +51,7 @@ class Navbar extends React.Component {
         </nav>
 
         <ul id='slide-out' className="sidenav">
-                <li><Link to="#" className="sidenav-close right pink-text lighten-1">X</Link></li>
+                <li><Link to="#" onClick={this.closeMe} className="sidenav-close right pink-text lighten-1">X</Link></li>
                 <li><a href='/' className="sidenav-close">HOME</a></li><div className="divider" />
                 <li><a href='/category/music' className="sidenav-close">MUSIC</a></li>
                 <li><a href='/category/videos' className="sidenav-close">VIDEO</a></li>
@@ -44,6 +63,9 @@ class Navbar extends React.Component {
          </ul>
 
         </div>
+
+
+         
     )
 }
 }
