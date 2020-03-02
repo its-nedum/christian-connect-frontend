@@ -8,7 +8,7 @@ const Header = () => {
     return(
         <nav className="header-nav">
         <div className="nav-wrapper">
-            <a href='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></a>
+            <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
             <ul className="right hide-on-small-only">
                 <li><Link to='/signin'>Sign In</Link></li>
                 <li><Link to='/signup'>Sign Up</Link></li>

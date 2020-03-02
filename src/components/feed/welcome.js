@@ -51,7 +51,7 @@ const Welcome = () => {
               alert('Network error, try again shortly..')
               console.log(error)
           })
-      }
+      } 
 
     if(!isLoggedIn()) return <Redirect to='/signin' />
     return (
