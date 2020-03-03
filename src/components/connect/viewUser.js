@@ -21,7 +21,7 @@ const ViewUser = ({user, sendFriendRequest}) => {
                 <div className="card-content">
                 <p className="center">
                     <Link to="#" onClick={() => sendFriendRequest(user.id)}><span style={{paddingRight:'50px'}}><i className="material-icons">group_add</i> Connect</span></Link>
-                    <a href={`/users/${user.username}/chat`}><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></a>
+                    <Link to={`/users/${user.username}/chat`}><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></Link>
                     <Link to="#"><span><i className="material-icons">block</i> Block</span></Link>
                 </p>
                 {user.work ? <p><i className="material-icons">work</i> {user.work}</p> : null}

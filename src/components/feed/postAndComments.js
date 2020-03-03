@@ -3,10 +3,11 @@ import AddComment from './addComment'
 import CommentsList from './commentsList'
 import {ClipLoader} from 'react-spinners'
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 
-const PostAndComments = ({post, isLoaded, notFound}) => {
+const PostAndComments = ({post, isLoaded, notFound, likeThisPost}) => {
 
-    return (
+    return ( 
         <div>
             {isLoaded ? 
             <div>
@@ -29,7 +30,7 @@ const PostAndComments = ({post, isLoaded, notFound}) => {
                     <div className="card-action">
                         <span className="col s12 m4">{moment(post.post.createdAt).format('MMM Do YYYY, h:mm:ss a')}</span>
                         <span className="col s6 m4"><i className="material-icons pink-text">comment</i> {post.numberOfComments} Comments</span> 
-                        <span className="col s6 m4"><i className="material-icons pink-text">thumb_up</i> {post.post.likes[0] ? post.post.likes[0].like.length : 0 } Like</span>
+                        <span className="col s6 m4"><i className="material-icons pink-text">thumb_up</i> {post.post.likes[0] ? post.post.likes[0].like.length : 0 }<Link to="#" onClick={() => likeThisPost(post.post.id)} className="cardActionLink pink-text"> Like</Link></span>
                     </div>
                 </div>
             </div>

@@ -39,7 +39,7 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loa
                                         <span className="col s6 m4">
                                             <i className="material-icons pink-text">comment</i>
                                             {/* 88  */}
-                                            <a href={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</a>
+                                            <Link to={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</Link>
                                             </span>
                                             
                                         <span className="col s6 m4"><i className="material-icons pink-text">thumb_up</i> {post.likes[0] ? post.likes[0].like.length : 0 } <Link to="#" onClick={() => likeThisPost(post.id)} className="cardActionLink pink-text">Like </Link></span>

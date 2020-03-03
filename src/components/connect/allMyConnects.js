@@ -3,7 +3,7 @@ import ConnectPagination from './connectPagination'
 import {setAuthToken, isLoggedIn} from '../../helpers/utility' 
 import axios from 'axios'
 import {ClipLoader} from 'react-spinners'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
  
 const AllMyConnects = () => {
@@ -51,7 +51,7 @@ const AllMyConnects = () => {
                                     <p>Location: {user.state}</p>
                                     <p>Gender: {user.gender}</p>
                                     {user.about_me ? <p>About Me: {user.about_me} </p> : null}
-                                    <a href={`/users/${user.username}`}>View Profile</a>
+                                    <Link to={`/users/${user.username}`}>View Profile</Link>
                                 </li>
                             )
                         })}

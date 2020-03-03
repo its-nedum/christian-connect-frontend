@@ -6,7 +6,7 @@ import Banner2 from '../adverts/banner2'
 import ComSidebar from '../layouts/comSidebar'
 import PostAndComments from './postAndComments'
 import {Redirect} from 'react-router-dom'
-import {isLoggedIn} from '../../helpers/utility'
+import {isLoggedIn, setAuthToken} from '../../helpers/utility'
 import axios from 'axios'
 
 class PostComments extends React.Component {
@@ -15,7 +15,7 @@ class PostComments extends React.Component {
         isLoaded: false,
         notFound: null
     }
-  
+   
     async componentDidMount(){
         await axios({
             method: 'get',
@@ -38,6 +38,24 @@ class PostComments extends React.Component {
         })
     }
 
+    //Like a post
+    likeThisPost = (postId) => {
+          
+        axios({
+            method: 'post',
+            url: `https://christian-connect-api.herokuapp.com/api/v1/like/${postId}`,
+          //   url: `http://localhost:4242/api/v1/like/${postId}`,
+            headers: {
+              'Authorization': setAuthToken()
+          }
+        }).then((response) => {
+          window.location.reload()
+        }).catch((error) => {
+            alert('Network error, try again shortly..')
+            console.log(error)
+        })
+    }
+
     render(){
         
     if(!isLoggedIn()) return <Redirect to='/signin' />
@@ -53,7 +71,7 @@ class PostComments extends React.Component {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                        <PostAndComments post={this.state.post} isLoaded={this.state.isLoaded} notFound={this.state.notFound}/>
+                        <PostAndComments post={this.state.post} isLoaded={this.state.isLoaded} notFound={this.state.notFound} likeThisPost={this.likeThisPost}/>
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />

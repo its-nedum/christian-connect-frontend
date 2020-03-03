@@ -1,5 +1,6 @@
 import React from 'react'
 import {ClipLoader} from 'react-spinners'
+import {Link} from 'react-router-dom'
 
 
 const Jobs = ({jobs, isLoaded}) => {
@@ -14,13 +15,13 @@ const Jobs = ({jobs, isLoaded}) => {
                     <div className="col s12 m6" key={job.id}>
                         <div className="card">
                             <div className="card-content">
-                                <a href={`/job-connect/${job.id}/${job.position}`}><span className="card-title">{job.position}</span></a>
+                                <Link to={`/job-connect/${job.id}/${job.position}`}><span className="card-title">{job.position}</span></Link>
                                 <p>{job.company}</p>
                                 <p>Location: {job.location}</p>
                                 <p>Type: {job.job_type}</p>
                             </div>
                             <div className="card-action">
-                                <a href={`/job-connect/${job.id}/${job.position}`}>READ MORE</a>
+                                <Link to={`/job-connect/${job.id}/${job.position}`}>READ MORE</Link>
                             </div>
                         </div>
                     </div>

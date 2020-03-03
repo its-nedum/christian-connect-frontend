@@ -1,6 +1,7 @@
 import React from 'react'
 import ConnectPagination from './connectPagination'
 import {ClipLoader} from 'react-spinners'
+import {Link} from 'react-router-dom'
 
 
 const Connect = ({users, postsPerPage, totalPosts, paginate, loading}) => {
@@ -18,7 +19,7 @@ const Connect = ({users, postsPerPage, totalPosts, paginate, loading}) => {
                             <p>Location: {user.state}</p>
                             <p>Gender: {user.gender}</p>
                             {user.about_me ? <p>About Me: {user.about_me}</p> : null}
-                            <a href={`/users/${user.username}`}>View Profile</a>
+                            <Link to={`/users/${user.username}`}>View Profile</Link>
                         </li>
                     )
                 })} 

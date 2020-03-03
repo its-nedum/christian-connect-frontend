@@ -8,10 +8,10 @@ const ResetForm = () => {
     return (
         <div>
         <nav className="header-nav">
-                <a href='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></a>
+                <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
                     <ul className="right">
                         <li><Link to='/signin'>Sign In</Link></li>
-                        <li><a href='/'>Home</a></li>
+                        <li><Link to='/'>Home</Link></li>
                     </ul>
                 </nav>
                     <div className="container login-div">

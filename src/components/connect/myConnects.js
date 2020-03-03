@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {setAuthToken, getUsername} from '../../helpers/utility' 
 import axios from 'axios'
 import {ClipLoader} from 'react-spinners'
+import {Link} from 'react-router-dom'
 
 
 const MyConnects = () => {
@@ -36,13 +37,13 @@ const MyConnects = () => {
                                     <p>Location: {user.state}</p>
                                     <p>Gender: {user.gender}</p>
                                     {user.about_me ? <p>About Me: {user.about_me} </p> : null}
-                                    <a href={`/users/${user.username}`}>View Profile</a>
+                                    <Link to={`/users/${user.username}`}>View Profile</Link>
                                 </li>
                             )
                         })}
                         {posts.length !== 0 ?
                         <li className="white center avatar">
-                            <a href={`/users/${getUsername()}/my-connect`}>View All</a>
+                            <Link to={`/users/${getUsername()}/my-connect`}>View All</Link>
                         </li>
                         : null}
                 </div>

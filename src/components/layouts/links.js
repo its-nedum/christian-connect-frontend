@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-
+// This code is not included anywhere
 const Links = () => {
     return(
         <div>

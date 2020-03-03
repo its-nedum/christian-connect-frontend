@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles/head.css'
+import {Link} from 'react-router-dom'
 
 import onlineIcon from '../../icons/onlineIcon.png'
 import closeIcon from '../../icons/closeIcon.png'
@@ -12,7 +13,7 @@ const Head = () => {
                 <h5>Chinedu Emesue</h5>
             </div>
             <div className="rightInnerContainer">
-                <a href="/feed"><img src={closeIcon} alt="close icon" /></a>
+                <Link to="/feed"><img src={closeIcon} alt="close icon" /></Link>
             </div>
         </div>
     )

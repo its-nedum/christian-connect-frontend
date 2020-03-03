@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const ConnectPagination = ({postsPerPage, totalPosts, paginate}) => {
     const pageNumbers = [];
@@ -10,13 +11,13 @@ const ConnectPagination = ({postsPerPage, totalPosts, paginate}) => {
     return (
         <div>
         <ul className="pagination center">
-            <li className="disabled"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
+            <li className="disabled"><Link to="#!"><i className="material-icons">chevron_left</i></Link></li>
             {pageNumbers.map(number => (
                 <li key={number} className="waves-effect">
-                    <a onClick={ () => paginate(number)} href="#!">{number}</a>
+                    <Link onClick={ () => paginate(number)} to="#!">{number}</Link>
                 </li>
             ))}
-            <li className="waves-effect"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
+            <li className="waves-effect"><Link to="#!"><i className="material-icons">chevron_right</i></Link></li>
         </ul>
         </div>
     )
