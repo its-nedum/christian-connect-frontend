@@ -49,3 +49,12 @@ export const getUsername = () => {
     let {username} = jwt_decode(getToken())
     return username
 }
+
+export const welcomeNote = () => {
+    if(isLoggedIn()){
+        let {name} = jwt_decode(getToken())
+        return name
+    }else{
+        return false
+    }
+}

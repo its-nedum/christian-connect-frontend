@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../../myStyles/main.css'
+import {isLoggedIn, welcomeNote} from '../../helpers/utility'
 
 class Navbar extends React.Component {
     
@@ -52,8 +53,16 @@ class Navbar extends React.Component {
                 <li><Link to='/category/lyrics' className="sidenav-close">LYRICS</Link></li>
                 <li><Link to='/category/events' className="sidenav-close">EVENTS</Link></li>
                 <li><Link to='/category/news' className="sidenav-close">NEWS</Link></li><div className="divider" />
-                <li><Link to='/signin' className="sidenav-close">Sign In</Link></li><div className="divider" />
-                <li><Link to='/signup' className="sidenav-close">Sign Up</Link></li><div className="divider" />
+                {isLoggedIn() ?                 
+                    <li><Link to='/feed'><i className="material-icons">forum</i>{welcomeNote()} </Link></li>
+                :
+                <div>
+                    <li><Link to='/signin' className="sidenav-close">Sign In</Link></li><div className="divider" />
+                    <li><Link to='/signup' className="sidenav-close">Sign Up</Link></li><div className="divider" />
+                </div>
+                }
+                
+
          </ul>
          
         </div>
