@@ -18,4 +18,3 @@ const ActiveChat = () => {
 }
 
 export default ActiveChat
- 
