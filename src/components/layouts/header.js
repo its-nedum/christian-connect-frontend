@@ -7,6 +7,7 @@ import {isLoggedIn, welcomeNote} from '../../helpers/utility'
 const Header = () => {
     
     return(
+        <div className="navbar-fixed">
         <nav className="header-nav">
         <div className="nav-wrapper">
             <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
@@ -26,6 +27,7 @@ const Header = () => {
             
         </div>
         </nav>
+        </div>
     ) 
 } 
 
