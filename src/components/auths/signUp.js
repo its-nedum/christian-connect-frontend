@@ -146,6 +146,7 @@ class SignUp extends Component {
         const { notification } = this.props
         return ( 
             <div>
+            <div className="navbar-fixed">
             <nav className="header-nav">
                 <Link to='/' className="brand-logo left logo"><img src={logo} alt="logo" className="responsive-img"/></Link>
                     <ul className="right">
@@ -153,6 +154,7 @@ class SignUp extends Component {
                         <li><Link to='/'>Home</Link></li>
                     </ul>
             </nav>
+            </div>
             <div className="container">
                 <div className="row">
                     <div className="col m2"></div>
