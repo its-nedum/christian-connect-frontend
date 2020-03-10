@@ -20,8 +20,8 @@ class SingleConnect extends React.Component {
     async componentDidMount(){
         await axios({
             method: 'get',
-            //url: `https://christian-connect-api.herokuapp.com/api/v1/users/${this.props.match.params.userId}`,
-            url: `http://localhost:4242/api/v1/users/${this.props.match.params.userId}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/users/${this.props.match.params.userId}`,
+            //url: `http://localhost:4242/api/v1/users/${this.props.match.params.userId}`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -40,8 +40,8 @@ class SingleConnect extends React.Component {
 
         await axios({
             method: 'get',
-            //url: `https://christian-connect-api.herokuapp.com/api/v1/verifyconnectionstatus/${this.state.user.id}`,
-            url: `http://localhost:4242/api/v1/verifyconnectionstatus/${this.state.user.id}`,
+            url: `https://christian-connect-api.herokuapp.com/api/v1/verifyconnectionstatus/${this.state.user.id}`,
+            //url: `http://localhost:4242/api/v1/verifyconnectionstatus/${this.state.user.id}`,
             headers: {
                 'Authorization': setAuthToken()
             }
@@ -56,22 +56,47 @@ class SingleConnect extends React.Component {
         })
     }
     
+theDeciderFunc = async (status, requesteeId) => {
+    switch (status) {
+        case 'Connect':
+        
+                axios({
+                    method: 'post',
+                    url: `https://christian-connect-api.herokuapp.com/api/v1/sendfriendrequest/${requesteeId}`,
+                    //url: `http://localhost:4242/api/v1/sendfriendrequest/${requesteeId}`,
+                    headers: {
+                        'Authorization': setAuthToken()
+                    }
+                }).then((response) => {
+                    window.location.reload()
+                }).catch((error) => {
+                    console.log(error)
+                })
+            
+            break;
+        case 'Disconnect':
+        
+                axios({
+                    method: 'delete',
+                    url: `https://christian-connect-api.herokuapp.com/api/v1/disconnectfriends/${requesteeId}`,
+                    //url: `http://localhost:4242/api/v1/disconnectfriends/${requesteeId}`,
+                    headers: {
+                        'Authorization': setAuthToken()
+                    }
+                }).then((response) => {
+                    window.location.reload()
+                }).catch((error) => {
+                    console.log(error)
+                })
+           
+            break;
 
-    
-    sendFriendRequest = async (requesteeId) => {
-        axios({
-            method: 'post',
-            url: `https://christian-connect-api.herokuapp.com/api/v1/sendfriendrequest/${requesteeId}`,
-            //url: `http://localhost:4242/api/v1/sendfriendrequest/${requesteeId}`,
-            headers: {
-                'Authorization': setAuthToken()
-            }
-        }).then((response) => {
-            window.location.reload()
-        }).catch((error) => {
-            console.log(error)
-        })
+        default:
+            break;
     }
+}
+    
+    
 
     render(){
         if(!isLoggedIn()) return <Redirect to='/signin' />   
@@ -88,7 +113,7 @@ class SingleConnect extends React.Component {
                     <div className="col s12 m7">
                     <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Community Member</h5>
                     {this.state.isLoaded ? 
-                        <ViewUser user={this.state.user} status={this.state.status} sendFriendRequest={this.sendFriendRequest}/>        
+                        <ViewUser user={this.state.user} status={this.state.status} theDeciderFunc={this.theDeciderFunc}/>        
                     :
                     <div className="sweet-loading">
                         <ClipLoader
