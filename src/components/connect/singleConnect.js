@@ -13,14 +13,15 @@ class SingleConnect extends React.Component {
     state = {
         user: [],
         isLoaded: false,
-        notFound: null
+        notFound: null,
+        status: null
     }
 
     async componentDidMount(){
         await axios({
             method: 'get',
-            url: `https://christian-connect-api.herokuapp.com/api/v1/users/${this.props.match.params.userId}`,
-            //url: `http://localhost:4242/api/v1/users/${this.props.match.params.userId}`,
+            //url: `https://christian-connect-api.herokuapp.com/api/v1/users/${this.props.match.params.userId}`,
+            url: `http://localhost:4242/api/v1/users/${this.props.match.params.userId}`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -28,16 +29,34 @@ class SingleConnect extends React.Component {
             let { data } = response.data
             this.setState({
                 user: data,
-                isLoaded: true
             })
+            
         }).catch((err) => {
             console.log(err)
             this.setState({
                 notFound: 'The link you followed may be broken, or the page may have been removed.'
             })
         })
+
+        await axios({
+            method: 'get',
+            //url: `https://christian-connect-api.herokuapp.com/api/v1/verifyconnectionstatus/${this.state.user.id}`,
+            url: `http://localhost:4242/api/v1/verifyconnectionstatus/${this.state.user.id}`,
+            headers: {
+                'Authorization': setAuthToken()
+            }
+        }).then((statusCheck) => {
+            let {data} = statusCheck.data
+            this.setState({
+                status: data,
+                isLoaded: true
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
     }
     
+
     
     sendFriendRequest = async (requesteeId) => {
         axios({
@@ -48,7 +67,7 @@ class SingleConnect extends React.Component {
                 'Authorization': setAuthToken()
             }
         }).then((response) => {
-            console.log(response)
+            window.location.reload()
         }).catch((error) => {
             console.log(error)
         })
@@ -69,7 +88,7 @@ class SingleConnect extends React.Component {
                     <div className="col s12 m7">
                     <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Community Member</h5>
                     {this.state.isLoaded ? 
-                        <ViewUser user={this.state.user} sendFriendRequest={this.sendFriendRequest}/>        
+                        <ViewUser user={this.state.user} status={this.state.status} sendFriendRequest={this.sendFriendRequest}/>        
                     :
                     <div className="sweet-loading">
                         <ClipLoader
