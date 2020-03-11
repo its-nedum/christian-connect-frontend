@@ -16,7 +16,7 @@ export const createPost = (post) => {
             data: post
         }).then( (response) => {
             dispatch({type:'POST_SUCCESS', post})
-            
+            window.location.reload()
         }).catch( (err) => {
             dispatch({type:'POST_ERROR', post})
         })

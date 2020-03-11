@@ -35,10 +35,10 @@ const Dashboard = ({posts, totalPosts, paginate, postsPerPage, likeThisPost, loa
                                         {post.post}
                                     </div>
                                     <div className="card-action row">
-                                        <span className="col s12 m4">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                                        <span className="col s12 m4">{moment(post.createdAt).calendar()}</span>
                                         <span className="col s6 m4">
                                             <i className="material-icons pink-text">comment</i>
-                                            {/* 88  */}
+                                            
                                             <Link to={`feed/${post.id}/comments`} className="cardActionLink pink-text"> Comments</Link>
                                             </span>
                                             

@@ -64,6 +64,10 @@ import { createPost } from '../../store/actions/postsActions'
         let newPost = new FormData();
         newPost.append('post', post)
         this.props.createPost(newPost)
+        //Clear the input fields
+        this.setState({
+            post: ''
+        })
       }else{
         console.log('Bro. pls check the error message')
       }
@@ -92,6 +96,11 @@ import { createPost } from '../../store/actions/postsActions'
         newPost.append('post', post)
         newPost.append('image', image)
         this.props.createPost(newPost)
+        //Clear the input fields
+        this.setState({
+            post: '',
+            image: ''
+        })
         }else{
             console.log('Bro. pls check the error message')
         }
@@ -111,7 +120,7 @@ import { createPost } from '../../store/actions/postsActions'
 
                     <form id="textForm">
                     <div className="input-field">
-                        <input type="text" id="post" onChange={this.handleChange} placeholder="What's on your mind?" />
+                        <input type="text" id="post" value={this.state.post} onChange={this.handleChange} placeholder="What's on your mind?" />
                     </div>
                     <div className="input-field">
                         <input type="button" onClick={this.handlePostWithoutImage} className="btn pink lighten-1 z-depth-0" value="Share" />
@@ -124,8 +133,9 @@ import { createPost } from '../../store/actions/postsActions'
 
                     <form className="hide" id="imageForm">
                     <div className="input-field">
-                        <input type="text" id="post" onChange={this.handleChange} placeholder="What's on your mind?"/>
+                        <input type="text" id="post" value={this.state.post} onChange={this.handleChange} placeholder="What's on your mind?"/>
                     </div>
+                    
                     <div className="file-field input-field">
                         <div className="btn-small">
                             <span>Image</span>
