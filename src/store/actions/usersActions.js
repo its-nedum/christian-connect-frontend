@@ -121,23 +121,22 @@ export const postComment = (newComment) => {
 
 
 export const updatePicture = (picture) => {
-    console.log(picture)
+    
     return (dispatch) => {
         axios({
             method: 'post',
             url: 'https://christian-connect-api.herokuapp.com/api/v1/avatar',
             //url: 'http://localhost:4242/api/v1/avatar',
             headers: {
-                'Content-Type': 'application/json',
                 'Authorization': setAuthToken()
             },
             data: picture
-        }).then( (response) => {
+        }).then((response) => {
             let { message } = response.data
             dispatch({type: 'PROFILE_PICTURE_CHANGE_SUCCESS', message})
             
         }).catch( (err) => {
-            dispatch({type: 'PROFILE_PICTURE_CHANGE_ERROR', picture})
+            dispatch({type: 'PROFILE_PICTURE_CHANGE_ERROR', err})
         })
     }
 }
