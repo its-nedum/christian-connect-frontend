@@ -7,8 +7,8 @@ import { createPost } from '../../store/actions/postsActions'
 
  class UrThoughts extends Component {
     state = {
-        post: null,
-        image: null,
+        post: '',
+        image: '',
         formStatus: false,
         swapValue: 'Add Image',
         postError: false,
