@@ -37,7 +37,7 @@ const PostAndComments = ({post, isLoaded, notFound, likeThisPost}) => {
                             <span className="col s12 m4">{moment(post.post.createdAt).calendar()}</span>
                             <span className="col s6 m2"><i className="material-icons pink-text">comment</i> {post.numberOfComments}</span> 
                             <span className="col s6 m2"><Link to="#" onClick={() => likeThisPost(post.post.id)} className="cardActionLink pink-text"> <i className="material-icons pink-text">thumb_up</i> {post.post.likes[0] ? post.post.likes[0].like.length : 0 }</Link></span>
-                            <span className="col s6 m2"><Link to="#"  className="cardActionLink pink-text"> Edit</Link></span>
+                            <span className="col s6 m2"><Link to="#" className="cardActionLink pink-text"> Edit</Link></span>
                             <span className="col s6 m2"><Link to="#"  className="cardActionLink pink-text"> Delete</Link></span>
                             </div>
                             : 

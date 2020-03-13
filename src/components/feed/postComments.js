@@ -8,6 +8,7 @@ import PostAndComments from './postAndComments'
 import {Redirect} from 'react-router-dom'
 import {isLoggedIn, setAuthToken} from '../../helpers/utility'
 import axios from 'axios'
+import {history} from '../../App'
 
 class PostComments extends React.Component {
     state = {
@@ -39,8 +40,7 @@ class PostComments extends React.Component {
     }
 
     //Like a post
-    likeThisPost = (postId) => {
-          
+    likeThisPost = (postId) => {   
         axios({
             method: 'post',
             url: `https://christian-connect-api.herokuapp.com/api/v1/like/${postId}`,
@@ -50,6 +50,28 @@ class PostComments extends React.Component {
           }
         }).then((response) => {
           window.location.reload()
+        }).catch((error) => {
+            alert('Network error, try again shortly..')
+            console.log(error)
+        })
+    }
+
+    //Delete a post
+    deleteThisPost = (postId) => {
+        console.log(postId)
+        axios({
+            method: 'delete',
+            url: `https://christian-connect-api.herokuapp.com/api/v1/deletepost/${postId}`,
+            //url: `http://localhost:4242/api/v1/deletepost/${postId}`,
+            headers: {
+              'Authorization': setAuthToken()
+          }
+        }).then((response) => {
+        let {message} = response.data
+        if(message === 'Post deleted successfully'){
+                history.push('/feed')
+                window.location.reload()
+            }
         }).catch((error) => {
             alert('Network error, try again shortly..')
             console.log(error)
@@ -71,7 +93,9 @@ class PostComments extends React.Component {
                     <ComSidebar />
                     </div>
                     <div className="col s12 m7">
-                        <PostAndComments post={this.state.post} isLoaded={this.state.isLoaded} notFound={this.state.notFound} likeThisPost={this.likeThisPost}/>
+                        <PostAndComments post={this.state.post} isLoaded={this.state.isLoaded} 
+                                        notFound={this.state.notFound} likeThisPost={this.likeThisPost}
+                                        />
                     </div>
                     <div className="col s3 hide-on-small-only">
                         <Banner2 />
