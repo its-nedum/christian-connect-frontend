@@ -107,4 +107,5 @@ class PostComments extends React.Component {
     )
 }
 }
+
 export default PostComments

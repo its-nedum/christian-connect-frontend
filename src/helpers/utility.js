@@ -26,7 +26,6 @@ export const isLoggedIn = () => {
     }catch(e){
         return false
     }
-
         return true
 }
 
