@@ -136,6 +136,7 @@ export const updatePicture = (picture) => {
             dispatch({type: 'PROFILE_PICTURE_CHANGE_SUCCESS', message})
             
         }).catch( (err) => {
+            console.log(err)
             dispatch({type: 'PROFILE_PICTURE_CHANGE_ERROR', err})
         })
     }
