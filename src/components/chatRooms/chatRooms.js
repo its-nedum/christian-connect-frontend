@@ -1,7 +1,8 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 const ChatRooms = () => {
+    const [room, setRoom] = useState('region28')
     return (
         <div>
         <h5 className="white-text left-align" style={{background:'#000033', padding:'10px', borderRadius:'5px'}}>Chat Rooms</h5>
@@ -14,11 +15,11 @@ const ChatRooms = () => {
                         <p>Region 28 Chat Room</p>
                     </div>
                     <div className="card-action center">
-                        <Link to='/chat-room/region28' >JOIN</Link>
+                        <Link to={`/chat-room/${room}`} >JOIN</Link>
                     </div>
                 </div>
             </div>
-            <div className="col s12 m6">
+            {/* <div className="col s12 m6">
                 <div className="card">
                     <div className="card-content">
                         <Link to='#'><span className="card-title">Football</span></Link>
@@ -50,7 +51,7 @@ const ChatRooms = () => {
                     <Link to='/chat-room/region28' >JOIN</Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
                        
         </div>
         </div>
