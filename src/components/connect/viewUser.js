@@ -1,8 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
+import {getToken} from '../../helpers/utility'
+import jwt_decode from 'jwt-decode'
 
 const ViewUser = ({user, status, theDeciderFunc}) => {
+    const decoded = jwt_decode(getToken())
+    const {userId} = decoded;
     
     return (
         <div className="card">
@@ -19,11 +23,14 @@ const ViewUser = ({user, status, theDeciderFunc}) => {
             </div>
             <div className="row">
                 <div className="card-content">
-                <p className="center">
+                { userId !== user.id ?
+                    <p className="center">
                     <Link to="#" onClick={() => theDeciderFunc(status, user.id)}><span style={{paddingRight:'50px'}}><i className="material-icons">group_add</i> {status}</span></Link>
                     <Link to={`/users/${user.username}/chat`}><span style={{paddingRight:'50px'}}><i className="material-icons">message</i> Message</span></Link>
                     {/* <Link to="#"><span><i className="material-icons">block</i> Block</span></Link> */}
-                </p>
+                    </p>
+                 : null}
+                
                 {user.work ? <p><i className="material-icons">work</i> {user.work}</p> : null}
                 {user.school ? <p><i className="material-icons">school</i> {user.school}</p> : null}
                 {user.state ? <p><i className="material-icons">location_city</i> {user.state}</p> : null}
