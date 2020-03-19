@@ -59,6 +59,6 @@ export const welcomeNote = () => {
 }
 
 export const chatHost = () => {
-    //return `localhost:4242`
-    return `https://christian-connect-api.herokuapp.com`
+    //return `localhost:8080`
+    return `https://christian-connect-chat-api.herokuapp.com`
 }
