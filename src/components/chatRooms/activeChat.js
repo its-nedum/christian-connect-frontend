@@ -2,18 +2,20 @@ import React, {useState, useEffect} from 'react'
 import ChatHead from './chatHead'
 import ChatMessages from './chatMessages'
 import ChatInput from './chatInput'
-import queryString from 'query-string'
+// import queryString from 'query-string'
 import io from 'socket.io-client'
 import './chatStyles/activeChat.css'
+import {chatHost, getUsername} from '../../helpers/utility'
 
 let socket;
 
 const ActiveChat = (props) => {
     const [message, setMessage] = useState([])
     const [messages, setMessages] = useState([])
-    const [room, setRoom] = useState('Region 28')
-    const [username, setUsername] = useState('its_nedum')
-    const ENDPOINT = 'localhost:4242'
+
+    const room = 'Region 28'
+    const username = getUsername()
+    const ENDPOINT = chatHost()
 
     useEffect(() => {
         socket = io(ENDPOINT)
@@ -43,7 +45,7 @@ const ActiveChat = (props) => {
         }
     }
 
-    console.log(message, messages)
+    //console.log(message, messages)
     return (
         <div className="">
             <div className="chat-container">

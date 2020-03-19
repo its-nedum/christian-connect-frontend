@@ -1,5 +1,6 @@
 import React from 'react'
 import './chatStyles/chatSingleMessage.css'
+import ReactEmoji from 'react-emoji'
 
 const ChatSingleMessage = ({message: {user, text}, username}) => {
     let isSentByCurrentUser = false;
@@ -17,7 +18,7 @@ const ChatSingleMessage = ({message: {user, text}, username}) => {
                     {/* <span>&nbsp; 09:34am</span> */}
                 </p>
                 <div className="messageBox backgroundBlue">
-                    <p className="messageText colorWhite">{text}</p>
+                    <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
                 </div>
             </div>
         )
@@ -25,7 +26,7 @@ const ChatSingleMessage = ({message: {user, text}, username}) => {
         (
             <div className="messageContainer justifyStart">
                 <div className="messageBox backgroundLight">
-                    <p className="messageText colorDark">{text}</p>
+                    <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
                 </div>
                 <p className="sentText pl-10">
                     <span>{user}</span>
