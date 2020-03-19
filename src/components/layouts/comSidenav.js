@@ -36,7 +36,7 @@ class ComSidenav extends React.Component {
                 <li><Link to="/feed" className="sidenav-close">Dashboard</Link></li>
                 <li><Link to="/users" className="sidenav-close">Connect</Link></li>
                 <li><Link to="/connect-request" className="sidenav-close">Connect Request</Link></li>
-                <li><Link to="#" className="sidenav-close">Chat Rooms</Link></li>
+                <li><Link to="/chat-room" className="sidenav-close">Chat Rooms</Link></li>
                 <li><Link to="/job-connect" className="sidenav-close">Job Alert</Link></li>
                 <li><Link to="/profile" className="sidenav-close">Profile</Link></li>
                 <li><Link to="#" onClick={() => logout()} className="sidenav-close">Log Out</Link></li>
