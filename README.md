@@ -1,7 +1,7 @@
 # Christian Connect Frontend
 This is a React frontend app for Christian Connect. A social network website, where people can meet, chat,download media files, get event notificationa and job vacancies.
 
-*Backend app: [https://github.com/its-nedum/christian-connect-backend](https://github.com/its-nedum/christian-connect-backend)
+*Backend app: [https://github.com/its-nedum/christian-connect-api](https://github.com/its-nedum/christian-connect-api)
 
 ## Demo Link
 Access the app [Christain Connect](https://christian-connect.herokuapp.com)
