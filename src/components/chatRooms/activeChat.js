@@ -28,7 +28,7 @@ const ActiveChat = (props) => {
             socket.emit('disconnect')
             socket.off()
         }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ENDPOINT])
 
     useEffect(() => {

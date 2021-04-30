@@ -20,7 +20,7 @@ const CommentsList = ({post_id}) => {
           }
 
           fetchPosts();
-      }, []);
+      }, [post_id]);
       
       //Get current posts
       const indexOfLastPost = currentPage * postsPerPage;

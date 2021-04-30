@@ -24,6 +24,7 @@ const SearchHolder = (props) => {
           }
 
           fetchPosts();
+         // eslint-disable-next-line react-hooks/exhaustive-deps 
       }, []);
       
       //Get current posts

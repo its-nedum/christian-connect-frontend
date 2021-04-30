@@ -9,7 +9,7 @@ const scroll_style = css({
 })
 
 const ChatMessages = ({messages, username}) => (
-            <ScrollToBottom className="messages" className={scroll_style}>
+            <ScrollToBottom className={`${scroll_style} messages`}>
                 {messages.map((message, i) => <div key={i}><ChatSingleMessage message={message} username={username} /></div>)}
             </ScrollToBottom>
 )   
